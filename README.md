@@ -15,7 +15,7 @@ GitHub Pages serves the repository root as it is, with no requests to other host
 | `index.html`, `<language>/index.html` | Generated: English at the root, the others in `zh-hans/`, `zh-hant/`, `ja/`, `fr/`, `es/`, `pt-br/`, `de/` |
 | `terms.html`, `privacy.html`, `refunds.html` | Terms of Service, Privacy Policy, Refund Policy |
 | `styles.css` | The only stylesheet, light and dark through `prefers-color-scheme` |
-| `images/` | Banner, icon (also the favicon), the Settings screenshots, and the Shortcuts tab in each language (`settings-shortcuts-<language>.png`) |
+| `images/` | Banner, icon (also the favicon), the Settings screenshots, and the Shortcuts tab in each language (`settings-shortcuts-<language>.webp`) |
 | `appcast.xml` | The Sparkle appcast that Piccolo fetches once a day |
 | `downloads/` | Release zips, `downloads/Piccolo-<version>.zip` |
 | `CNAME`, `.nojekyll` | GitHub Pages: the custom domain, and no Jekyll processing |
