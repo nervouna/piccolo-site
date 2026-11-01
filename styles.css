@@ -1,0 +1,460 @@
+/* Piccolo product site. Plain CSS, system fonts, no external requests. */
+
+:root {
+  color-scheme: light dark;
+
+  --bg: #fbf8f3;
+  --surface: #ffffff;
+  --surface-alt: #f3ede4;
+  --text: #1f1a17;
+  --muted: #665a51;
+  --line: #d9cfc2;
+  --accent: #0a5fc4;
+  --button: #0a5fc4;
+  --button-hover: #084c9e;
+  --button-text: #ffffff;
+  --focus: #0a5fc4;
+  --shadow: 0 1px 2px rgb(60 40 20 / 8%), 0 8px 24px rgb(60 40 20 / 8%);
+
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui,
+    "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1917;
+    --surface: #262220;
+    --surface-alt: #2b2623;
+    --text: #f3ece4;
+    --muted: #b5a99f;
+    --line: #463f3a;
+    --accent: #6cb0ff;
+    --button: #6cb0ff;
+    --button-hover: #8cc2ff;
+    --button-text: #0d1b2a;
+    --focus: #6cb0ff;
+    --shadow: 0 1px 2px rgb(0 0 0 / 30%), 0 8px 24px rgb(0 0 0 / 30%);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 1.0625rem/1.6 var(--font);
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:focus-visible,
+.button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+code {
+  font: 0.9em var(--mono);
+  background: var(--surface-alt);
+  border-radius: 6px;
+  padding: 0.1em 0.35em;
+  overflow-wrap: anywhere;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+p,
+ul {
+  margin: 0 0 1rem;
+}
+
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header and footer, shared by every page */
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.site-header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.brand img {
+  width: 32px;
+  height: 32px;
+}
+
+.site-header nav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.site-header nav a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.25rem 0;
+}
+
+.site-header nav a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.site-footer {
+  margin-top: 2rem;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.site-footer .wrap {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* Buttons */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.button {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.55rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button.primary {
+  border-color: transparent;
+  background: var(--button);
+  color: var(--button-text);
+}
+
+.button.primary:hover:not(:disabled) {
+  background: var(--button-hover);
+}
+
+.button .note {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.button:disabled,
+.button.primary:disabled {
+  border-color: var(--line);
+  border-style: dashed;
+  background: var(--surface-alt);
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+/* Sections of the home page */
+
+section {
+  padding: 3rem 0;
+  scroll-margin-top: 1rem;
+}
+
+section > .wrap > h2 {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.6rem, 4.5vw, 2rem);
+  text-align: center;
+}
+
+.hero {
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 6.5vw, 3.25rem);
+}
+
+.lead {
+  max-width: 36rem;
+  margin: 0 auto 2rem;
+  color: var(--muted);
+  font-size: 1.2rem;
+}
+
+.banner {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto 2rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.shots img {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.price-card {
+  max-width: 28rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.price-card .eyebrow {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.price-card .price {
+  margin: 0.25rem 0 1.25rem;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.price-card .price small {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.price-card ul {
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.price-card li {
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.price-card li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.price-card .button {
+  width: 100%;
+  margin: 0.25rem 0 1rem;
+}
+
+.price-card .fine {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.requirements {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.requirements li {
+  margin-bottom: 0.5rem;
+}
+
+.faq {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.faq h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+}
+
+.faq > div {
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.faq > div:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq p:last-child,
+.faq ul:last-child {
+  margin-bottom: 0;
+}
+
+.faq ul {
+  padding-left: 1.25rem;
+}
+
+/* Legal pages */
+
+.prose {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 2.5rem 16px 1rem;
+}
+
+.prose h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.9rem, 6vw, 2.5rem);
+}
+
+.prose h2 {
+  margin: 2rem 0 0.5rem;
+  font-size: 1.35rem;
+}
+
+.prose .effective {
+  margin-bottom: 1.5rem;
+  color: var(--muted);
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose ul {
+  padding-left: 1.25rem;
+}
+
+@media (max-width: 420px) {
+  .site-header nav {
+    gap: 1rem;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}
