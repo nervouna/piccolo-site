@@ -1,0 +1,261 @@
+<!doctype html>
+<!-- Generated from src/ by scripts/build.py. Edit those, not this file. -->
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Piccolo：用键盘管理 macOS 窗口</title>
+  <meta name="description" content="Piccolo 把你刚用过的窗口一键铺开、一起调整大小、互换位置，全程只用键盘。一次买断 US$4.99，可免费试用 14 天。">
+  <link rel="alternate" hreflang="en" href="https://piccolo.damao.io/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://piccolo.damao.io/zh-hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://piccolo.damao.io/zh-hant/">
+  <link rel="alternate" hreflang="ja" href="https://piccolo.damao.io/ja/">
+  <link rel="alternate" hreflang="fr" href="https://piccolo.damao.io/fr/">
+  <link rel="alternate" hreflang="es" href="https://piccolo.damao.io/es/">
+  <link rel="alternate" hreflang="pt-BR" href="https://piccolo.damao.io/pt-br/">
+  <link rel="alternate" hreflang="de" href="https://piccolo.damao.io/de/">
+  <link rel="alternate" hreflang="x-default" href="https://piccolo.damao.io/">
+  <link rel="icon" type="image/png" href="../images/icon.png">
+  <link rel="apple-touch-icon" href="../images/icon.png">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="../images/icon.png" alt="" width="32" height="32"><span>Piccolo</span></a>
+      <nav aria-label="主导航">
+        <a href="#features">功能</a>
+        <a href="#pricing">价格</a>
+        <a href="#faq">常见问题</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <h1><span>macOS早该<span class="nobr">自带的</span></span><span>窗<span class="nobr">口管理</span></span></h1>
+        <p class="lead"><span>Piccolo一键铺开你的常<span class="nobr">用窗口</span></span><span>让桌面始终井井有条，全程只<span class="nobr">用键盘</span></span></p>
+        <div class="actions">
+          <button class="button primary" type="button" disabled>下载试用版 <span class="note">即将推出</span></button>
+        </div>
+        <p class="hero-fine">免费试用14天，无需<span class="nobr">信用卡</span><br>
+          <a href="#pricing">US$4.99购买</a></p>
+        <figure class="demo" role="img" aria-label="一个 Mac 桌面，三个窗口互相叠着。按住 Control-Option-4 会显示它们将去的位置，松手后排成 2 × 2 网格。按两次 Control-Option-等号，分隔线右移，三个窗口一起调整大小。按 Control-Option-右箭头，当前窗口与相邻窗口互换位置。">
+          <div class="desk" aria-hidden="true">
+            <div class="menubar"></div>
+            <div class="win win-a"><div class="titlebar"></div><div class="body"></div></div>
+            <div class="win win-b"><div class="titlebar"></div><div class="body"></div></div>
+            <div class="win win-c"><div class="titlebar"></div><div class="body"></div></div>
+            <div class="ghost ghost-a"></div>
+            <div class="ghost ghost-b"></div>
+            <div class="ghost ghost-c"></div>
+          </div>
+          <div class="keys" aria-hidden="true">
+            <p class="step step-1"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>4</kbd><span>将3个窗口排成2 × 2</span></p>
+            <p class="step step-2"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>=</kbd><span>向右移动分隔线</span></p>
+            <p class="step step-3"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>→</kbd><span>与右侧窗口交换</span></p>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="wrap">
+        <article class="feature">
+          <div class="feature-text">
+            <h2>一键铺开你正在用<span class="nobr">的窗口</span></h2>
+            <p>Piccolo记得你最近用过哪些窗口。一个快捷键，就能把最近的两个、三个或六个窗口在当前显示器上并排或排成网格，不用再一<span class="nobr">个个挑。</span></p>
+          </div>
+          <figure class="mini-fig f1" role="img" aria-label="Control-Option-2 把最近的两个窗口并排，Control-Option-3 把最近的三个窗口排成三栏，Control-Option-6 把六个窗口排成 2 × 3 网格。">
+            <div class="mini" aria-hidden="true">
+              <div class="mw t1 focus f1-a"></div>
+              <div class="mw t2 f1-b"></div>
+              <div class="mw t3 f1-c"></div>
+              <div class="mw t4 f1-r f1-d"></div>
+              <div class="mw t5 f1-r f1-e"></div>
+              <div class="mw t6 f1-r f1-f"></div>
+            </div>
+            <div class="keys" aria-hidden="true">
+              <p class="step s1"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>2</kbd><span>将2个窗口排成1 × 2</span></p>
+              <p class="step s2"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>3</kbd><span>将3个窗口排成1 × 3</span></p>
+              <p class="step s3"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>6</kbd><span>将6个窗口排成2 × 3</span></p>
+            </div>
+          </figure>
+        </article>
+
+        <article class="feature">
+          <div class="feature-text">
+            <h2>一起调<span class="nobr">整大小</span></h2>
+            <p>Piccolo排好一组窗口后，用快捷键移动当前窗口旁的分隔线，相邻窗口会跟着变，不留空隙也不重叠。交换窗口能让两个窗口互换位置，布局保<span class="nobr">持不变。</span></p>
+          </div>
+          <figure class="mini-fig f2" role="img" aria-label="三个窗口排成三栏。按两次 Control-Option-等号，中间窗口变宽、右侧窗口变窄；按两次 Control-Option-减号，中间窗口向左变宽；按 Control-Option-右箭头，它与右侧窗口互换位置。">
+            <div class="mini" aria-hidden="true">
+              <div class="mw t1 f2-a"></div>
+              <div class="mw t2 focus f2-b"></div>
+              <div class="mw t3 f2-c"></div>
+            </div>
+            <div class="keys" aria-hidden="true">
+              <p class="step s1"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>=</kbd><span>向右移动分隔线</span></p>
+              <p class="step s2"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>-</kbd><span>向左移动分隔线</span></p>
+              <p class="step s3"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>→</kbd><span>与右侧窗口交换</span></p>
+            </div>
+          </figure>
+        </article>
+
+        <article class="feature">
+          <div class="feature-text">
+            <h2>移动之前，先<span class="nobr">看落点</span></h2>
+            <p>按住快捷键，高亮框会显示窗口将去的位置。松手就移过去，按Esc则什么<span class="nobr">都不变。</span></p>
+          </div>
+          <figure class="mini-fig f3" role="img" aria-label="按住 Control-Option-H 时左半屏高亮，按 Esc 取消，窗口不动。按住 Control-Option-L 时右半屏高亮，松手后窗口移到右半屏。">
+            <div class="mini" aria-hidden="true">
+              <div class="mw t1 focus f3-w"></div>
+              <div class="ghost f3-gl"></div>
+              <div class="ghost f3-gr"></div>
+            </div>
+            <div class="keys" aria-hidden="true">
+              <p class="step s1"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>H</kbd><span>左半屏</span></p>
+              <p class="step s2"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>H</kbd><kbd>esc</kbd><span>已取消</span></p>
+              <p class="step s3"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>L</kbd><span>右半屏</span></p>
+            </div>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <section id="layouts">
+      <div class="wrap">
+        <h2>常用布局，一<span class="nobr">应俱全</span></h2>
+        <ul class="layouts">
+          <li><div class="screen" aria-hidden="true"><i class="area cycle"></i></div><h3>半屏</h3><p>再按一次变成2/3，再<span class="nobr">按变成1/3</span></p><p class="combo">⌃⌥H&ensp;⌃⌥L</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:0;--y:0;--w:50;--h:50"></i><i class="area faint" style="--x:50;--y:0;--w:50;--h:50"></i><i class="area faint" style="--x:0;--y:50;--w:50;--h:50"></i><i class="area faint" style="--x:50;--y:50;--w:50;--h:50"></i></div><h3><span class="nobr">四等分</span></h3><p>每个角各<span class="nobr">一个键</span></p><p class="combo">⌃⌥U&ensp;⌃⌥I&ensp;⌃⌥J&ensp;⌃⌥K</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area faint" style="--x:0;--y:0;--w:33.33;--h:100"></i><i class="area" style="--x:33.33;--y:0;--w:33.33;--h:100"></i><i class="area faint" style="--x:66.67;--y:0;--w:33.33;--h:100"></i></div><h3>三<span class="nobr">分之一</span></h3><p>宽屏上的三<span class="nobr">栏布局</span></p><p class="combo">⌃⌥A&ensp;⌃⌥S&ensp;⌃⌥D</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:0;--y:0;--w:66.67;--h:100"></i><i class="area faint" style="--x:66.67;--y:0;--w:33.33;--h:100"></i></div><h3>三<span class="nobr">分之二</span></h3><p>给主窗口留<span class="nobr">足空间</span></p><p class="combo">⌃⌥Q&ensp;⌃⌥E</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:0;--y:0;--w:100;--h:100"></i></div><h3><span class="nobr">最大化</span></h3><p>铺满整<span class="nobr">个屏幕</span></p><p class="combo">⌃⌥R</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:22;--y:15;--w:56;--h:70"></i></div><h3>居中</h3><p>大小不变，移<span class="nobr">到正中</span></p><p class="combo">⌃⌥C</p></li>
+          <li><div class="screen dual" aria-hidden="true"><i class="area faint dashed" style="--x:8;--y:20;--w:34;--h:60"></i><i class="area" style="--x:58;--y:20;--w:34;--h:60"></i></div><h3>换到另一台<span class="nobr">显示器</span></h3><p>保持相对大小<span class="nobr">和位置</span></p><p class="combo">⌃⌥[&ensp;⌃⌥]&ensp;⌃⌥⌘+方向键</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area dashed" style="--x:25;--y:10;--w:50;--h:65"></i></div><h3>自定<span class="nobr">义区域</span></h3><p>在屏幕示意图上<span class="nobr">自己画</span></p><p class="combo">⌃⌥W</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area faint dashed" style="--x:12;--y:12;--w:48;--h:60"></i><i class="area" style="--x:50;--y:0;--w:50;--h:100"></i></div><h3>恢<span class="nobr">复窗口</span></h3><p>回到移动之前<span class="nobr">的位置</span></p><p class="combo">⌃⌥⌫</p></li>
+          <li class="rebind">
+            <div class="recorder" aria-hidden="true">
+              <span class="rec-name">左半屏</span>
+              <span class="rec-button"><span class="rec-1">⌃⌥H</span><span class="rec-2">输入快捷键…</span><span class="rec-3">⌃⌘←</span></span>
+            </div>
+            <div>
+              <h3>按你喜好定制所有<span class="nobr">快捷键</span></h3>
+              <p>在设置里点一下动作，按下你想要的组合键即可。网格和自定义区域也能有自己的快捷键，进阶用户还可以直接编辑配<span class="nobr">置文件。</span></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="craft">
+      <div class="wrap">
+        <h2>地道<span class="nobr">的Mac应用</span></h2>
+        <div class="craft">
+          <img src="../images/settings-shortcuts-zh-Hans.png" width="1632" height="1966" loading="lazy" alt="设置窗口的快捷键标签页：一个搜索框，下面按半屏、四等分、三分之一等分组列出所有动作，每行有窗口位置的小图、动作名称和快捷键，例如左半屏是 ⌃⌥H。">
+          <ul class="points">
+            <li><h3>可搜索的快捷<span class="nobr">键列表</span></h3><p>所有动作都在一张列表里。点一行，按下按键，立即保存。⌘Z可以撤销任<span class="nobr">何更改。</span></p></li>
+            <li><h3>恰到好处<span class="nobr">的动画</span></h3><p>窗口平滑地滑到位，无处可去时轻轻回弹。速度可调，也可<span class="nobr">以关掉。</span></p></li>
+            <li><h3>横屏竖屏<span class="nobr">都合适</span></h3><p>窗口填不满网格时，可以选择最后一个窗口竖向还是横向铺开：横屏用列优先，竖屏用<span class="nobr">行优先。</span></p></li>
+            <li><h3>留点呼<span class="nobr">吸空间</span></h3><p>在窗口之间和屏幕边缘留出间距，阴影不会叠成一道<span class="nobr">道黑缝。</span></p></li>
+            <li><h3>支持你<span class="nobr">的语言</span></h3><p>English、简体中文、繁體中文、日本語、Français、Español、Português和Deutsch。</p></li>
+            <li><h3>注<span class="nobr">重隐私</span></h3><p>无需账户，不做统计。只有许可证验证和检查更新<span class="nobr">会联网。</span></p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="wrap">
+        <h2>价格</h2>
+        <div class="price-card">
+          <p class="eyebrow">首<span class="nobr">发特惠</span></p>
+          <p class="price">US$4.99 <small>一次买断，首<span class="nobr">发期后US$9.99</span></small></p>
+          <ul>
+            <li>一份许可证可<span class="nobr">用于3台Mac</span></li>
+            <li>免费试用14天，无需<span class="nobr">信用卡</span></li>
+            <li>1.x版本内免<span class="nobr">费更新</span></li>
+            <li>30天内无理<span class="nobr">由退款</span></li>
+          </ul>
+          <div class="price-actions">
+            <button id="buy" class="button primary" type="button" disabled>购买 <span class="note">即将开放</span></button>
+            <button class="button" type="button" disabled>下载 <span class="note">即将推出</span></button>
+          </div>
+          <p class="fine">订单由记录商户<a href="https://dodopayments.com">Dodo Payments</a>处理，负责付款、税务<span class="nobr">和发票。</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <h2>常<span class="nobr">见问题</span></h2>
+        <div class="faq">
+          <div>
+            <h3>需要什<span class="nobr">么条件？</span></h3>
+            <p>macOS 14或更高版本，以及辅助功能权限：Piccolo通过macOS辅助功能API移动其他应用的窗口，没有这个权限就无法移动任<span class="nobr">何窗口。</span></p>
+          </div>
+          <div>
+            <h3>为什么Piccolo需要辅助功<span class="nobr">能权限？</span></h3>
+            <p>Piccolo通过macOS辅助功能API移动和调整其他应用的窗口，没有这个权限就无法移动任何窗口。它只用这个权限读取和更改窗口的位置与大小。你可以在“系统设置”>“隐私与安全性”>“辅助功能”<span class="nobr">中授权。</span></p>
+          </div>
+          <div>
+            <h3>哪些数据会离<span class="nobr">开我的Mac？</span></h3>
+            <ul>
+              <li>激活许可证时，会把许可证密钥和你的Mac型号标识符（例如MacBookPro18,3）发送给Dodo Payments。</li>
+              <li>大约每周验证一次许可证，把密钥和激活ID发送给Dodo Payments。</li>
+              <li>“在此Mac上取消激活”会把密钥和激活ID发送给Dodo Payments。</li>
+              <li>检查更新每天从本网站获取一次appcast。Sparkle只在User-Agent中带上应用名称和版本，不发送系<span class="nobr">统概况。</span></li>
+            </ul>
+            <p>除此之外，没有任何数据离开你的Mac：不做统计，不收集崩溃报告。你的窗口、快捷键和配置文件都留在本地。详见<span class="nobr"><a href="../privacy.html">隐私政策</a>（英文）。</span></p>
+          </div>
+          <div>
+            <h3>可以在几台Mac<span class="nobr">上使用？</span></h3>
+            <p>一份许可证可<span class="nobr">用于3台Mac。</span></p>
+          </div>
+          <div>
+            <h3>如何把许可证转到<span class="nobr">另一台Mac？</span></h3>
+            <p>在要释放的那台Mac上打开设置，进入“通用”，选择“在此Mac上取消激活”，然后在另一台Mac上激活<span class="nobr">许可证。</span></p>
+          </div>
+          <div>
+            <h3>如<span class="nobr">何退款？</span></h3>
+            <p>购买后30天内可无理由退款。请发邮件到<a href="mailto:support@damao.io">support@damao.io</a>并附上订单号。详见<span class="nobr"><a href="../refunds.html">退款政策</a>（英文）。</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="法律与支持">
+        <a href="../terms.html">服务条款</a>
+        <a href="../privacy.html">隐私政策</a>
+        <a href="../refunds.html">退款政策</a>
+        <a href="mailto:support@damao.io">support@damao.io</a>
+      </nav>
+      <nav class="langs" aria-label="语言">
+        <a href="../" hreflang="en" lang="en" data-lang="en">English</a>
+        <a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans" aria-current="page">简体中文</a>
+        <a href="../zh-hant/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a>
+        <a href="../ja/" hreflang="ja" lang="ja" data-lang="ja">日本語</a>
+        <a href="../fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a>
+        <a href="../es/" hreflang="es" lang="es" data-lang="es">Español</a>
+        <a href="../pt-br/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a>
+        <a href="../de/" hreflang="de" lang="de" data-lang="de">Deutsch</a>
+      </nav>
+      <p>© 2026 Xiaoyu Guan</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll("[data-lang]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        try { localStorage.setItem("lang", link.dataset.lang); } catch (e) {}
+      });
+    });
+  </script>
+</body>
+</html>

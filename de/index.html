@@ -1,0 +1,261 @@
+<!doctype html>
+<!-- Generated from src/ by scripts/build.py. Edit those, not this file. -->
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Piccolo: macOS-Fenster mit der Tastatur verwalten</title>
+  <meta name="description" content="Piccolo ordnet die zuletzt benutzten Fenster an, ändert ihre Größe gemeinsam und tauscht sie, alles mit der Tastatur. 4,99 US$ als Einmalkauf, mit 14 Tagen kostenlosem Test.">
+  <link rel="alternate" hreflang="en" href="https://piccolo.damao.io/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://piccolo.damao.io/zh-hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://piccolo.damao.io/zh-hant/">
+  <link rel="alternate" hreflang="ja" href="https://piccolo.damao.io/ja/">
+  <link rel="alternate" hreflang="fr" href="https://piccolo.damao.io/fr/">
+  <link rel="alternate" hreflang="es" href="https://piccolo.damao.io/es/">
+  <link rel="alternate" hreflang="pt-BR" href="https://piccolo.damao.io/pt-br/">
+  <link rel="alternate" hreflang="de" href="https://piccolo.damao.io/de/">
+  <link rel="alternate" hreflang="x-default" href="https://piccolo.damao.io/">
+  <link rel="icon" type="image/png" href="../images/icon.png">
+  <link rel="apple-touch-icon" href="../images/icon.png">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="../images/icon.png" alt="" width="32" height="32"><span>Piccolo</span></a>
+      <nav aria-label="Hauptnavigation">
+        <a href="#features">Funktionen</a>
+        <a href="#pricing">Preis</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <h1><span>Die Fensterverwaltung,</span> <span>die macOS fehlt</span></h1>
+        <p class="lead"><span>Piccolo ordnet die zuletzt benutzten Fenster an</span> <span>und hält deinen Schreibtisch aufgeräumt, alles mit der Tastatur.</span></p>
+        <div class="actions">
+          <button class="button primary" type="button" disabled>Kostenlose Testversion laden <span class="note">Bald verfügbar</span></button>
+        </div>
+        <p class="hero-fine">14 Tage kostenlos, ohne Kreditkarte<br>
+          <a href="#pricing">Für 4,99 US$ kaufen</a></p>
+        <figure class="demo" role="img" aria-label="Ein Mac-Schreibtisch mit drei überlappenden Fenstern. Hält man Control-Option-4, sieht man, wohin sie kommen; beim Loslassen ordnen sie sich in einem 2 × 2-Raster an. Control-Option-Gleich schiebt die Trennlinie zweimal nach rechts, und alle drei Fenster ändern gemeinsam ihre Größe. Control-Option-Rechtspfeil tauscht das aktive Fenster mit seinem Nachbarn.">
+          <div class="desk" aria-hidden="true">
+            <div class="menubar"></div>
+            <div class="win win-a"><div class="titlebar"></div><div class="body"></div></div>
+            <div class="win win-b"><div class="titlebar"></div><div class="body"></div></div>
+            <div class="win win-c"><div class="titlebar"></div><div class="body"></div></div>
+            <div class="ghost ghost-a"></div>
+            <div class="ghost ghost-b"></div>
+            <div class="ghost ghost-c"></div>
+          </div>
+          <div class="keys" aria-hidden="true">
+            <p class="step step-1"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>4</kbd><span>3 Fenster in 2 × 2 anordnen</span></p>
+            <p class="step step-2"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>=</kbd><span>Trennlinie nach rechts verschieben</span></p>
+            <p class="step step-3"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>→</kbd><span>Mit Fenster rechts tauschen</span></p>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="wrap">
+        <article class="feature">
+          <div class="feature-text">
+            <h2>Ordne die Fenster an, die du wirklich benutzt</h2>
+            <p>Piccolo merkt sich, welche Fenster du zuletzt benutzt hast. Ein Tastaturkurzbefehl legt die letzten zwei, drei oder sechs nebeneinander oder im Raster auf das aktuelle Display, ohne dass du sie einzeln auswählst.</p>
+          </div>
+          <figure class="mini-fig f1" role="img" aria-label="Control-Option-2 legt die zwei zuletzt benutzten Fenster nebeneinander, Control-Option-3 die drei letzten in Spalten und Control-Option-6 sechs Fenster in ein 2 × 3-Raster.">
+            <div class="mini" aria-hidden="true">
+              <div class="mw t1 focus f1-a"></div>
+              <div class="mw t2 f1-b"></div>
+              <div class="mw t3 f1-c"></div>
+              <div class="mw t4 f1-r f1-d"></div>
+              <div class="mw t5 f1-r f1-e"></div>
+              <div class="mw t6 f1-r f1-f"></div>
+            </div>
+            <div class="keys" aria-hidden="true">
+              <p class="step s1"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>2</kbd><span>2 Fenster in 1 × 2 anordnen</span></p>
+              <p class="step s2"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>3</kbd><span>3 Fenster in 1 × 3 anordnen</span></p>
+              <p class="step s3"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>6</kbd><span>6 Fenster in 2 × 3 anordnen</span></p>
+            </div>
+          </figure>
+        </article>
+
+        <article class="feature">
+          <div class="feature-text">
+            <h2>Gemeinsam in der Größe ändern</h2>
+            <p>Hat Piccolo eine Gruppe angeordnet, verschiebt ein Tastaturkurzbefehl die Trennlinie neben dem aktiven Fenster, und die Nachbarn folgen, ohne Lücken und ohne Überlappung. Fenster tauschen vertauscht zwei Fenster, das Layout bleibt.</p>
+          </div>
+          <figure class="mini-fig f2" role="img" aria-label="Drei Fenster in Spalten. Control-Option-Gleich verbreitert zweimal das mittlere Fenster, während das rechte schmaler wird, Control-Option-Minus verbreitert es zweimal nach links, und Control-Option-Rechtspfeil tauscht es mit dem rechten Fenster.">
+            <div class="mini" aria-hidden="true">
+              <div class="mw t1 f2-a"></div>
+              <div class="mw t2 focus f2-b"></div>
+              <div class="mw t3 f2-c"></div>
+            </div>
+            <div class="keys" aria-hidden="true">
+              <p class="step s1"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>=</kbd><span>Trennlinie nach rechts verschieben</span></p>
+              <p class="step s2"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>-</kbd><span>Trennlinie nach links verschieben</span></p>
+              <p class="step s3"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>→</kbd><span>Mit Fenster rechts tauschen</span></p>
+            </div>
+          </figure>
+        </article>
+
+        <article class="feature">
+          <div class="feature-text">
+            <h2>Sieh, wohin es geht, bevor es sich bewegt</h2>
+            <p>Halte einen Tastaturkurzbefehl gedrückt, und eine Hervorhebung zeigt das Ziel. Lass los, um das Fenster dorthin zu bewegen, oder drücke Esc, und nichts ändert sich.</p>
+          </div>
+          <figure class="mini-fig f3" role="img" aria-label="Hält man Control-Option-H, wird die linke Hälfte hervorgehoben; Esc bricht ab, und das Fenster bleibt. Hält man Control-Option-L, wird die rechte Hälfte hervorgehoben, und beim Loslassen wandert das Fenster dorthin.">
+            <div class="mini" aria-hidden="true">
+              <div class="mw t1 focus f3-w"></div>
+              <div class="ghost f3-gl"></div>
+              <div class="ghost f3-gr"></div>
+            </div>
+            <div class="keys" aria-hidden="true">
+              <p class="step s1"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>H</kbd><span>Linke Hälfte</span></p>
+              <p class="step s2"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>H</kbd><kbd>esc</kbd><span>Abgebrochen</span></p>
+              <p class="step s3"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>L</kbd><span>Rechte Hälfte</span></p>
+            </div>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <section id="layouts">
+      <div class="wrap">
+        <h2>Alle Layouts, die du erwartest</h2>
+        <ul class="layouts">
+          <li><div class="screen" aria-hidden="true"><i class="area cycle"></i></div><h3>Hälften</h3><p>Nochmal drücken für 2/3, dann 1/3</p><p class="combo">⌃⌥H&ensp;⌃⌥L</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:0;--y:0;--w:50;--h:50"></i><i class="area faint" style="--x:50;--y:0;--w:50;--h:50"></i><i class="area faint" style="--x:0;--y:50;--w:50;--h:50"></i><i class="area faint" style="--x:50;--y:50;--w:50;--h:50"></i></div><h3>Viertel</h3><p>Eine Taste für jede Ecke</p><p class="combo">⌃⌥U&ensp;⌃⌥I&ensp;⌃⌥J&ensp;⌃⌥K</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area faint" style="--x:0;--y:0;--w:33.33;--h:100"></i><i class="area" style="--x:33.33;--y:0;--w:33.33;--h:100"></i><i class="area faint" style="--x:66.67;--y:0;--w:33.33;--h:100"></i></div><h3>Drittel</h3><p>Drei Spalten für breite Displays</p><p class="combo">⌃⌥A&ensp;⌃⌥S&ensp;⌃⌥D</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:0;--y:0;--w:66.67;--h:100"></i><i class="area faint" style="--x:66.67;--y:0;--w:33.33;--h:100"></i></div><h3>Zwei Drittel</h3><p>Platz für das Hauptfenster</p><p class="combo">⌃⌥Q&ensp;⌃⌥E</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:0;--y:0;--w:100;--h:100"></i></div><h3>Maximieren</h3><p>Füllt den ganzen Bildschirm</p><p class="combo">⌃⌥R</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:22;--y:15;--w:56;--h:70"></i></div><h3>Zentriert</h3><p>Gleiche Größe, genau in der Mitte</p><p class="combo">⌃⌥C</p></li>
+          <li><div class="screen dual" aria-hidden="true"><i class="area faint dashed" style="--x:8;--y:20;--w:34;--h:60"></i><i class="area" style="--x:58;--y:20;--w:34;--h:60"></i></div><h3>Anderes Display</h3><p>Gleiche relative Größe und Lage</p><p class="combo">⌃⌥[&ensp;⌃⌥]&ensp;⌃⌥⌘ + Pfeiltasten</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area dashed" style="--x:25;--y:10;--w:50;--h:65"></i></div><h3>Eigene Bereiche</h3><p>Zeichne eigene auf den Bildschirm</p><p class="combo">⌃⌥W</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area faint dashed" style="--x:12;--y:12;--w:48;--h:60"></i><i class="area" style="--x:50;--y:0;--w:50;--h:100"></i></div><h3>Fenster wiederherstellen</h3><p>Zurück an die alte Stelle</p><p class="combo">⌃⌥⌫</p></li>
+          <li class="rebind">
+            <div class="recorder" aria-hidden="true">
+              <span class="rec-name">Linke Hälfte</span>
+              <span class="rec-button"><span class="rec-1">⌃⌥H</span><span class="rec-2">Tastaturkurzbefehl eingeben…</span><span class="rec-3">⌃⌘←</span></span>
+            </div>
+            <div>
+              <h3>Jeder Tastaturkurzbefehl gehört dir</h3>
+              <p>Klicke in den Einstellungen auf eine Aktion und drücke die gewünschten Tasten. Auch Raster und eigene Bereiche bekommen Kurzbefehle, und Profis bearbeiten die Konfigurationsdatei auf Wunsch direkt.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="craft">
+      <div class="wrap">
+        <h2>Gebaut wie eine Mac-App</h2>
+        <div class="craft">
+          <img src="../images/settings-shortcuts-de.png" width="1632" height="1966" loading="lazy" alt="Einstellungsfenster, Tab Tastaturkurzbefehle: ein Suchfeld und die Aktionen in Gruppen (Hälften, Viertel, Drittel …), jede Zeile mit einem kleinen Bild der Position, dem Namen der Aktion und ihrem Kurzbefehl, etwa ⌃⌥H für Linke Hälfte.">
+          <ul class="points">
+            <li><h3>Eine durchsuchbare Tastenbelegung</h3><p>Alle Aktionen in einer Liste. Zeile anklicken, Tasten drücken, gespeichert. ⌘Z macht jede Änderung rückgängig.</p></li>
+            <li><h3>Bewegung, die sich richtig anfühlt</h3><p>Fenster gleiten an ihren Platz und federn sanft zurück, wenn es nicht weitergeht. Wähle das Tempo oder schalte es aus.</p></li>
+            <li><h3>Für breite und hohe Displays</h3><p>Füllen die Fenster das Raster nicht, wählst du, ob sich das letzte nach unten oder zur Seite streckt: Spalten zuerst für ein breites Display, Zeilen zuerst für ein hochkant gestelltes.</p></li>
+            <li><h3>Luft zum Atmen</h3><p>Lass Abstand zwischen den Fenstern und zu den Rändern, damit sich Schatten nicht zu dunklen Fugen stapeln.</p></li>
+            <li><h3>Spricht deine Sprache</h3><p>English, 简体中文, 繁體中文, 日本語, Français, Español, Português und Deutsch.</p></li>
+            <li><h3>Privat</h3><p>Kein Konto, keine Analyse. Nur die Lizenzprüfung und die Suche nach Updates gehen online.</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="wrap">
+        <h2>Preis</h2>
+        <div class="price-card">
+          <p class="eyebrow">Einführungspreis</p>
+          <p class="price">US$4.99 <small>Einmalkauf · 9,99 US$ nach dem Start</small></p>
+          <ul>
+            <li>Eine Lizenz für bis zu 3 Macs</li>
+            <li>14 Tage testen, ohne Karte</li>
+            <li>Alle 1.x-Updates gratis</li>
+            <li>30 Tage Geld-zurück</li>
+          </ul>
+          <div class="price-actions">
+            <button id="buy" class="button primary" type="button" disabled>Kaufen <span class="note">Bald erhältlich</span></button>
+            <button class="button" type="button" disabled>Herunterladen <span class="note">Bald verfügbar</span></button>
+          </div>
+          <p class="fine">Bestellungen wickelt <a href="https://dodopayments.com">Dodo Payments</a> als Händler ab, einschließlich Zahlung, Steuern und Rechnungen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <h2>FAQ</h2>
+        <div class="faq">
+          <div>
+            <h3>Was brauche ich?</h3>
+            <p>macOS 14 oder neuer und die Berechtigung für Bedienungshilfen: Piccolo bewegt die Fenster anderer Apps über die Bedienungshilfen-API von macOS, ohne sie bewegt sich kein Fenster.</p>
+          </div>
+          <div>
+            <h3>Warum braucht Piccolo die Bedienungshilfen?</h3>
+            <p>Piccolo bewegt Fenster anderer Apps und ändert ihre Größe über die Bedienungshilfen-API von macOS; ohne die Berechtigung bewegt sich kein Fenster. Piccolo nutzt sie nur, um Position und Größe von Fenstern zu lesen und zu ändern. Du erlaubst sie unter Systemeinstellungen, Datenschutz &amp; Sicherheit, Bedienungshilfen.</p>
+          </div>
+          <div>
+            <h3>Was verlässt meinen Mac?</h3>
+            <ul>
+              <li>Die Aktivierung der Lizenz sendet deinen Lizenzschlüssel und die Modell-ID deines Macs (zum Beispiel MacBookPro18,3) an Dodo Payments.</li>
+              <li>Die Lizenzprüfung sendet etwa einmal pro Woche den Schlüssel und die Aktivierungs-ID an Dodo Payments.</li>
+              <li>„Auf diesem Mac deaktivieren“ sendet den Schlüssel und die Aktivierungs-ID an Dodo Payments.</li>
+              <li>Die Suche nach Updates lädt einmal täglich den Appcast von dieser Website. Sparkle sendet im User-Agent nur Namen und Version der App, kein Systemprofil.</li>
+            </ul>
+            <p>Sonst verlässt nichts deinen Mac: keine Analyse, keine Absturzberichte. Deine Fenster, Kurzbefehle und Konfigurationsdatei bleiben lokal. Siehe die <a href="../privacy.html">Datenschutzerklärung</a> (Englisch).</p>
+          </div>
+          <div>
+            <h3>Auf wie vielen Macs kann ich es nutzen?</h3>
+            <p>Eine Lizenz gilt für 3 Macs.</p>
+          </div>
+          <div>
+            <h3>Wie übertrage ich meine Lizenz auf einen anderen Mac?</h3>
+            <p>Öffne auf dem Mac, den du freigeben willst, die Einstellungen, gehe zu Allgemein und wähle „Auf diesem Mac deaktivieren“. Aktiviere die Lizenz dann auf dem anderen Mac.</p>
+          </div>
+          <div>
+            <h3>Wie funktionieren Erstattungen?</h3>
+            <p>Innerhalb von 30 Tagen nach dem Kauf kannst du ohne Angabe von Gründen eine Erstattung anfordern. Schreib an <a href="mailto:support@damao.io">support@damao.io</a> mit deiner Bestellnummer. Siehe die <a href="../refunds.html">Erstattungsrichtlinie</a> (Englisch).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Rechtliches und Support">
+        <a href="../terms.html">Nutzungsbedingungen</a>
+        <a href="../privacy.html">Datenschutzerklärung</a>
+        <a href="../refunds.html">Erstattungsrichtlinie</a>
+        <a href="mailto:support@damao.io">support@damao.io</a>
+      </nav>
+      <nav class="langs" aria-label="Sprache">
+        <a href="../" hreflang="en" lang="en" data-lang="en">English</a>
+        <a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a>
+        <a href="../zh-hant/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a>
+        <a href="../ja/" hreflang="ja" lang="ja" data-lang="ja">日本語</a>
+        <a href="../fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a>
+        <a href="../es/" hreflang="es" lang="es" data-lang="es">Español</a>
+        <a href="../pt-br/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a>
+        <a href="../de/" hreflang="de" lang="de" data-lang="de" aria-current="page">Deutsch</a>
+      </nav>
+      <p>© 2026 Xiaoyu Guan</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll("[data-lang]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        try { localStorage.setItem("lang", link.dataset.lang); } catch (e) {}
+      });
+    });
+  </script>
+</body>
+</html>

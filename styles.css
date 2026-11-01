@@ -111,6 +111,33 @@ ul {
   margin: 0 0 1rem;
 }
 
+/* Long text avoids a short last line; short text spreads evenly over its
+   lines. The page generator also keeps the last two words together. */
+p,
+li {
+  text-wrap: pretty;
+}
+
+.layouts p,
+.price-card li,
+.price-card small,
+.hero-fine,
+.lead > span {
+  text-wrap: balance;
+}
+
+/* The gap between Chinese or Japanese and Latin text comes from the browser,
+   not from spaces in the text. */
+:lang(zh),
+:lang(ja) {
+  text-autospace: normal;
+}
+
+/* Japanese breaks headings between phrases, not inside words. */
+:lang(ja) :is(h1, h2, h3) {
+  word-break: auto-phrase;
+}
+
 .wrap {
   max-width: 960px;
   margin: 0 auto;
@@ -191,6 +218,26 @@ ul {
   margin: 0;
 }
 
+.site-footer .langs {
+  gap: 0.25rem 1rem;
+  font-size: 0.9rem;
+}
+
+.langs a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.langs a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.langs a[aria-current="page"] {
+  color: var(--text);
+  font-weight: 600;
+}
+
 /* Buttons */
 
 .actions {
@@ -231,6 +278,7 @@ ul {
 .button .note {
   font-size: 0.8rem;
   font-weight: 400;
+  white-space: nowrap;
 }
 
 .button:disabled,
@@ -265,10 +313,18 @@ section > .wrap > h2 {
   font-size: clamp(2rem, 6.5vw, 3.25rem);
 }
 
-/* Each phrase of the headline and the lead stays on its own line when it fits. */
-.hero h1 span,
-.lead span {
+/* Each phrase of the headline stays on its own line when it fits; each
+   phrase of the lead always starts a line. */
+.hero h1 > span {
   display: inline-block;
+}
+
+.lead > span {
+  display: block;
+}
+
+.nobr {
+  white-space: nowrap;
 }
 
 .lead {
@@ -471,21 +527,27 @@ section > .wrap > h2 {
 .ghost-c { left: 50.6%; top: 5.9%; width: 48.2%; height: 92.2%; }
 
 /* The keys being pressed, under the desk. */
+/* The steps share one grid cell, so the row is as tall as the tallest one.
+   A label too long for the row moves under the keys instead of wrapping. */
 .keys {
-  position: relative;
-  height: 3.25rem;
+  display: grid;
+  min-height: 3.25rem;
   margin-top: 1rem;
 }
 
 .step {
-  position: absolute;
-  inset: 0;
+  grid-area: 1 / 1;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
+  gap: 0.35rem 0.4rem;
   margin: 0;
   opacity: 0;
+}
+
+.step span {
+  white-space: nowrap;
 }
 
 .step:first-child {
@@ -662,7 +724,7 @@ kbd {
 }
 
 .mini-fig .keys {
-  height: 2.75rem;
+  min-height: 2.75rem;
   margin-top: 0.75rem;
 }
 
@@ -1088,6 +1150,7 @@ kbd {
 
 .recorder {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
@@ -1114,6 +1177,7 @@ kbd {
 
 .rec-button > span {
   grid-area: 1 / 1;
+  white-space: nowrap;
 }
 
 .rec-2,
@@ -1207,9 +1271,9 @@ kbd {
 
   .layouts li:not(.rebind) {
     display: grid;
-    grid-template-columns: 7.5rem minmax(0, 1fr);
+    grid-template-columns: 5.5rem minmax(0, 1fr);
     grid-template-rows: auto auto 1fr;
-    column-gap: 1rem;
+    column-gap: 0.75rem;
   }
 
   .layouts li:not(.rebind) .screen {
@@ -1219,6 +1283,18 @@ kbd {
 
   .layouts li:not(.rebind) h3 {
     margin-top: 0;
+  }
+
+  .layouts .rebind {
+    padding: 1rem;
+  }
+
+  .recorder {
+    padding: 0.75rem;
+  }
+
+  .rec-button {
+    font-size: 0.9rem;
   }
 }
 
@@ -1304,6 +1380,7 @@ kbd {
 
 .price-card .button {
   width: 100%;
+  padding-inline: 0.75rem;
 }
 
 .price-card .fine {
@@ -1419,7 +1496,7 @@ kbd {
   }
 
   .keys {
-    height: 2.5rem;
+    min-height: 2.5rem;
     margin-top: 0.75rem;
   }
 

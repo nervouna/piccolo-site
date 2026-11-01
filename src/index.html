@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="{{html_lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+{{redirect}}  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+{{alternates}}  <link rel="icon" type="image/png" href="{{root}}images/icon.png">
+  <link rel="apple-touch-icon" href="{{root}}images/icon.png">
+  <link rel="stylesheet" href="{{root}}styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="{{root}}images/icon.png" alt="" width="32" height="32"><span>Piccolo</span></a>
+      <nav aria-label="{{nav_label}}">
+        <a href="#features">{{nav_features}}</a>
+        <a href="#pricing">{{nav_pricing}}</a>
+        <a href="#faq">{{nav_faq}}</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <h1><span>{{h1_1}}</span>{{phrase_gap}}<span>{{h1_2}}</span></h1>
+        <p class="lead"><span>{{lead_1}}</span>{{phrase_gap}}<span>{{lead_2}}</span></p>
+        <div class="actions">
+          <button class="button primary" type="button" disabled>{{download_trial}} <span class="note">{{coming_soon}}</span></button>
+        </div>
+        <p class="hero-fine">{{hero_trial}}<br>
+          <a href="#pricing">{{hero_purchase}}</a></p>
+        <figure class="demo" role="img" aria-label="{{demo_label}}">
+          <div class="desk" aria-hidden="true">
+            <div class="menubar"></div>
+            <div class="win win-a"><div class="titlebar"></div><div class="body"></div></div>
+            <div class="win win-b"><div class="titlebar"></div><div class="body"></div></div>
+            <div class="win win-c"><div class="titlebar"></div><div class="body"></div></div>
+            <div class="ghost ghost-a"></div>
+            <div class="ghost ghost-b"></div>
+            <div class="ghost ghost-c"></div>
+          </div>
+          <div class="keys" aria-hidden="true">
+            <p class="step step-1"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>4</kbd><span>{{act_arrange_3_2x2}}</span></p>
+            <p class="step step-2"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>=</kbd><span>{{act_divider_right}}</span></p>
+            <p class="step step-3"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>→</kbd><span>{{act_swap_right}}</span></p>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="wrap">
+        <article class="feature">
+          <div class="feature-text">
+            <h2>{{f1_title}}</h2>
+            <p>{{f1_text}}</p>
+          </div>
+          <figure class="mini-fig f1" role="img" aria-label="{{f1_label}}">
+            <div class="mini" aria-hidden="true">
+              <div class="mw t1 focus f1-a"></div>
+              <div class="mw t2 f1-b"></div>
+              <div class="mw t3 f1-c"></div>
+              <div class="mw t4 f1-r f1-d"></div>
+              <div class="mw t5 f1-r f1-e"></div>
+              <div class="mw t6 f1-r f1-f"></div>
+            </div>
+            <div class="keys" aria-hidden="true">
+              <p class="step s1"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>2</kbd><span>{{act_arrange_2_1x2}}</span></p>
+              <p class="step s2"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>3</kbd><span>{{act_arrange_3_1x3}}</span></p>
+              <p class="step s3"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>6</kbd><span>{{act_arrange_6_2x3}}</span></p>
+            </div>
+          </figure>
+        </article>
+
+        <article class="feature">
+          <div class="feature-text">
+            <h2>{{f2_title}}</h2>
+            <p>{{f2_text}}</p>
+          </div>
+          <figure class="mini-fig f2" role="img" aria-label="{{f2_label}}">
+            <div class="mini" aria-hidden="true">
+              <div class="mw t1 f2-a"></div>
+              <div class="mw t2 focus f2-b"></div>
+              <div class="mw t3 f2-c"></div>
+            </div>
+            <div class="keys" aria-hidden="true">
+              <p class="step s1"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>=</kbd><span>{{act_divider_right}}</span></p>
+              <p class="step s2"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>-</kbd><span>{{act_divider_left}}</span></p>
+              <p class="step s3"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>→</kbd><span>{{act_swap_right}}</span></p>
+            </div>
+          </figure>
+        </article>
+
+        <article class="feature">
+          <div class="feature-text">
+            <h2>{{f3_title}}</h2>
+            <p>{{f3_text}}</p>
+          </div>
+          <figure class="mini-fig f3" role="img" aria-label="{{f3_label}}">
+            <div class="mini" aria-hidden="true">
+              <div class="mw t1 focus f3-w"></div>
+              <div class="ghost f3-gl"></div>
+              <div class="ghost f3-gr"></div>
+            </div>
+            <div class="keys" aria-hidden="true">
+              <p class="step s1"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>H</kbd><span>{{act_left_half}}</span></p>
+              <p class="step s2"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>H</kbd><kbd>esc</kbd><span>{{act_cancelled}}</span></p>
+              <p class="step s3"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>L</kbd><span>{{act_right_half}}</span></p>
+            </div>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <section id="layouts">
+      <div class="wrap">
+        <h2>{{layouts_title}}</h2>
+        <ul class="layouts">
+          <li><div class="screen" aria-hidden="true"><i class="area cycle"></i></div><h3>{{lay_halves}}</h3><p>{{lay_halves_text}}</p><p class="combo">⌃⌥H&ensp;⌃⌥L</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:0;--y:0;--w:50;--h:50"></i><i class="area faint" style="--x:50;--y:0;--w:50;--h:50"></i><i class="area faint" style="--x:0;--y:50;--w:50;--h:50"></i><i class="area faint" style="--x:50;--y:50;--w:50;--h:50"></i></div><h3>{{lay_quarters}}</h3><p>{{lay_quarters_text}}</p><p class="combo">⌃⌥U&ensp;⌃⌥I&ensp;⌃⌥J&ensp;⌃⌥K</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area faint" style="--x:0;--y:0;--w:33.33;--h:100"></i><i class="area" style="--x:33.33;--y:0;--w:33.33;--h:100"></i><i class="area faint" style="--x:66.67;--y:0;--w:33.33;--h:100"></i></div><h3>{{lay_thirds}}</h3><p>{{lay_thirds_text}}</p><p class="combo">⌃⌥A&ensp;⌃⌥S&ensp;⌃⌥D</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:0;--y:0;--w:66.67;--h:100"></i><i class="area faint" style="--x:66.67;--y:0;--w:33.33;--h:100"></i></div><h3>{{lay_two_thirds}}</h3><p>{{lay_two_thirds_text}}</p><p class="combo">⌃⌥Q&ensp;⌃⌥E</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:0;--y:0;--w:100;--h:100"></i></div><h3>{{lay_maximize}}</h3><p>{{lay_maximize_text}}</p><p class="combo">⌃⌥R</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:22;--y:15;--w:56;--h:70"></i></div><h3>{{lay_center}}</h3><p>{{lay_center_text}}</p><p class="combo">⌃⌥C</p></li>
+          <li><div class="screen dual" aria-hidden="true"><i class="area faint dashed" style="--x:8;--y:20;--w:34;--h:60"></i><i class="area" style="--x:58;--y:20;--w:34;--h:60"></i></div><h3>{{lay_display}}</h3><p>{{lay_display_text}}</p><p class="combo">⌃⌥[&ensp;⌃⌥]&ensp;{{lay_display_arrows}}</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area dashed" style="--x:25;--y:10;--w:50;--h:65"></i></div><h3>{{lay_custom}}</h3><p>{{lay_custom_text}}</p><p class="combo">⌃⌥W</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area faint dashed" style="--x:12;--y:12;--w:48;--h:60"></i><i class="area" style="--x:50;--y:0;--w:50;--h:100"></i></div><h3>{{lay_restore}}</h3><p>{{lay_restore_text}}</p><p class="combo">⌃⌥⌫</p></li>
+          <li class="rebind">
+            <div class="recorder" aria-hidden="true">
+              <span class="rec-name">{{act_left_half}}</span>
+              <span class="rec-button"><span class="rec-1">⌃⌥H</span><span class="rec-2">{{rec_typing}}</span><span class="rec-3">⌃⌘←</span></span>
+            </div>
+            <div>
+              <h3>{{rebind_title}}</h3>
+              <p>{{rebind_text}}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="craft">
+      <div class="wrap">
+        <h2>{{craft_title}}</h2>
+        <div class="craft">
+          <img src="{{root}}images/{{shortcuts_image}}" width="1632" height="1966" loading="lazy" alt="{{craft_img_alt}}">
+          <ul class="points">
+            <li><h3>{{craft_keymap}}</h3><p>{{craft_keymap_text}}</p></li>
+            <li><h3>{{craft_motion}}</h3><p>{{craft_motion_text}}</p></li>
+            <li><h3>{{craft_fill}}</h3><p>{{craft_fill_text}}</p></li>
+            <li><h3>{{craft_gap}}</h3><p>{{craft_gap_text}}</p></li>
+            <li><h3>{{craft_lang}}</h3><p>{{craft_lang_text}}</p></li>
+            <li><h3>{{craft_private}}</h3><p>{{craft_private_text}}</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="wrap">
+        <h2>{{pricing_title}}</h2>
+        <div class="price-card">
+          <p class="eyebrow">{{price_eyebrow}}</p>
+          <p class="price">US$4.99 <small>{{price_sub}}</small></p>
+          <ul>
+            <li>{{price_1}}</li>
+            <li>{{price_2}}</li>
+            <li>{{price_3}}</li>
+            <li>{{price_4}}</li>
+          </ul>
+          <div class="price-actions">
+            <button id="buy" class="button primary" type="button" disabled>{{purchase}} <span class="note">{{available_soon}}</span></button>
+            <button class="button" type="button" disabled>{{download}} <span class="note">{{coming_soon}}</span></button>
+          </div>
+          <p class="fine">{{price_fine}}</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <h2>{{faq_title}}</h2>
+        <div class="faq">
+          <div>
+            <h3>{{faq_need}}</h3>
+            <p>{{faq_need_text}}</p>
+          </div>
+          <div>
+            <h3>{{faq_ax}}</h3>
+            <p>{{faq_ax_text}}</p>
+          </div>
+          <div>
+            <h3>{{faq_data}}</h3>
+            <ul>
+              <li>{{faq_data_1}}</li>
+              <li>{{faq_data_2}}</li>
+              <li>{{faq_data_3}}</li>
+              <li>{{faq_data_4}}</li>
+            </ul>
+            <p>{{faq_data_text}}</p>
+          </div>
+          <div>
+            <h3>{{faq_macs}}</h3>
+            <p>{{faq_macs_text}}</p>
+          </div>
+          <div>
+            <h3>{{faq_move}}</h3>
+            <p>{{faq_move_text}}</p>
+          </div>
+          <div>
+            <h3>{{faq_refund}}</h3>
+            <p>{{faq_refund_text}}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="{{footer_label}}">
+        <a href="{{root}}terms.html">{{terms}}</a>
+        <a href="{{root}}privacy.html">{{privacy}}</a>
+        <a href="{{root}}refunds.html">{{refunds}}</a>
+        <a href="mailto:support@damao.io">support@damao.io</a>
+      </nav>
+{{languages}}      <p>© 2026 Xiaoyu Guan</p>
+    </div>
+  </footer>
+{{remember}}</body>
+</html>
