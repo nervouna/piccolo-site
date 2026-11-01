@@ -172,7 +172,7 @@ def build():
                   for key, value in strings.items()}
         values.update(
             html_lang=hreflang,
-            shortcuts_image="settings-shortcuts.png" if code == "en" else f"settings-shortcuts-{code}.png",
+            shortcuts_image="settings-shortcuts.webp" if code == "en" else f"settings-shortcuts-{code}.webp",
             root=root,
             redirect=redirect_script() if not directory else "",
             alternates=alternates(),
