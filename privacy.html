@@ -35,8 +35,10 @@
     <ul>
       <li><strong>License activation.</strong> When you activate a license, Piccolo sends the license key and your Mac's model identifier (for example MacBookPro18,3) to Dodo Payments.</li>
       <li><strong>License validation.</strong> About once a week, Piccolo sends the license key and the activation ID to Dodo Payments.</li>
+      <li><strong>License deactivation.</strong> When you choose Deactivate This Mac, Piccolo sends the license key and the activation ID to Dodo Payments.</li>
       <li><strong>Update check.</strong> Once a day, Piccolo fetches <code>https://piccolo.damao.io/appcast.xml</code>. Sparkle sends the app's name and version in the User-Agent and no system profile. This file is served by GitHub Pages, like the website, so GitHub may log your IP address.</li>
     </ul>
+    <p>Like any request on the internet, these requests also carry your IP address and standard HTTP headers, including a User-Agent with the app's name and version and the version of macOS's networking library.</p>
     <p>Nothing else leaves your Mac. Piccolo has no analytics and no crash reporting. Your windows, shortcuts and config file stay on your Mac.</p>
 
     <h2>Purchases</h2>
