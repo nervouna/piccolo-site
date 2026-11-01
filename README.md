@@ -8,7 +8,7 @@ The site is plain static files at the repository root: no build step, no JavaScr
 
 | Path | What it is |
 |---|---|
-| `index.html` | Product page: features, screenshots, pricing, requirements, FAQ |
+| `index.html` | Product page: animated demos drawn in CSS, layouts, details, pricing, FAQ |
 | `terms.html`, `privacy.html`, `refunds.html` | Terms of Service, Privacy Policy, Refund Policy |
 | `styles.css` | The only stylesheet, light and dark through `prefers-color-scheme` |
 | `images/` | Banner, icon (also the favicon) and the two Settings screenshots |
@@ -46,5 +46,5 @@ Then open http://localhost:8765. Stop the server with Control-C.
    ```
 
 3. Check that the file is still valid XML: `xmllint --noout appcast.xml`.
-4. Replace the disabled "Download free trial" button in the hero of `index.html` with a link to the zip, and the disabled button with `id="buy"` in the pricing section with the checkout link.
+4. Replace the two disabled Download buttons of `index.html`, "Download free trial" in the hero and "Download" in the pricing section, with links to the zip, and the disabled Purchase button with `id="buy"` in the pricing section with the checkout link.
 5. Commit and push to `main`; GitHub Pages publishes the site.
