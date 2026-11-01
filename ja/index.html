@@ -1,0 +1,261 @@
+<!doctype html>
+<!-- Generated from src/ by scripts/build.py. Edit those, not this file. -->
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Piccolo：キーボードで macOS のウインドウを管理</title>
+  <meta name="description" content="Piccolo は直前に使ったウインドウをキーボードだけで並べ、まとめてサイズを変え、入れ替えます。買い切り US$4.99、14 日間の無料体験付き。">
+  <link rel="alternate" hreflang="en" href="https://piccolo.damao.io/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://piccolo.damao.io/zh-hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://piccolo.damao.io/zh-hant/">
+  <link rel="alternate" hreflang="ja" href="https://piccolo.damao.io/ja/">
+  <link rel="alternate" hreflang="fr" href="https://piccolo.damao.io/fr/">
+  <link rel="alternate" hreflang="es" href="https://piccolo.damao.io/es/">
+  <link rel="alternate" hreflang="pt-BR" href="https://piccolo.damao.io/pt-br/">
+  <link rel="alternate" hreflang="de" href="https://piccolo.damao.io/de/">
+  <link rel="alternate" hreflang="x-default" href="https://piccolo.damao.io/">
+  <link rel="icon" type="image/png" href="../images/icon.png">
+  <link rel="apple-touch-icon" href="../images/icon.png">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="../images/icon.png" alt="" width="32" height="32"><span>Piccolo</span></a>
+      <nav aria-label="メイン">
+        <a href="#features">機能</a>
+        <a href="#pricing">価格</a>
+        <a href="#faq">よくある質問</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <h1><span>macOSに最<span class="nobr">初から</span></span><span>欲しかったウインド<span class="nobr">ウ管理</span></span></h1>
+        <p class="lead"><span>Piccoloは直前に使ったウインドウ<span class="nobr">を並べ、</span></span><span>キーボードだけでデスクトップを整<span class="nobr">えます。</span></span></p>
+        <div class="actions">
+          <button class="button primary" type="button" disabled>無料体験版をダウンロード <span class="note">近日公開</span></button>
+        </div>
+        <p class="hero-fine">14日間無料、クレジットカー<span class="nobr">ド不要</span><br>
+          <a href="#pricing">US$4.99<span class="nobr">で購入</span></a></p>
+        <figure class="demo" role="img" aria-label="3 つのウインドウが重なった Mac のデスクトップ。Control-Option-4 を押し続けると移動先が表示され、離すと 2 × 2 のグリッドに並びます。Control-Option-イコールを 2 回押すと区切り線が右へ動き、3 つのウインドウが一緒にサイズを変えます。Control-Option-右矢印で、フォーカス中のウインドウが隣と入れ替わります。">
+          <div class="desk" aria-hidden="true">
+            <div class="menubar"></div>
+            <div class="win win-a"><div class="titlebar"></div><div class="body"></div></div>
+            <div class="win win-b"><div class="titlebar"></div><div class="body"></div></div>
+            <div class="win win-c"><div class="titlebar"></div><div class="body"></div></div>
+            <div class="ghost ghost-a"></div>
+            <div class="ghost ghost-b"></div>
+            <div class="ghost ghost-c"></div>
+          </div>
+          <div class="keys" aria-hidden="true">
+            <p class="step step-1"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>4</kbd><span>3個のウインドウを2 × 2に配置</span></p>
+            <p class="step step-2"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>=</kbd><span>区切り線を右に移動</span></p>
+            <p class="step step-3"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>→</kbd><span>右のウインドウと入れ替え</span></p>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="wrap">
+        <article class="feature">
+          <div class="feature-text">
+            <h2>いま使っているウインドウを<span class="nobr">並べる</span></h2>
+            <p>Piccoloは最近使ったウインドウを覚えています。ショートカット1つで、最新の2つ、3つ、6つのウインドウを現在のディスプレイに横並びやグリッドで配置。1つずつ選ぶ必要はあり<span class="nobr">ません。</span></p>
+          </div>
+          <figure class="mini-fig f1" role="img" aria-label="Control-Option-2 で最近の 2 つのウインドウを横に並べ、Control-Option-3 で最近の 3 つを 3 列に、Control-Option-6 で 6 つを 2 × 3 のグリッドに配置します。">
+            <div class="mini" aria-hidden="true">
+              <div class="mw t1 focus f1-a"></div>
+              <div class="mw t2 f1-b"></div>
+              <div class="mw t3 f1-c"></div>
+              <div class="mw t4 f1-r f1-d"></div>
+              <div class="mw t5 f1-r f1-e"></div>
+              <div class="mw t6 f1-r f1-f"></div>
+            </div>
+            <div class="keys" aria-hidden="true">
+              <p class="step s1"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>2</kbd><span>2個のウインドウを1 × 2に配置</span></p>
+              <p class="step s2"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>3</kbd><span>3個のウインドウを1 × 3に配置</span></p>
+              <p class="step s3"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>6</kbd><span>6個のウインドウを2 × 3に配置</span></p>
+            </div>
+          </figure>
+        </article>
+
+        <article class="feature">
+          <div class="feature-text">
+            <h2>まとめてサイズを<span class="nobr">変える</span></h2>
+            <p>Piccoloがウインドウを並べたあとは、ショートカットでフォーカス中のウインドウ横の区切り線を動かすと、隣のウインドウも追従します。すき間も重なりもできません。ウインドウを入れ替えれば2つの位置を交換し、レイアウトはそ<span class="nobr">のまま。</span></p>
+          </div>
+          <figure class="mini-fig f2" role="img" aria-label="3 列に並んだウインドウ。Control-Option-イコールを 2 回押すと中央が広がり右が狭まり、Control-Option-マイナスを 2 回押すと中央が左へ広がり、Control-Option-右矢印で右のウインドウと入れ替わります。">
+            <div class="mini" aria-hidden="true">
+              <div class="mw t1 f2-a"></div>
+              <div class="mw t2 focus f2-b"></div>
+              <div class="mw t3 f2-c"></div>
+            </div>
+            <div class="keys" aria-hidden="true">
+              <p class="step s1"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>=</kbd><span>区切り線を右に移動</span></p>
+              <p class="step s2"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>-</kbd><span>区切り線を左に移動</span></p>
+              <p class="step s3"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>→</kbd><span>右のウインドウと入れ替え</span></p>
+            </div>
+          </figure>
+        </article>
+
+        <article class="feature">
+          <div class="feature-text">
+            <h2>動かす前に移動先<span class="nobr">を確認</span></h2>
+            <p>ショートカットを押し続けると、移動先がハイライトで表示されます。離せばそこへ移動、Escを押せば何も変わり<span class="nobr">ません。</span></p>
+          </div>
+          <figure class="mini-fig f3" role="img" aria-label="Control-Option-H を押し続けると左半分がハイライトされ、Esc でキャンセルしてウインドウはそのまま。Control-Option-L を押し続けると右半分がハイライトされ、離すとウインドウがそこへ移動します。">
+            <div class="mini" aria-hidden="true">
+              <div class="mw t1 focus f3-w"></div>
+              <div class="ghost f3-gl"></div>
+              <div class="ghost f3-gr"></div>
+            </div>
+            <div class="keys" aria-hidden="true">
+              <p class="step s1"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>H</kbd><span>左半分</span></p>
+              <p class="step s2"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>H</kbd><kbd>esc</kbd><span>キャンセル</span></p>
+              <p class="step s3"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>L</kbd><span>右半分</span></p>
+            </div>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <section id="layouts">
+      <div class="wrap">
+        <h2>定番のレイアウトは<span class="nobr">すべて</span></h2>
+        <ul class="layouts">
+          <li><div class="screen" aria-hidden="true"><i class="area cycle"></i></div><h3>半分</h3><p>もう一度押すと2/3、<span class="nobr">さらに1/3</span></p><p class="combo">⌃⌥H&ensp;⌃⌥L</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:0;--y:0;--w:50;--h:50"></i><i class="area faint" style="--x:50;--y:0;--w:50;--h:50"></i><i class="area faint" style="--x:0;--y:50;--w:50;--h:50"></i><i class="area faint" style="--x:50;--y:50;--w:50;--h:50"></i></div><h3>4分割</h3><p>四隅それぞれ<span class="nobr">に1キー</span></p><p class="combo">⌃⌥U&ensp;⌃⌥I&ensp;⌃⌥J&ensp;⌃⌥K</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area faint" style="--x:0;--y:0;--w:33.33;--h:100"></i><i class="area" style="--x:33.33;--y:0;--w:33.33;--h:100"></i><i class="area faint" style="--x:66.67;--y:0;--w:33.33;--h:100"></i></div><h3>3分の1</h3><p>ワイド画<span class="nobr">面に3列</span></p><p class="combo">⌃⌥A&ensp;⌃⌥S&ensp;⌃⌥D</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:0;--y:0;--w:66.67;--h:100"></i><i class="area faint" style="--x:66.67;--y:0;--w:33.33;--h:100"></i></div><h3>3分の2</h3><p>メインのウインドウ<span class="nobr">を広く</span></p><p class="combo">⌃⌥Q&ensp;⌃⌥E</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:0;--y:0;--w:100;--h:100"></i></div><h3><span class="nobr">最大化</span></h3><p>画面いっ<span class="nobr">ぱいに</span></p><p class="combo">⌃⌥R</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:22;--y:15;--w:56;--h:70"></i></div><h3>中央<span class="nobr">に配置</span></h3><p>サイズはそのまま<span class="nobr">中央へ</span></p><p class="combo">⌃⌥C</p></li>
+          <li><div class="screen dual" aria-hidden="true"><i class="area faint dashed" style="--x:8;--y:20;--w:34;--h:60"></i><i class="area" style="--x:58;--y:20;--w:34;--h:60"></i></div><h3>別のディスプ<span class="nobr">レイへ</span></h3><p>相対的なサイズと位置<span class="nobr">を維持</span></p><p class="combo">⌃⌥[&ensp;⌃⌥]&ensp;⌃⌥⌘+矢印</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area dashed" style="--x:25;--y:10;--w:50;--h:65"></i></div><h3>カスタム<span class="nobr">エリア</span></h3><p>画面の図に自分<span class="nobr">で描く</span></p><p class="combo">⌃⌥W</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area faint dashed" style="--x:12;--y:12;--w:48;--h:60"></i><i class="area" style="--x:50;--y:0;--w:50;--h:100"></i></div><h3>ウインドウ<span class="nobr">を復元</span></h3><p>動かす前の位置<span class="nobr">に戻す</span></p><p class="combo">⌃⌥⌫</p></li>
+          <li class="rebind">
+            <div class="recorder" aria-hidden="true">
+              <span class="rec-name">左半分</span>
+              <span class="rec-button"><span class="rec-1">⌃⌥H</span><span class="rec-2">ショートカットを入力…</span><span class="rec-3">⌃⌘←</span></span>
+            </div>
+            <div>
+              <h3>ショートカットはすべて自由<span class="nobr">に変更</span></h3>
+              <p>設定でアクションをクリックし、好きなキーを押すだけ。グリッドやカスタムエリアにも専用のショートカットを割り当てられ、上級者は設定ファイルを直接編集することもで<span class="nobr">きます。</span></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="craft">
+      <div class="wrap">
+        <h2>Macらしい<span class="nobr">つくり</span></h2>
+        <div class="craft">
+          <img src="../images/settings-shortcuts.png" width="1632" height="1966" loading="lazy" alt="設定ウインドウのショートカットタブ：検索フィールドの下に、半分、4分割、3分の1 などのグループでアクションが並び、各行に位置の小さな図、アクション名、ショートカット（左半分は ⌃⌥H など）が表示されています。">
+          <ul class="points">
+            <li><h3>検索できるキー<span class="nobr">マップ</span></h3><p>すべてのアクションを1つのリストに。行をクリックしてキーを押せば保存されます。⌘Zでどの変更も取り消<span class="nobr">せます。</span></p></li>
+            <li><h3>心地よいアニメー<span class="nobr">ション</span></h3><p>ウインドウはなめらかに収まり、行き先がないときはやさしく跳ね返ります。速さは選べて、オフにもで<span class="nobr">きます。</span></p></li>
+            <li><h3>横長にも縦<span class="nobr">長にも</span></h3><p>ウインドウがグリッドを埋めきらないとき、最後の1つを縦に伸ばすか横に伸ばすかを選べます。横長のディスプレイには列優先、縦置きには<span class="nobr">行優先。</span></p></li>
+            <li><h3>ゆとりのあ<span class="nobr">る間隔</span></h3><p>ウインドウの間と画面の端にすき間を空けて、影が重なって黒い筋になるのを防<span class="nobr">ぎます。</span></p></li>
+            <li><h3>あなたの<span class="nobr">言語で</span></h3><p>English、简体中文、繁體中文、日本語、Français、Español、Português、Deutsch。</p></li>
+            <li><h3>プライバシ<span class="nobr">ー重視</span></h3><p>アカウント不要、解析なし。ネットに接続するのはライセンス確認とアップデート確認だ<span class="nobr">けです。</span></p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="wrap">
+        <h2>価格</h2>
+        <div class="price-card">
+          <p class="eyebrow">リリース記<span class="nobr">念価格</span></p>
+          <p class="price">US$4.99 <small>買い切り・リリース期<span class="nobr">間後はUS$9.99</span></small></p>
+          <ul>
+            <li>1ライセンスでMac 3<span class="nobr">台まで</span></li>
+            <li>14日間無料、カー<span class="nobr">ド不要</span></li>
+            <li>1.xのアップデート<span class="nobr">は無料</span></li>
+            <li>30日以内なら理由を問わ<span class="nobr">ず返金</span></li>
+          </ul>
+          <div class="price-actions">
+            <button id="buy" class="button primary" type="button" disabled>購入 <span class="note">近日販売</span></button>
+            <button class="button" type="button" disabled>ダウンロード <span class="note">近日公開</span></button>
+          </div>
+          <p class="fine">ご注文は販売事業者である<a href="https://dodopayments.com">Dodo Payments</a>が処理し、決済、税金、請求書を扱<span class="nobr">います。</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <h2>よくあ<span class="nobr">る質問</span></h2>
+        <div class="faq">
+          <div>
+            <h3>動作に必要な<span class="nobr">ものは？</span></h3>
+            <p>macOS 14以降と、アクセシビリティの許可です。PiccoloはmacOSのアクセシビリティAPIで他のAppのウインドウを動かすため、許可がないとウインドウは動き<span class="nobr">ません。</span></p>
+          </div>
+          <div>
+            <h3>なぜアクセシビリティの許可が必要なの<span class="nobr">ですか？</span></h3>
+            <p>PiccoloはmacOSのアクセシビリティAPIで他のAppのウインドウを移動・サイズ変更するため、許可がないとウインドウは動きません。ウインドウの位置とサイズの読み取りと変更にだけ使います。「システム設定」>「プライバシーとセキュリティ」>「アクセシビリティ」で許可で<span class="nobr">きます。</span></p>
+          </div>
+          <div>
+            <h3>Macの外に送られるデ<span class="nobr">ータは？</span></h3>
+            <ul>
+              <li>ライセンスの有効化では、ライセンスキーとMacのモデル識別子（例：MacBookPro18,3）をDodo Paymentsに送<span class="nobr">ります。</span></li>
+              <li>ライセンスの確認では、およそ週に1回、キーとアクティベーションIDをDodo Paymentsに送<span class="nobr">ります。</span></li>
+              <li>「このMacを無効化」では、キーとアクティベーションIDをDodo Paymentsに送<span class="nobr">ります。</span></li>
+              <li>アップデート確認では、1日1回このウェブサイトからappcastを取得します。SparkleがUser-Agentで送るのはAppの名前とバージョンだけで、システムプロファイルは送り<span class="nobr">ません。</span></li>
+            </ul>
+            <p>それ以外のデータはMacの外に出ません。解析もクラッシュレポートもなし。ウインドウ、ショートカット、設定ファイルはすべてローカルに残ります。詳しくは<a href="../privacy.html">プライバシーポリシー</a>（英語）をご覧く<span class="nobr">ださい。</span></p>
+          </div>
+          <div>
+            <h3>何台のMacで使え<span class="nobr">ますか？</span></h3>
+            <p>1ライセンスでMac 3台まで使<span class="nobr">えます。</span></p>
+          </div>
+          <div>
+            <h3>ライセンスを別のMacに移<span class="nobr">すには？</span></h3>
+            <p>空けたいMacで設定を開き、「一般」で「このMacを無効化」を選びます。その後、もう一方のMacでライセンスを有効化してく<span class="nobr">ださい。</span></p>
+          </div>
+          <div>
+            <h3>返金の<span class="nobr">方法は？</span></h3>
+            <p>購入から30日以内なら理由を問わず返金できます。注文番号を添えて<a href="mailto:support@damao.io">support@damao.io</a>までメールしてください。詳しくは<a href="../refunds.html">返金ポリシー</a>（英語）をご覧く<span class="nobr">ださい。</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="規約とサポート">
+        <a href="../terms.html">利用規約</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../refunds.html">返金ポリシー</a>
+        <a href="mailto:support@damao.io">support@damao.io</a>
+      </nav>
+      <nav class="langs" aria-label="言語">
+        <a href="../" hreflang="en" lang="en" data-lang="en">English</a>
+        <a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a>
+        <a href="../zh-hant/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a>
+        <a href="../ja/" hreflang="ja" lang="ja" data-lang="ja" aria-current="page">日本語</a>
+        <a href="../fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a>
+        <a href="../es/" hreflang="es" lang="es" data-lang="es">Español</a>
+        <a href="../pt-br/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a>
+        <a href="../de/" hreflang="de" lang="de" data-lang="de">Deutsch</a>
+      </nav>
+      <p>© 2026 Xiaoyu Guan</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll("[data-lang]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        try { localStorage.setItem("lang", link.dataset.lang); } catch (e) {}
+      });
+    });
+  </script>
+</body>
+</html>

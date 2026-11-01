@@ -1,11 +1,40 @@
 <!doctype html>
+<!-- Generated from src/ by scripts/build.py. Edit those, not this file. -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
+  <script>
+    (function () {
+      var pages = {"zh-Hans": "zh-hans/", "zh-Hant": "zh-hant/", "ja": "ja/", "fr": "fr/", "es": "es/", "pt-BR": "pt-br/", "de": "de/"};
+      var target = null;
+      try { target = localStorage.getItem("lang"); } catch (e) {}
+      if (!target) {
+        var wanted = navigator.languages || [navigator.language || ""];
+        for (var i = 0; i < wanted.length && !target; i++) {
+          var tag = String(wanted[i]).toLowerCase();
+          var primary = tag.split("-")[0];
+          if (primary === "en") target = "en";
+          else if (primary === "zh") target = /hant|-tw|-hk|-mo/.test(tag) ? "zh-Hant" : "zh-Hans";
+          else if (primary === "pt") target = "pt-BR";
+          else if (pages[primary]) target = primary;
+        }
+      }
+      if (target && pages[target]) location.replace(pages[target] + location.hash);
+    })();
+  </script>
   <title>Piccolo: Keyboard window management for macOS</title>
-  <meta name="description" content="Piccolo is a macOS menu bar app that moves, resizes and arranges windows with global keyboard shortcuts. US$4.99, one-time purchase, with a 14-day free trial.">
+  <meta name="description" content="Piccolo tiles the windows you just used, resizes them together and swaps them around, all from the keyboard. US$4.99, one-time purchase, with a 14-day free trial.">
+  <link rel="alternate" hreflang="en" href="https://piccolo.damao.io/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://piccolo.damao.io/zh-hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://piccolo.damao.io/zh-hant/">
+  <link rel="alternate" hreflang="ja" href="https://piccolo.damao.io/ja/">
+  <link rel="alternate" hreflang="fr" href="https://piccolo.damao.io/fr/">
+  <link rel="alternate" hreflang="es" href="https://piccolo.damao.io/es/">
+  <link rel="alternate" hreflang="pt-BR" href="https://piccolo.damao.io/pt-br/">
+  <link rel="alternate" hreflang="de" href="https://piccolo.damao.io/de/">
+  <link rel="alternate" hreflang="x-default" href="https://piccolo.damao.io/">
   <link rel="icon" type="image/png" href="images/icon.png">
   <link rel="apple-touch-icon" href="images/icon.png">
   <link rel="stylesheet" href="styles.css">
@@ -13,11 +42,11 @@
 <body>
   <header class="site-header">
     <div class="wrap">
-      <a class="brand" href="index.html"><img src="images/icon.png" alt="" width="32" height="32"><span>Piccolo</span></a>
+      <a class="brand" href="./"><img src="images/icon.png" alt="" width="32" height="32"><span>Piccolo</span></a>
       <nav aria-label="Main">
-        <a href="index.html#features">Features</a>
-        <a href="index.html#pricing">Pricing</a>
-        <a href="index.html#faq">FAQ</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
       </nav>
     </div>
   </header>
@@ -25,13 +54,13 @@
   <main>
     <section class="hero">
       <div class="wrap">
-        <h1><span>The window management</span> <span>macOS should have shipped</span></h1>
-        <p class="lead"><span>Piccolo tiles the windows you just used</span> <span>and keeps your desktop tidy, all from the keyboard.</span></p>
+        <h1><span>The window management</span> <span>macOS should have shipped</span></h1>
+        <p class="lead"><span>Piccolo tiles the windows you just used</span> <span>and keeps your desktop tidy, all from the keyboard.</span></p>
         <div class="actions">
           <button class="button primary" type="button" disabled>Download free trial <span class="note">Coming soon</span></button>
         </div>
-        <p class="hero-fine">Free for 14 days, no credit card needed<br>
-          <a href="#pricing">Purchase for $4.99</a></p>
+        <p class="hero-fine">Free for 14 days, no credit card needed<br>
+          <a href="#pricing">Purchase for $4.99</a></p>
         <figure class="demo" role="img" aria-label="A Mac desktop with three overlapping windows. Holding Control-Option-4 shows where they will go; on release they tile in a 2 by 2 grid. Control-Option-equals moves the divider right twice and all three windows resize together. Control-Option-Right Arrow swaps the focused window with its neighbour.">
           <div class="desk" aria-hidden="true">
             <div class="menubar"></div>
@@ -55,8 +84,8 @@
       <div class="wrap">
         <article class="feature">
           <div class="feature-text">
-            <h2>Tile the windows you’re actually using</h2>
-            <p>Piccolo remembers which windows you used last. One shortcut lays out the latest two, three or six side by side or in a grid on the current display, so you never pick them one by one.</p>
+            <h2>Tile the windows you’re actually using</h2>
+            <p>Piccolo remembers which windows you used last. One shortcut lays out the latest two, three or six side by side or in a grid on the current display, so you never pick them one by one.</p>
           </div>
           <figure class="mini-fig f1" role="img" aria-label="Control-Option-2 puts the two most recent windows side by side, Control-Option-3 the three most recent in columns, and Control-Option-6 six windows in a 2 by 3 grid.">
             <div class="mini" aria-hidden="true">
@@ -77,8 +106,8 @@
 
         <article class="feature">
           <div class="feature-text">
-            <h2>Resize them together</h2>
-            <p>Once Piccolo has arranged a group, a shortcut moves the divider next to the focused window and its neighbours follow, with no gaps and no overlaps. Swap Window trades two windows’ places and the layout stays.</p>
+            <h2>Resize them together</h2>
+            <p>Once Piccolo has arranged a group, a shortcut moves the divider next to the focused window and its neighbours follow, with no gaps and no overlaps. Swap Window trades two windows’ places and the layout stays.</p>
           </div>
           <figure class="mini-fig f2" role="img" aria-label="Three windows in columns. Control-Option-equals widens the middle window twice while the right one shrinks, Control-Option-minus widens it to the left twice, and Control-Option-Right Arrow swaps it with the right window.">
             <div class="mini" aria-hidden="true">
@@ -96,8 +125,8 @@
 
         <article class="feature">
           <div class="feature-text">
-            <h2>See where it goes before it moves</h2>
-            <p>Hold a shortcut and a highlight shows the destination. Let go to move the window there, or press Esc and nothing changes.</p>
+            <h2>See where it goes before it moves</h2>
+            <p>Hold a shortcut and a highlight shows the destination. Let go to move the window there, or press Esc and nothing changes.</p>
           </div>
           <figure class="mini-fig f3" role="img" aria-label="Holding Control-Option-H highlights the left half; Escape cancels and the window stays. Holding Control-Option-L highlights the right half, and on release the window moves there.">
             <div class="mini" aria-hidden="true">
@@ -117,25 +146,25 @@
 
     <section id="layouts">
       <div class="wrap">
-        <h2>Every layout you’d expect</h2>
+        <h2>Every layout you’d expect</h2>
         <ul class="layouts">
-          <li><div class="screen" aria-hidden="true"><i class="area cycle"></i></div><h3>Halves</h3><p>Press again for 2/3, then 1/3</p><p class="combo">⌃⌥H&ensp;⌃⌥L</p></li>
-          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:0;--y:0;--w:50;--h:50"></i><i class="area faint" style="--x:50;--y:0;--w:50;--h:50"></i><i class="area faint" style="--x:0;--y:50;--w:50;--h:50"></i><i class="area faint" style="--x:50;--y:50;--w:50;--h:50"></i></div><h3>Quarters</h3><p>One key for each corner</p><p class="combo">⌃⌥U&ensp;⌃⌥I&ensp;⌃⌥J&ensp;⌃⌥K</p></li>
-          <li><div class="screen" aria-hidden="true"><i class="area faint" style="--x:0;--y:0;--w:33.33;--h:100"></i><i class="area" style="--x:33.33;--y:0;--w:33.33;--h:100"></i><i class="area faint" style="--x:66.67;--y:0;--w:33.33;--h:100"></i></div><h3>Thirds</h3><p>Three columns for wide screens</p><p class="combo">⌃⌥A&ensp;⌃⌥S&ensp;⌃⌥D</p></li>
-          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:0;--y:0;--w:66.67;--h:100"></i><i class="area faint" style="--x:66.67;--y:0;--w:33.33;--h:100"></i></div><h3>Two thirds</h3><p>Room for the main window</p><p class="combo">⌃⌥Q&ensp;⌃⌥E</p></li>
-          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:0;--y:0;--w:100;--h:100"></i></div><h3>Maximize</h3><p>Fills the whole screen</p><p class="combo">⌃⌥R</p></li>
-          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:22;--y:15;--w:56;--h:70"></i></div><h3>Center</h3><p>Same size, right in the middle</p><p class="combo">⌃⌥C</p></li>
-          <li><div class="screen dual" aria-hidden="true"><i class="area faint dashed" style="--x:8;--y:20;--w:34;--h:60"></i><i class="area" style="--x:58;--y:20;--w:34;--h:60"></i></div><h3>Another display</h3><p>Same relative size and place</p><p class="combo">⌃⌥[&ensp;⌃⌥]&ensp;⌃⌥⌘ + arrows</p></li>
-          <li><div class="screen" aria-hidden="true"><i class="area dashed" style="--x:25;--y:10;--w:50;--h:65"></i></div><h3>Custom areas</h3><p>Draw your own on the screen</p><p class="combo">⌃⌥W</p></li>
-          <li><div class="screen" aria-hidden="true"><i class="area faint dashed" style="--x:12;--y:12;--w:48;--h:60"></i><i class="area" style="--x:50;--y:0;--w:50;--h:100"></i></div><h3>Restore Window</h3><p>Back to where it was before</p><p class="combo">⌃⌥⌫</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area cycle"></i></div><h3>Halves</h3><p>Press again for 2/3, then 1/3</p><p class="combo">⌃⌥H&ensp;⌃⌥L</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:0;--y:0;--w:50;--h:50"></i><i class="area faint" style="--x:50;--y:0;--w:50;--h:50"></i><i class="area faint" style="--x:0;--y:50;--w:50;--h:50"></i><i class="area faint" style="--x:50;--y:50;--w:50;--h:50"></i></div><h3>Quarters</h3><p>One key for each corner</p><p class="combo">⌃⌥U&ensp;⌃⌥I&ensp;⌃⌥J&ensp;⌃⌥K</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area faint" style="--x:0;--y:0;--w:33.33;--h:100"></i><i class="area" style="--x:33.33;--y:0;--w:33.33;--h:100"></i><i class="area faint" style="--x:66.67;--y:0;--w:33.33;--h:100"></i></div><h3>Thirds</h3><p>Three columns for wide screens</p><p class="combo">⌃⌥A&ensp;⌃⌥S&ensp;⌃⌥D</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:0;--y:0;--w:66.67;--h:100"></i><i class="area faint" style="--x:66.67;--y:0;--w:33.33;--h:100"></i></div><h3>Two thirds</h3><p>Room for the main window</p><p class="combo">⌃⌥Q&ensp;⌃⌥E</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:0;--y:0;--w:100;--h:100"></i></div><h3>Maximize</h3><p>Fills the whole screen</p><p class="combo">⌃⌥R</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:22;--y:15;--w:56;--h:70"></i></div><h3>Center</h3><p>Same size, right in the middle</p><p class="combo">⌃⌥C</p></li>
+          <li><div class="screen dual" aria-hidden="true"><i class="area faint dashed" style="--x:8;--y:20;--w:34;--h:60"></i><i class="area" style="--x:58;--y:20;--w:34;--h:60"></i></div><h3>Another display</h3><p>Same relative size and place</p><p class="combo">⌃⌥[&ensp;⌃⌥]&ensp;⌃⌥⌘ + arrows</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area dashed" style="--x:25;--y:10;--w:50;--h:65"></i></div><h3>Custom areas</h3><p>Draw your own on the screen</p><p class="combo">⌃⌥W</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area faint dashed" style="--x:12;--y:12;--w:48;--h:60"></i><i class="area" style="--x:50;--y:0;--w:50;--h:100"></i></div><h3>Restore Window</h3><p>Back to where it was before</p><p class="combo">⌃⌥⌫</p></li>
           <li class="rebind">
             <div class="recorder" aria-hidden="true">
               <span class="rec-name">Left Half</span>
               <span class="rec-button"><span class="rec-1">⌃⌥H</span><span class="rec-2">Type shortcut…</span><span class="rec-3">⌃⌘←</span></span>
             </div>
             <div>
-              <h3>Every shortcut is yours to change</h3>
-              <p>Click an action in Settings and press the keys you want. Grids and custom areas get their own shortcuts too, and power users can edit the config file by hand.</p>
+              <h3>Every shortcut is yours to change</h3>
+              <p>Click an action in Settings and press the keys you want. Grids and custom areas get their own shortcuts too, and power users can edit the config file by hand.</p>
             </div>
           </li>
         </ul>
@@ -144,16 +173,16 @@
 
     <section id="craft">
       <div class="wrap">
-        <h2>Built like a Mac app</h2>
+        <h2>Built like a Mac app</h2>
         <div class="craft">
-          <img src="images/settings-shortcuts.png" width="1632" height="1966" loading="lazy" alt="Settings window, Shortcuts tab: a search field and a keymap in grouped cards, Halves, Quarters, Thirds and Other, each row with a small picture of the frame, the action's name and its shortcut, such as ⌃⌥H for Left Half.">
+          <img src="images/settings-shortcuts.png" width="1632" height="1966" loading="lazy" alt="Settings window, Shortcuts tab: a search field and a keymap in grouped cards, Halves, Quarters, Thirds and Other, each row with a small picture of the frame, the action’s name and its shortcut, such as ⌃⌥H for Left Half.">
           <ul class="points">
-            <li><h3>A keymap you can search</h3><p>Every action in one list. Click a row, press the keys, and it’s saved. ⌘Z undoes any change.</p></li>
-            <li><h3>Motion that feels right</h3><p>Windows glide into place and bounce softly when there’s nowhere to go. Pick the speed, or turn it off.</p></li>
-            <li><h3>Fits wide and tall screens</h3><p>When the windows don’t fill a grid, choose whether the last one stretches down or across: columns first for a wide display, rows first for a portrait one.</p></li>
-            <li><h3>Room to breathe</h3><p>Leave a gap between windows and around the edges, so shadows don’t pile up into dark seams.</p></li>
-            <li><h3>Speaks your language</h3><p>English, 简体中文, 繁體中文, 日本語, Français, Español, Português and Deutsch.</p></li>
-            <li><h3>Private</h3><p>No account, no analytics. Only the license check and the update check go online.</p></li>
+            <li><h3>A keymap you can search</h3><p>Every action in one list. Click a row, press the keys, and it’s saved. ⌘Z undoes any change.</p></li>
+            <li><h3>Motion that feels right</h3><p>Windows glide into place and bounce softly when there’s nowhere to go. Pick the speed, or turn it off.</p></li>
+            <li><h3>Fits wide and tall screens</h3><p>When the windows don’t fill a grid, choose whether the last one stretches down or across: columns first for a wide display, rows first for a portrait one.</p></li>
+            <li><h3>Room to breathe</h3><p>Leave a gap between windows and around the edges, so shadows don’t pile up into dark seams.</p></li>
+            <li><h3>Speaks your language</h3><p>English, 简体中文, 繁體中文, 日本語, Français, Español, Português and Deutsch.</p></li>
+            <li><h3>Private</h3><p>No account, no analytics. Only the license check and the update check go online.</p></li>
           </ul>
         </div>
       </div>
@@ -163,19 +192,19 @@
       <div class="wrap">
         <h2>Pricing</h2>
         <div class="price-card">
-          <p class="eyebrow">Launch price</p>
-          <p class="price">US$4.99 <small>one-time purchase · US$9.99 after launch</small></p>
+          <p class="eyebrow">Launch price</p>
+          <p class="price">US$4.99 <small>one-time purchase · US$9.99 after launch</small></p>
           <ul>
-            <li>One license for up to 3 Macs</li>
-            <li>Free 14-day trial, no card</li>
-            <li>Free updates for all of 1.x</li>
-            <li>30-day refund, no questions</li>
+            <li>One license for up to 3 Macs</li>
+            <li>Free 14-day trial, no card</li>
+            <li>Free updates for all of 1.x</li>
+            <li>30-day refund, no questions</li>
           </ul>
           <div class="price-actions">
             <button id="buy" class="button primary" type="button" disabled>Purchase <span class="note">Available soon</span></button>
             <button class="button" type="button" disabled>Download <span class="note">Coming soon</span></button>
           </div>
-          <p class="fine">Orders are processed by <a href="https://dodopayments.com">Dodo Payments</a>, the merchant of record, which handles payment, tax and invoices.</p>
+          <p class="fine">Orders are processed by <a href="https://dodopayments.com">Dodo Payments</a>, the merchant of record, which handles payment, tax and invoices.</p>
         </div>
       </div>
     </section>
@@ -185,34 +214,34 @@
         <h2>FAQ</h2>
         <div class="faq">
           <div>
-            <h3>What do I need?</h3>
-            <p>macOS 14 or later, and the Accessibility permission: Piccolo moves other apps’ windows through the macOS Accessibility API, so without it no window moves.</p>
+            <h3>What do I need?</h3>
+            <p>macOS 14 or later, and the Accessibility permission: Piccolo moves other apps’ windows through the macOS Accessibility API, so without it no window moves.</p>
           </div>
           <div>
-            <h3>Why does Piccolo need Accessibility?</h3>
-            <p>Piccolo moves and resizes other apps' windows through the macOS Accessibility API, and without the permission no window moves. It uses it to read and change the position and size of windows. You grant it under System Settings, Privacy &amp; Security, Accessibility.</p>
+            <h3>Why does Piccolo need Accessibility?</h3>
+            <p>Piccolo moves and resizes other apps’ windows through the macOS Accessibility API, and without the permission no window moves. It uses it to read and change the position and size of windows. You grant it under System Settings, Privacy &amp; Security, Accessibility.</p>
           </div>
           <div>
-            <h3>What leaves my Mac?</h3>
+            <h3>What leaves my Mac?</h3>
             <ul>
-              <li>License activation sends your license key and your Mac's model identifier (for example MacBookPro18,3) to Dodo Payments.</li>
-              <li>License validation sends the key and the activation ID to Dodo Payments about once a week.</li>
-              <li>Deactivate This Mac sends the key and the activation ID to Dodo Payments.</li>
-              <li>The update check fetches the appcast from this website once a day. Sparkle sends the app's name and version in the User-Agent and no system profile.</li>
+              <li>License activation sends your license key and your Mac’s model identifier (for example MacBookPro18,3) to Dodo Payments.</li>
+              <li>License validation sends the key and the activation ID to Dodo Payments about once a week.</li>
+              <li>Deactivate This Mac sends the key and the activation ID to Dodo Payments.</li>
+              <li>The update check fetches the appcast from this website once a day. Sparkle sends the app’s name and version in the User-Agent and no system profile.</li>
             </ul>
-            <p>Nothing else leaves your Mac: no analytics, no crash reporting. Your windows, shortcuts and config file stay local. See the <a href="privacy.html">Privacy Policy</a>.</p>
+            <p>Nothing else leaves your Mac: no analytics, no crash reporting. Your windows, shortcuts and config file stay local. See the <a href="privacy.html">Privacy Policy</a>.</p>
           </div>
           <div>
-            <h3>How many Macs can I use?</h3>
-            <p>One license covers 3 Macs.</p>
+            <h3>How many Macs can I use?</h3>
+            <p>One license covers 3 Macs.</p>
           </div>
           <div>
-            <h3>How do I move my license to another Mac?</h3>
-            <p>On the Mac you want to free, open Settings, go to General and choose Deactivate This Mac. Then activate your license on the other Mac.</p>
+            <h3>How do I move my license to another Mac?</h3>
+            <p>On the Mac you want to free, open Settings, go to General and choose Deactivate This Mac. Then activate your license on the other Mac.</p>
           </div>
           <div>
-            <h3>How do refunds work?</h3>
-            <p>You can ask for a refund within 30 days of purchase, no questions asked. Email <a href="mailto:support@damao.io">support@damao.io</a> with your order number. See the <a href="refunds.html">Refund Policy</a>.</p>
+            <h3>How do refunds work?</h3>
+            <p>You can ask for a refund within 30 days of purchase, no questions asked. Email <a href="mailto:support@damao.io">support@damao.io</a> with your order number. See the <a href="refunds.html">Refund Policy</a>.</p>
           </div>
         </div>
       </div>
@@ -227,8 +256,25 @@
         <a href="refunds.html">Refund Policy</a>
         <a href="mailto:support@damao.io">support@damao.io</a>
       </nav>
+      <nav class="langs" aria-label="Language">
+        <a href="./" hreflang="en" lang="en" data-lang="en" aria-current="page">English</a>
+        <a href="zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a>
+        <a href="zh-hant/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a>
+        <a href="ja/" hreflang="ja" lang="ja" data-lang="ja">日本語</a>
+        <a href="fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a>
+        <a href="es/" hreflang="es" lang="es" data-lang="es">Español</a>
+        <a href="pt-br/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a>
+        <a href="de/" hreflang="de" lang="de" data-lang="de">Deutsch</a>
+      </nav>
       <p>© 2026 Xiaoyu Guan</p>
     </div>
   </footer>
+  <script>
+    document.querySelectorAll("[data-lang]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        try { localStorage.setItem("lang", link.dataset.lang); } catch (e) {}
+      });
+    });
+  </script>
 </body>
 </html>
