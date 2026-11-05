@@ -5,5 +5,13 @@
     <link>https://piccolo.damao.io</link>
     <description>Updates for Piccolo, a keyboard window manager for macOS.</description>
     <language>en</language>
+    <item>
+        <title>Piccolo 1.0.0</title>
+        <pubDate>Thu, 05 Nov 2026 14:16:06 +0000</pubDate>
+        <sparkle:version>2</sparkle:version>
+        <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+        <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+        <enclosure url="https://piccolo.damao.io/downloads/Piccolo-1.0.0.zip" length="3694443" type="application/octet-stream" sparkle:edSignature="cCjtvt6PFfD+XweDyt33vs6BBp5pP06fgvVuBey7Hj3fYsJAfDUxlv1OFSfGmfNFkyrHeLXJGlF3yaLSw1duDQ=="/>
+    </item>
   </channel>
 </rss>

@@ -21,6 +21,8 @@ SITE = "https://piccolo.damao.io/"
 # The live Dodo Payments checkout of Piccolo. After paying, the buyer goes to
 # the thank-you page in the language of the page they bought on.
 CHECKOUT = "https://checkout.dodopayments.com/buy/pdt_0NrGPyMUoa4o9eIOWl0Jf"
+# The archive the Download buttons and the thank-you page link to.
+DOWNLOAD = "downloads/Piccolo-1.0.0.zip"
 
 # (strings file, output directory, hreflang, name in its own language)
 LANGUAGES = [
@@ -46,7 +48,7 @@ ATTRIBUTE_KEYS = {
 # Short labels that sit in buttons, menus and key rows, where an extra span
 # would become a layout item of its own. They never wrap anyway.
 LABEL_KEYS = {
-    "nav_features", "nav_pricing", "nav_faq", "download_trial", "coming_soon",
+    "nav_features", "nav_pricing", "nav_faq", "download_trial",
     "purchase", "download", "rec_typing", "lay_display_arrows",
     "terms", "privacy", "refunds", "thanks_copy", "thanks_copied", "thanks_retry",
 }
@@ -199,11 +201,12 @@ def build():
             languages=language_nav(code, root, strings["languages_label"]),
             remember=REMEMBER_SCRIPT,
             buy_url=buy_url(directory),
+            download_url=root + DOWNLOAD,
             home="./",
         )
         where = f"src/strings/{code}.json"
         pages[Path(directory) / "index.html"] = generated(fill(template, values, where))
-        values.update(root=root + "../", home="../")
+        values.update(root=root + "../", home="../", download_url=root + "../" + DOWNLOAD)
         pages[Path(directory) / "thanks/index.html"] = generated(fill(thanks_template, values, where))
     return pages
 
