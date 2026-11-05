@@ -110,5 +110,23 @@
   "languages_label": "Idioma",
   "terms": "Condiciones del servicio",
   "privacy": "Política de privacidad",
-  "refunds": "Política de reembolsos"
+  "refunds": "Política de reembolsos",
+
+  "thanks_title": "Gracias por comprar Piccolo",
+  "thanks_h1_ok": "Gracias por comprar Piccolo",
+  "thanks_key_label": "Tu clave de licencia",
+  "thanks_copy": "Copiar",
+  "thanks_copied": "Copiada",
+  "thanks_key_email": "También está en el correo de Dodo Payments. Si no lo encuentras, revisa la carpeta de correo no deseado.",
+  "thanks_no_key": "Tu clave de licencia está en el correo de Dodo Payments. Si no lo encuentras, revisa la carpeta de correo no deseado.",
+  "thanks_steps_title": "Activa Piccolo",
+  "thanks_step_1": "Abre Piccolo. Si aún no lo tienes, <a href=\"{{home}}#pricing\">descárgalo</a> primero.",
+  "thanks_step_2": "Haz clic en el icono de Piccolo en la barra de menús y elige <strong>Introducir clave de licencia…</strong>",
+  "thanks_step_3": "Pega la clave y haz clic en <strong>Activar</strong>.",
+  "thanks_fine": "Una licencia sirve para 3 Mac. ¿Dudas? Escribe a <a href=\"mailto:support@damao.io\">support@damao.io</a>.",
+  "thanks_h1_failed": "El pago no se ha completado",
+  "thanks_failed_text": "No se te ha cobrado nada. Vuelve a intentarlo o usa otra tarjeta.",
+  "thanks_retry": "Reintentar",
+  "thanks_h1_pending": "Gracias por tu pedido",
+  "thanks_pending_text": "Tu pago aún se está procesando. En cuanto termine, Dodo Payments te enviará la clave de licencia por correo."
 }

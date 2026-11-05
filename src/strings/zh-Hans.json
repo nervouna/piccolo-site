@@ -110,5 +110,23 @@
   "languages_label": "语言",
   "terms": "服务条款",
   "privacy": "隐私政策",
-  "refunds": "退款政策"
+  "refunds": "退款政策",
+
+  "thanks_title": "感谢购买 Piccolo",
+  "thanks_h1_ok": "感谢购买Piccolo",
+  "thanks_key_label": "你的许可证密钥",
+  "thanks_copy": "复制",
+  "thanks_copied": "已复制",
+  "thanks_key_email": "Dodo Payments发来的邮件里也有这个密钥。找不到邮件的话，请看看垃圾邮件文件夹。",
+  "thanks_no_key": "许可证密钥在Dodo Payments发来的邮件里。找不到邮件的话，请看看垃圾邮件文件夹。",
+  "thanks_steps_title": "激活Piccolo",
+  "thanks_step_1": "打开Piccolo。还没有安装的话，请先<a href=\"{{home}}#pricing\">下载</a>。",
+  "thanks_step_2": "点按菜单栏里的Piccolo图标，选择<strong>“输入许可证密钥…”</strong>",
+  "thanks_step_3": "粘贴密钥，然后点按<strong>“激活”</strong>。",
+  "thanks_fine": "一份许可证可用于3台Mac。有问题请写信到<a href=\"mailto:support@damao.io\">support@damao.io</a>。",
+  "thanks_h1_failed": "付款没有成功",
+  "thanks_failed_text": "这次没有扣款。请再试一次，或者换一张卡。",
+  "thanks_retry": "再试一次",
+  "thanks_h1_pending": "感谢你的订单",
+  "thanks_pending_text": "付款还在处理中。处理完成后，Dodo Payments会把许可证密钥发到你的邮箱。"
 }

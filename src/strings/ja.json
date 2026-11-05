@@ -110,5 +110,23 @@
   "languages_label": "言語",
   "terms": "利用規約",
   "privacy": "プライバシーポリシー",
-  "refunds": "返金ポリシー"
+  "refunds": "返金ポリシー",
+
+  "thanks_title": "Piccolo をお買い上げいただきありがとうございます",
+  "thanks_h1_ok": "Piccoloをお買い上げいただきありがとうございます",
+  "thanks_key_label": "ライセンスキー",
+  "thanks_copy": "コピー",
+  "thanks_copied": "コピーしました",
+  "thanks_key_email": "Dodo Paymentsからのメールにも記載されています。メールが見つからない場合は、迷惑メールフォルダをご確認ください。",
+  "thanks_no_key": "ライセンスキーはDodo Paymentsからのメールに記載されています。見つからない場合は、迷惑メールフォルダをご確認ください。",
+  "thanks_steps_title": "Piccoloを有効化する",
+  "thanks_step_1": "Piccoloを開きます。まだお持ちでない場合は、先に<a href=\"{{home}}#pricing\">ダウンロード</a>してください。",
+  "thanks_step_2": "メニューバーのPiccoloアイコンをクリックし、<strong>「ライセンスキーを入力…」</strong>を選びます。",
+  "thanks_step_3": "キーをペーストして、<strong>「有効化」</strong>をクリックします。",
+  "thanks_fine": "1つのライセンスでMac 3台まで使えます。ご質問は<a href=\"mailto:support@damao.io\">support@damao.io</a>までお送りください。",
+  "thanks_h1_failed": "お支払いが完了しませんでした",
+  "thanks_failed_text": "料金は請求されていません。もう一度お試しいただくか、別のカードをお使いください。",
+  "thanks_retry": "もう一度試す",
+  "thanks_h1_pending": "ご注文ありがとうございます",
+  "thanks_pending_text": "お支払いはまだ処理中です。完了すると、Dodo Paymentsからライセンスキーがメールで届きます。"
 }

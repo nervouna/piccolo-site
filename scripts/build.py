@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Generate the product page in every language from src/.
+"""Generate the product page and the thank-you page in every language from src/.
 
-src/index.html is the template; src/strings/<language>.json holds its texts.
-English goes to index.html, every other language to <dir>/index.html. The
-output is committed, so GitHub Pages serves plain files.
+src/index.html and src/thanks.html are the templates; src/strings/<language>.json
+holds their texts. English goes to index.html and thanks/index.html, every other
+language to <dir>/index.html and <dir>/thanks/index.html. The output is
+committed, so GitHub Pages serves plain files.
 
     scripts/build.py           write the pages
     scripts/build.py --check   exit 1 if a committed page is out of date
@@ -13,9 +14,13 @@ import json
 import re
 import sys
 from pathlib import Path
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://piccolo.damao.io/"
+# The live Dodo Payments checkout of Piccolo. After paying, the buyer goes to
+# the thank-you page in the language of the page they bought on.
+CHECKOUT = "https://checkout.dodopayments.com/buy/pdt_0NrGPyMUoa4o9eIOWl0Jf"
 
 # (strings file, output directory, hreflang, name in its own language)
 LANGUAGES = [
@@ -35,14 +40,15 @@ PLACEHOLDER = re.compile(r"\{\{(\w+)\}\}")
 ATTRIBUTE_KEYS = {
     "title", "description", "nav_label", "demo_label", "f1_label", "f2_label",
     "f3_label", "craft_img_alt", "footer_label", "languages_label", "phrase_gap",
+    "thanks_title",
 }
 
 # Short labels that sit in buttons, menus and key rows, where an extra span
 # would become a layout item of its own. They never wrap anyway.
 LABEL_KEYS = {
     "nav_features", "nav_pricing", "nav_faq", "download_trial", "coming_soon",
-    "purchase", "available_soon", "download", "rec_typing", "lay_display_arrows",
-    "terms", "privacy", "refunds",
+    "purchase", "download", "rec_typing", "lay_display_arrows",
+    "terms", "privacy", "refunds", "thanks_copy", "thanks_copied", "thanks_retry",
 }
 
 CJK = re.compile(r"[\u3040-\u30ff\u3400-\u9fff\uf900-\ufaff]")
@@ -156,8 +162,22 @@ def fill(text, values, where):
     return PLACEHOLDER.sub(replace, PLACEHOLDER.sub(replace, text))
 
 
+def buy_url(directory):
+    thanks = SITE + (directory + "/" if directory else "") + "thanks/"
+    return f"{CHECKOUT}?quantity=1&amp;redirect_url={quote(thanks, safe='')}"
+
+
+def generated(page):
+    return page.replace(
+        "<!doctype html>\n",
+        "<!doctype html>\n<!-- Generated from src/ by scripts/build.py. Edit those, not this file. -->\n",
+        1,
+    )
+
+
 def build():
     template = (ROOT / "src/index.html").read_text()
+    thanks_template = (ROOT / "src/thanks.html").read_text()
     english = json.loads((ROOT / "src/strings/en.json").read_text())
     pages = {}
     for code, directory, hreflang, _ in LANGUAGES:
@@ -178,14 +198,13 @@ def build():
             alternates=alternates(),
             languages=language_nav(code, root, strings["languages_label"]),
             remember=REMEMBER_SCRIPT,
+            buy_url=buy_url(directory),
+            home="./",
         )
-        page = fill(template, values, f"src/strings/{code}.json")
-        page = page.replace(
-            "<!doctype html>\n",
-            "<!doctype html>\n<!-- Generated from src/ by scripts/build.py. Edit those, not this file. -->\n",
-            1,
-        )
-        pages[Path(directory) / "index.html"] = page
+        where = f"src/strings/{code}.json"
+        pages[Path(directory) / "index.html"] = generated(fill(template, values, where))
+        values.update(root=root + "../", home="../")
+        pages[Path(directory) / "thanks/index.html"] = generated(fill(thanks_template, values, where))
     return pages
 
 

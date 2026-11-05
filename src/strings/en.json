@@ -110,5 +110,23 @@
   "languages_label": "Language",
   "terms": "Terms of Service",
   "privacy": "Privacy Policy",
-  "refunds": "Refund Policy"
+  "refunds": "Refund Policy",
+
+  "thanks_title": "Thank you for buying Piccolo",
+  "thanks_h1_ok": "Thank you for buying Piccolo",
+  "thanks_key_label": "Your license key",
+  "thanks_copy": "Copy",
+  "thanks_copied": "Copied",
+  "thanks_key_email": "It is also in the email from Dodo Payments. If you can’t find that email, check your spam folder.",
+  "thanks_no_key": "Your license key is in the email from Dodo Payments. If you can’t find it, check your spam folder.",
+  "thanks_steps_title": "Activate Piccolo",
+  "thanks_step_1": "Open Piccolo. If you don’t have it yet, <a href=\"{{home}}#pricing\">download it</a> first.",
+  "thanks_step_2": "Click the Piccolo icon in the menu bar and choose <strong>Enter License Key…</strong>",
+  "thanks_step_3": "Paste the key and click <strong>Activate</strong>.",
+  "thanks_fine": "One license covers 3 Macs. Questions? Write to <a href=\"mailto:support@damao.io\">support@damao.io</a>.",
+  "thanks_h1_failed": "The payment didn’t go through",
+  "thanks_failed_text": "You have not been charged. Try again, or use another card.",
+  "thanks_retry": "Try again",
+  "thanks_h1_pending": "Thank you for your order",
+  "thanks_pending_text": "Your payment is still being processed. Once it is done, Dodo Payments emails you your license key."
 }

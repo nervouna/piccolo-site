@@ -110,5 +110,23 @@
   "languages_label": "Sprache",
   "terms": "Nutzungsbedingungen",
   "privacy": "Datenschutzerklärung",
-  "refunds": "Erstattungsrichtlinie"
+  "refunds": "Erstattungsrichtlinie",
+
+  "thanks_title": "Danke für deinen Kauf von Piccolo",
+  "thanks_h1_ok": "Danke für deinen Kauf von Piccolo",
+  "thanks_key_label": "Dein Lizenzschlüssel",
+  "thanks_copy": "Kopieren",
+  "thanks_copied": "Kopiert",
+  "thanks_key_email": "Er steht auch in der E-Mail von Dodo Payments. Findest du sie nicht, sieh im Spam-Ordner nach.",
+  "thanks_no_key": "Dein Lizenzschlüssel steht in der E-Mail von Dodo Payments. Findest du sie nicht, sieh im Spam-Ordner nach.",
+  "thanks_steps_title": "Piccolo aktivieren",
+  "thanks_step_1": "Öffne Piccolo. Falls du es noch nicht hast, <a href=\"{{home}}#pricing\">lade es</a> zuerst.",
+  "thanks_step_2": "Klicke in der Menüleiste auf das Piccolo-Symbol und wähle <strong>Lizenzschlüssel eingeben…</strong>",
+  "thanks_step_3": "Füge den Schlüssel ein und klicke auf <strong>Aktivieren</strong>.",
+  "thanks_fine": "Eine Lizenz gilt für 3 Macs. Fragen? Schreib an <a href=\"mailto:support@damao.io\">support@damao.io</a>.",
+  "thanks_h1_failed": "Die Zahlung ist nicht durchgegangen",
+  "thanks_failed_text": "Dir wurde nichts berechnet. Versuch es noch einmal oder nimm eine andere Karte.",
+  "thanks_retry": "Erneut versuchen",
+  "thanks_h1_pending": "Danke für deine Bestellung",
+  "thanks_pending_text": "Deine Zahlung wird noch bearbeitet. Sobald sie abgeschlossen ist, schickt dir Dodo Payments deinen Lizenzschlüssel per E-Mail."
 }

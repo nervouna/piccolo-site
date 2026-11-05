@@ -110,5 +110,23 @@
   "languages_label": "語言",
   "terms": "服務條款",
   "privacy": "隱私權政策",
-  "refunds": "退款政策"
+  "refunds": "退款政策",
+
+  "thanks_title": "感謝購買 Piccolo",
+  "thanks_h1_ok": "感謝購買Piccolo",
+  "thanks_key_label": "你的許可證密鑰",
+  "thanks_copy": "拷貝",
+  "thanks_copied": "已拷貝",
+  "thanks_key_email": "Dodo Payments寄來的郵件裡也有這個密鑰。找不到郵件的話，請看看垃圾郵件檔案夾。",
+  "thanks_no_key": "許可證密鑰在Dodo Payments寄來的郵件裡。找不到郵件的話，請看看垃圾郵件檔案夾。",
+  "thanks_steps_title": "啟用Piccolo",
+  "thanks_step_1": "打開Piccolo。還沒有安裝的話，請先<a href=\"{{home}}#pricing\">下載</a>。",
+  "thanks_step_2": "按一下選單列裡的Piccolo圖像，選擇<strong>「輸入許可證密鑰…」</strong>",
+  "thanks_step_3": "貼上密鑰，然後按一下<strong>「啟用」</strong>。",
+  "thanks_fine": "一份許可證可用於3台Mac。有問題請寫信到<a href=\"mailto:support@damao.io\">support@damao.io</a>。",
+  "thanks_h1_failed": "付款沒有成功",
+  "thanks_failed_text": "這次沒有扣款。請再試一次，或者換一張卡。",
+  "thanks_retry": "再試一次",
+  "thanks_h1_pending": "感謝你的訂單",
+  "thanks_pending_text": "付款還在處理中。處理完成後，Dodo Payments會把許可證密鑰寄到你的信箱。"
 }
