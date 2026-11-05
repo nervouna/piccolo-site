@@ -12,7 +12,6 @@
   "lead_1": "Piccolo tiles the windows you just used",
   "lead_2": "and keeps your desktop tidy, all from the keyboard.",
   "download_trial": "Download free trial",
-  "coming_soon": "Coming soon",
   "hero_trial": "Free for 14 days, no credit card needed",
   "hero_purchase": "Purchase for $4.99",
   "demo_label": "A Mac desktop with three overlapping windows. Holding Control-Option-4 shows where they will go; on release they tile in a 2 by 2 grid. Control-Option-equals moves the divider right twice and all three windows resize together. Control-Option-Right Arrow swaps the focused window with its neighbour.",
@@ -85,7 +84,6 @@
   "price_3": "Free updates for all of 1.x",
   "price_4": "30-day refund, no questions",
   "purchase": "Purchase",
-  "available_soon": "Available soon",
   "download": "Download",
   "price_fine": "Orders are processed by <a href=\"https://dodopayments.com\">Dodo Payments</a>, the merchant of record, which handles payment, tax and invoices.",
 
@@ -111,5 +109,23 @@
   "languages_label": "Language",
   "terms": "Terms of Service",
   "privacy": "Privacy Policy",
-  "refunds": "Refund Policy"
+  "refunds": "Refund Policy",
+
+  "thanks_title": "Thank you for buying Piccolo",
+  "thanks_h1_ok": "Thank you for buying Piccolo",
+  "thanks_key_label": "Your license key",
+  "thanks_copy": "Copy",
+  "thanks_copied": "Copied",
+  "thanks_key_email": "It is also in the email from Dodo Payments. If you can’t find that email, check your spam folder.",
+  "thanks_no_key": "Your license key is in the email from Dodo Payments. If you can’t find it, check your spam folder.",
+  "thanks_steps_title": "Activate Piccolo",
+  "thanks_step_1": "Open Piccolo. If you don’t have it yet, <a href=\"{{download_url}}\">download it</a> first.",
+  "thanks_step_2": "Click the Piccolo icon in the menu bar and choose <strong>Enter License Key…</strong>",
+  "thanks_step_3": "Paste the key and click <strong>Activate</strong>.",
+  "thanks_fine": "One license covers 3 Macs. Questions? Write to <a href=\"mailto:support@damao.io\">support@damao.io</a>.",
+  "thanks_h1_failed": "The payment didn’t go through",
+  "thanks_failed_text": "You have not been charged. Try again, or use another card.",
+  "thanks_retry": "Try again",
+  "thanks_h1_pending": "Thank you for your order",
+  "thanks_pending_text": "Your payment is still being processed. Once it is done, Dodo Payments emails you your license key."
 }

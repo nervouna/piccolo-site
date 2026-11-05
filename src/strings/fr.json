@@ -12,7 +12,6 @@
   "lead_1": "Piccolo dispose les fenêtres que vous venez d’utiliser",
   "lead_2": "et garde votre bureau en ordre, le tout au clavier.",
   "download_trial": "Télécharger l’essai gratuit",
-  "coming_soon": "Bientôt disponible",
   "hero_trial": "Gratuit pendant 14 jours, sans carte bancaire",
   "hero_purchase": "Acheter pour 4,99 $ US",
   "demo_label": "Un bureau Mac avec trois fenêtres superposées. En maintenant Contrôle-Option-4, on voit où elles iront ; au relâchement, elles se disposent en grille 2 × 2. Contrôle-Option-égal déplace deux fois le séparateur vers la droite et les trois fenêtres se redimensionnent ensemble. Contrôle-Option-flèche droite permute la fenêtre active avec sa voisine.",
@@ -85,7 +84,6 @@
   "price_3": "Mises à jour 1.x gratuites",
   "price_4": "Remboursé sous 30 jours",
   "purchase": "Acheter",
-  "available_soon": "Bientôt",
   "download": "Télécharger",
   "price_fine": "Les commandes sont traitées par <a href=\"https://dodopayments.com\">Dodo Payments</a>, revendeur officiel, qui gère le paiement, les taxes et les factures.",
 
@@ -111,5 +109,23 @@
   "languages_label": "Langue",
   "terms": "Conditions d’utilisation",
   "privacy": "Politique de confidentialité",
-  "refunds": "Politique de remboursement"
+  "refunds": "Politique de remboursement",
+
+  "thanks_title": "Merci d’avoir acheté Piccolo",
+  "thanks_h1_ok": "Merci d’avoir acheté Piccolo",
+  "thanks_key_label": "Votre clé de licence",
+  "thanks_copy": "Copier",
+  "thanks_copied": "Copiée",
+  "thanks_key_email": "Elle figure aussi dans l’e-mail de Dodo Payments. Si vous ne le trouvez pas, regardez dans vos courriers indésirables.",
+  "thanks_no_key": "Votre clé de licence figure dans l’e-mail de Dodo Payments. Si vous ne le trouvez pas, regardez dans vos courriers indésirables.",
+  "thanks_steps_title": "Activer Piccolo",
+  "thanks_step_1": "Ouvrez Piccolo. Si vous ne l’avez pas encore, <a href=\"{{download_url}}\">téléchargez-le</a> d’abord.",
+  "thanks_step_2": "Cliquez sur l’icône de Piccolo dans la barre des menus et choisissez <strong>Saisir la clé de licence…</strong>",
+  "thanks_step_3": "Collez la clé et cliquez sur <strong>Activer</strong>.",
+  "thanks_fine": "Une licence couvre 3 Mac. Une question ? Écrivez à <a href=\"mailto:support@damao.io\">support@damao.io</a>.",
+  "thanks_h1_failed": "Le paiement n’a pas abouti",
+  "thanks_failed_text": "Vous n’avez pas été débité. Réessayez, ou utilisez une autre carte.",
+  "thanks_retry": "Réessayer",
+  "thanks_h1_pending": "Merci pour votre commande",
+  "thanks_pending_text": "Votre paiement est encore en cours de traitement. Dès qu’il aboutit, Dodo Payments vous envoie votre clé de licence par e-mail."
 }

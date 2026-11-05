@@ -12,7 +12,6 @@
   "lead_1": "O Piccolo organiza as janelas que você acabou de usar",
   "lead_2": "e mantém sua mesa arrumada, tudo pelo teclado.",
   "download_trial": "Baixar o teste grátis",
-  "coming_soon": "Em breve",
   "hero_trial": "Grátis por 14 dias, sem cartão de crédito",
   "hero_purchase": "Comprar por US$ 4,99",
   "demo_label": "Uma mesa do Mac com três janelas sobrepostas. Segurando Control-Option-4, aparece para onde elas vão; ao soltar, elas formam uma grade 2 × 2. Control-Option-igual move o divisor para a direita duas vezes e as três janelas mudam de tamanho juntas. Control-Option-seta para a direita troca a janela em foco com a vizinha.",
@@ -85,7 +84,6 @@
   "price_3": "Atualizações 1.x grátis",
   "price_4": "Reembolso em até 30 dias",
   "purchase": "Comprar",
-  "available_soon": "À venda em breve",
   "download": "Baixar",
   "price_fine": "Os pedidos são processados pela <a href=\"https://dodopayments.com\">Dodo Payments</a>, revendedora oficial, que cuida do pagamento, dos impostos e das notas.",
 
@@ -111,5 +109,23 @@
   "languages_label": "Idioma",
   "terms": "Termos de Serviço",
   "privacy": "Política de Privacidade",
-  "refunds": "Política de Reembolso"
+  "refunds": "Política de Reembolso",
+
+  "thanks_title": "Obrigado por comprar o Piccolo",
+  "thanks_h1_ok": "Obrigado por comprar o Piccolo",
+  "thanks_key_label": "Sua chave de licença",
+  "thanks_copy": "Copiar",
+  "thanks_copied": "Copiada",
+  "thanks_key_email": "Ela também está no e-mail da Dodo Payments. Se não encontrar o e-mail, confira a pasta de spam.",
+  "thanks_no_key": "Sua chave de licença está no e-mail da Dodo Payments. Se não encontrar, confira a pasta de spam.",
+  "thanks_steps_title": "Ative o Piccolo",
+  "thanks_step_1": "Abra o Piccolo. Se ainda não o tem, <a href=\"{{download_url}}\">baixe-o</a> primeiro.",
+  "thanks_step_2": "Clique no ícone do Piccolo na barra de menus e escolha <strong>Inserir chave de licença…</strong>",
+  "thanks_step_3": "Cole a chave e clique em <strong>Ativar</strong>.",
+  "thanks_fine": "Uma licença vale para 3 Macs. Dúvidas? Escreva para <a href=\"mailto:support@damao.io\">support@damao.io</a>.",
+  "thanks_h1_failed": "O pagamento não foi concluído",
+  "thanks_failed_text": "Nada foi cobrado. Tente de novo ou use outro cartão.",
+  "thanks_retry": "Tentar de novo",
+  "thanks_h1_pending": "Obrigado pelo seu pedido",
+  "thanks_pending_text": "Seu pagamento ainda está sendo processado. Assim que terminar, a Dodo Payments envia sua chave de licença por e-mail."
 }

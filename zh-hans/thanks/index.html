@@ -1,0 +1,95 @@
+<!doctype html>
+<!-- Generated from src/ by scripts/build.py. Edit those, not this file. -->
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="robots" content="noindex">
+  <title>感谢购买 Piccolo</title>
+  <link rel="icon" type="image/png" href="../../images/icon.png">
+  <link rel="apple-touch-icon" href="../../images/icon.png">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../"><img src="../../images/icon.png" alt="" width="32" height="32"><span>Piccolo</span></a>
+    </div>
+  </header>
+
+  <main class="thanks">
+    <div class="wrap">
+      <!-- Dodo Payments sends the buyer here with status, payment_id, email and license_key in the query.
+           Without a status (or without JavaScript) the page says the key is in the email. -->
+      <section class="thanks-card" data-state="succeeded">
+        <h1>感<span class="nobr">谢购买Piccolo</span></h1>
+        <div class="thanks-key" hidden>
+          <p class="thanks-key-label">你的许可<span class="nobr">证密钥</span></p>
+          <div class="thanks-key-row">
+            <code id="license-key"></code>
+            <button class="button" type="button" id="copy-key" data-copied="已复制">复制</button>
+          </div>
+          <p class="fine">Dodo Payments发来的邮件里也有这个密钥。找不到邮件的话，请看看垃圾邮件<span class="nobr">文件夹。</span></p>
+        </div>
+        <p class="thanks-no-key">许可证密钥在Dodo Payments发来的邮件里。找不到邮件的话，请看看垃圾邮件<span class="nobr">文件夹。</span></p>
+        <h2>激活Piccolo</h2>
+        <ol class="thanks-steps">
+          <li>打开Piccolo。还没有安装的话，请<span class="nobr">先<a href="../../downloads/Piccolo-1.0.0.zip">下载</a>。</span></li>
+          <li>点按菜单栏里的Piccolo图标，选择<strong>“输入许可<span class="nobr">证密钥…”</strong></span></li>
+          <li>粘贴密钥，然后点<span class="nobr">按<strong>“激活”</strong>。</span></li>
+        </ol>
+        <p class="fine">一份许可证可用于3台Mac。有问题请写信到<a href="mailto:support@damao.io">support@damao.io</a>。</p>
+      </section>
+
+      <section class="thanks-card" data-state="failed" hidden>
+        <h1>付款没<span class="nobr">有成功</span></h1>
+        <p>这次没有扣款。请再试一次，或者换<span class="nobr">一张卡。</span></p>
+        <a class="button primary" href="https://checkout.dodopayments.com/buy/pdt_0NrGPyMUoa4o9eIOWl0Jf?quantity=1&amp;redirect_url=https%3A%2F%2Fpiccolo.damao.io%2Fzh-hans%2Fthanks%2F">再试一次</a>
+      </section>
+
+      <section class="thanks-card" data-state="pending" hidden>
+        <h1>感谢你<span class="nobr">的订单</span></h1>
+        <p>付款还在处理中。处理完成后，Dodo Payments会把许可证密钥发到你<span class="nobr">的邮箱。</span></p>
+        <p class="fine">一份许可证可用于3台Mac。有问题请写信到<a href="mailto:support@damao.io">support@damao.io</a>。</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="法律与支持">
+        <a href="../../terms.html">服务条款</a>
+        <a href="../../privacy.html">隐私政策</a>
+        <a href="../../refunds.html">退款政策</a>
+        <a href="mailto:support@damao.io">support@damao.io</a>
+      </nav>
+      <p>© 2026 Xiaoyu Guan</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var query = new URLSearchParams(location.search);
+      var status = query.get("status");
+      var key = (query.get("license_key") || "").split(",")[0].trim();
+      // Keep the key out of the address bar, the history and any link copied from it.
+      if (location.search) history.replaceState(null, "", location.pathname);
+      var state = !status || status === "succeeded" ? "succeeded"
+        : status === "failed" || status === "expired" ? "failed" : "pending";
+      document.querySelectorAll("[data-state]").forEach(function (section) {
+        section.hidden = section.dataset.state !== state;
+      });
+      if (state !== "succeeded" || !key) return;
+      document.getElementById("license-key").textContent = key;
+      document.querySelector(".thanks-key").hidden = false;
+      document.querySelector(".thanks-no-key").hidden = true;
+      var copy = document.getElementById("copy-key");
+      copy.addEventListener("click", function () {
+        navigator.clipboard.writeText(key).then(function () {
+          copy.textContent = copy.dataset.copied;
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

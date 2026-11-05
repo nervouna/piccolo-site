@@ -1,0 +1,95 @@
+<!doctype html>
+<!-- Generated from src/ by scripts/build.py. Edit those, not this file. -->
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="robots" content="noindex">
+  <title>Danke für deinen Kauf von Piccolo</title>
+  <link rel="icon" type="image/png" href="../../images/icon.png">
+  <link rel="apple-touch-icon" href="../../images/icon.png">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../"><img src="../../images/icon.png" alt="" width="32" height="32"><span>Piccolo</span></a>
+    </div>
+  </header>
+
+  <main class="thanks">
+    <div class="wrap">
+      <!-- Dodo Payments sends the buyer here with status, payment_id, email and license_key in the query.
+           Without a status (or without JavaScript) the page says the key is in the email. -->
+      <section class="thanks-card" data-state="succeeded">
+        <h1>Danke für deinen Kauf von Piccolo</h1>
+        <div class="thanks-key" hidden>
+          <p class="thanks-key-label">Dein Lizenzschlüssel</p>
+          <div class="thanks-key-row">
+            <code id="license-key"></code>
+            <button class="button" type="button" id="copy-key" data-copied="Kopiert">Kopieren</button>
+          </div>
+          <p class="fine">Er steht auch in der E-Mail von Dodo Payments. Findest du sie nicht, sieh im Spam-Ordner nach.</p>
+        </div>
+        <p class="thanks-no-key">Dein Lizenzschlüssel steht in der E-Mail von Dodo Payments. Findest du sie nicht, sieh im Spam-Ordner nach.</p>
+        <h2>Piccolo aktivieren</h2>
+        <ol class="thanks-steps">
+          <li>Öffne Piccolo. Falls du es noch nicht hast, <a href="../../downloads/Piccolo-1.0.0.zip">lade es</a> zuerst.</li>
+          <li>Klicke in der Menüleiste auf das Piccolo-Symbol und wähle <strong>Lizenzschlüssel eingeben…</strong></li>
+          <li>Füge den Schlüssel ein und klicke auf <strong>Aktivieren</strong>.</li>
+        </ol>
+        <p class="fine">Eine Lizenz gilt für 3 Macs. Fragen? Schreib an <a href="mailto:support@damao.io">support@damao.io</a>.</p>
+      </section>
+
+      <section class="thanks-card" data-state="failed" hidden>
+        <h1>Die Zahlung ist nicht durchgegangen</h1>
+        <p>Dir wurde nichts berechnet. Versuch es noch einmal oder nimm eine andere Karte.</p>
+        <a class="button primary" href="https://checkout.dodopayments.com/buy/pdt_0NrGPyMUoa4o9eIOWl0Jf?quantity=1&amp;redirect_url=https%3A%2F%2Fpiccolo.damao.io%2Fde%2Fthanks%2F">Erneut versuchen</a>
+      </section>
+
+      <section class="thanks-card" data-state="pending" hidden>
+        <h1>Danke für deine Bestellung</h1>
+        <p>Deine Zahlung wird noch bearbeitet. Sobald sie abgeschlossen ist, schickt dir Dodo Payments deinen Lizenzschlüssel per E-Mail.</p>
+        <p class="fine">Eine Lizenz gilt für 3 Macs. Fragen? Schreib an <a href="mailto:support@damao.io">support@damao.io</a>.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Rechtliches und Support">
+        <a href="../../terms.html">Nutzungsbedingungen</a>
+        <a href="../../privacy.html">Datenschutzerklärung</a>
+        <a href="../../refunds.html">Erstattungsrichtlinie</a>
+        <a href="mailto:support@damao.io">support@damao.io</a>
+      </nav>
+      <p>© 2026 Xiaoyu Guan</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var query = new URLSearchParams(location.search);
+      var status = query.get("status");
+      var key = (query.get("license_key") || "").split(",")[0].trim();
+      // Keep the key out of the address bar, the history and any link copied from it.
+      if (location.search) history.replaceState(null, "", location.pathname);
+      var state = !status || status === "succeeded" ? "succeeded"
+        : status === "failed" || status === "expired" ? "failed" : "pending";
+      document.querySelectorAll("[data-state]").forEach(function (section) {
+        section.hidden = section.dataset.state !== state;
+      });
+      if (state !== "succeeded" || !key) return;
+      document.getElementById("license-key").textContent = key;
+      document.querySelector(".thanks-key").hidden = false;
+      document.querySelector(".thanks-no-key").hidden = true;
+      var copy = document.getElementById("copy-key");
+      copy.addEventListener("click", function () {
+        navigator.clipboard.writeText(key).then(function () {
+          copy.textContent = copy.dataset.copied;
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -28,7 +28,7 @@
         <h1><span>{{h1_1}}</span>{{phrase_gap}}<span>{{h1_2}}</span></h1>
         <p class="lead"><span>{{lead_1}}</span>{{phrase_gap}}<span>{{lead_2}}</span></p>
         <div class="actions">
-          <button class="button primary" type="button" disabled>{{download_trial}} <span class="note">{{coming_soon}}</span></button>
+          <a class="button primary" href="{{download_url}}">{{download_trial}}</a>
         </div>
         <p class="hero-fine">{{hero_trial}}<br>
           <a href="#pricing">{{hero_purchase}}</a></p>
@@ -172,8 +172,8 @@
             <li>{{price_4}}</li>
           </ul>
           <div class="price-actions">
-            <button id="buy" class="button primary" type="button" disabled>{{purchase}} <span class="note">{{available_soon}}</span></button>
-            <button class="button" type="button" disabled>{{download}} <span class="note">{{coming_soon}}</span></button>
+            <a id="buy" class="button primary" href="{{buy_url}}">{{purchase}}</a>
+            <a class="button" href="{{download_url}}">{{download}}</a>
           </div>
           <p class="fine">{{price_fine}}</p>
         </div>

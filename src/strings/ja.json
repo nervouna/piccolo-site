@@ -12,7 +12,6 @@
   "lead_1": "Piccoloは直前に使ったウインドウを並べ、",
   "lead_2": "キーボードだけでデスクトップを整えます。",
   "download_trial": "無料体験版をダウンロード",
-  "coming_soon": "近日公開",
   "hero_trial": "14日間無料、クレジットカード不要",
   "hero_purchase": "US$4.99で購入",
   "demo_label": "3 つのウインドウが重なった Mac のデスクトップ。Control-Option-4 を押し続けると移動先が表示され、離すと 2 × 2 のグリッドに並びます。Control-Option-イコールを 2 回押すと区切り線が右へ動き、3 つのウインドウが一緒にサイズを変えます。Control-Option-右矢印で、フォーカス中のウインドウが隣と入れ替わります。",
@@ -85,7 +84,6 @@
   "price_3": "1.xのアップデートは無料",
   "price_4": "30日以内なら理由を問わず返金",
   "purchase": "購入",
-  "available_soon": "近日販売",
   "download": "ダウンロード",
   "price_fine": "ご注文は販売事業者である<a href=\"https://dodopayments.com\">Dodo Payments</a>が処理し、決済、税金、請求書を扱います。",
 
@@ -111,5 +109,23 @@
   "languages_label": "言語",
   "terms": "利用規約",
   "privacy": "プライバシーポリシー",
-  "refunds": "返金ポリシー"
+  "refunds": "返金ポリシー",
+
+  "thanks_title": "Piccolo をお買い上げいただきありがとうございます",
+  "thanks_h1_ok": "Piccoloをお買い上げいただきありがとうございます",
+  "thanks_key_label": "ライセンスキー",
+  "thanks_copy": "コピー",
+  "thanks_copied": "コピーしました",
+  "thanks_key_email": "Dodo Paymentsからのメールにも記載されています。メールが見つからない場合は、迷惑メールフォルダをご確認ください。",
+  "thanks_no_key": "ライセンスキーはDodo Paymentsからのメールに記載されています。見つからない場合は、迷惑メールフォルダをご確認ください。",
+  "thanks_steps_title": "Piccoloを有効化する",
+  "thanks_step_1": "Piccoloを開きます。まだお持ちでない場合は、先に<a href=\"{{download_url}}\">ダウンロード</a>してください。",
+  "thanks_step_2": "メニューバーのPiccoloアイコンをクリックし、<strong>「ライセンスキーを入力…」</strong>を選びます。",
+  "thanks_step_3": "キーをペーストして、<strong>「有効化」</strong>をクリックします。",
+  "thanks_fine": "1つのライセンスでMac 3台まで使えます。ご質問は<a href=\"mailto:support@damao.io\">support@damao.io</a>までお送りください。",
+  "thanks_h1_failed": "お支払いが完了しませんでした",
+  "thanks_failed_text": "料金は請求されていません。もう一度お試しいただくか、別のカードをお使いください。",
+  "thanks_retry": "もう一度試す",
+  "thanks_h1_pending": "ご注文ありがとうございます",
+  "thanks_pending_text": "お支払いはまだ処理中です。完了すると、Dodo Paymentsからライセンスキーがメールで届きます。"
 }
