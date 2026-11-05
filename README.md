@@ -59,5 +59,5 @@ Then open http://localhost:8765. Stop the server with Control-C.
    ```
 
 3. Check that the file is still valid XML: `xmllint --noout appcast.xml`.
-4. In `src/index.html`, replace the two disabled Download buttons, "Download free trial" in the hero and "Download" in the pricing section, with links to the zip, and the disabled Purchase button with `id="buy"` in the pricing section with the checkout link. Then run `scripts/build.py`.
+4. In `src/index.html`, replace the two disabled Download buttons, "Download free trial" in the hero and "Download" in the pricing section, with links to the zip. Then run `scripts/build.py`.
 5. Commit and push to `main`; GitHub Pages publishes the site.
