@@ -1,0 +1,161 @@
+<!doctype html>
+<!-- Generated from src/ by scripts/build.py. Edit those, not this file. -->
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Piccolo : relevé de compatibilité</title>
+  <meta name="description" content="Pour chaque version de macOS, ce que fait chaque action de Piccolo avec les fenêtres en plein écran et celles qu’on ne peut pas redimensionner, le temps que prend un raccourci et la mémoire qu’utilise Piccolo.">
+  <link rel="alternate" hreflang="en" href="https://piccolo.damao.io/compatibility/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://piccolo.damao.io/zh-hans/compatibility/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://piccolo.damao.io/zh-hant/compatibility/">
+  <link rel="alternate" hreflang="ja" href="https://piccolo.damao.io/ja/compatibility/">
+  <link rel="alternate" hreflang="ko" href="https://piccolo.damao.io/ko/compatibility/">
+  <link rel="alternate" hreflang="fr" href="https://piccolo.damao.io/fr/compatibility/">
+  <link rel="alternate" hreflang="es" href="https://piccolo.damao.io/es/compatibility/">
+  <link rel="alternate" hreflang="pt-BR" href="https://piccolo.damao.io/pt-br/compatibility/">
+  <link rel="alternate" hreflang="de" href="https://piccolo.damao.io/de/compatibility/">
+  <link rel="alternate" hreflang="x-default" href="https://piccolo.damao.io/compatibility/">
+  <link rel="icon" type="image/png" href="../../images/icon.png">
+  <link rel="apple-touch-icon" href="../../images/icon.png">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../"><img src="../../images/icon.png" alt="" width="32" height="32"><span>Piccolo</span></a>
+      <nav aria-label="Navigation principale">
+        <a href="../#features">Fonctions</a>
+        <a href="../#pricing">Prix</a>
+        <a href="../#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="record">
+    <div class="wrap">
+      <h1>Relevé de compatibilité</h1>
+      <p class="intro">Ce que fait chaque action quand la fenêtre active est en plein écran ou refuse d’être redimensionnée, le temps entre l’appui sur le raccourci et l’arrêt de la fenêtre, et la mémoire qu’utilise Piccolo. Une section par version de macOS, la plus récente d’abord.</p>
+
+      <section id="macos-27-0-1">
+        <h2>macOS 27.0.1 (26A434)</h2>
+        <p>Deux moniteurs, le principal en 2560 × 1440 et entièrement disponible pour les fenêtres ; Stage Manager désactivé et « Les écrans disposent de Spaces distincts » activé. Piccolo était une compilation Debug de la version en développement après la 1.0.0, avec une marge des fenêtres de 0 et l’animation des fenêtres Rapide, sauf mention contraire dans un tableau.</p>
+        <p>Les positions s’écrivent (x, y) largeur×hauteur, en points. Moitié gauche sur le moniteur principal donne <code>(0, 0) 1280×1440</code>.</p>
+
+        <h3>Fenêtres en plein écran</h3>
+        <p>Une fenêtre en plein écran et active. Une seconde fenêtre, pas en plein écran, était active avant elle ; elle reste dans le Space du bureau, hors de l’écran. Chaque action a affiché le message « Les fenêtres en plein écran ne peuvent pas être déplacées » et laissé la fenêtre en plein écran en <code>(0, 0) 2560×1440</code>.</p>
+        <table class="results">
+          <thead><tr><th scope="col">Action</th><th scope="col">Message</th><th scope="col">Résultat</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Moitié gauche</span></th><td data-label="Message">« Les fenêtres en plein écran ne peuvent pas être déplacées »</td><td data-label="Résultat">Rien n’a bougé.</td></tr>
+            <tr><th scope="row"><span>Maximiser</span></th><td data-label="Message">« Les fenêtres en plein écran ne peuvent pas être déplacées »</td><td data-label="Résultat">Rien n’a bougé.</td></tr>
+            <tr><th scope="row"><span>Centrer</span></th><td data-label="Message">« Les fenêtres en plein écran ne peuvent pas être déplacées »</td><td data-label="Résultat">Rien n’a bougé.</td></tr>
+            <tr><th scope="row"><span>Restaurer la fenêtre</span></th><td data-label="Message">« Les fenêtres en plein écran ne peuvent pas être déplacées »</td><td data-label="Résultat">Rien n’a bougé : Piccolo refuse la fenêtre avant de chercher où elle était.</td></tr>
+            <tr><th scope="row"><span>Moniteur suivant</span></th><td data-label="Message">« Les fenêtres en plein écran ne peuvent pas être déplacées »</td><td data-label="Résultat">Rien n’a bougé : la fenêtre est restée sur son moniteur.</td></tr>
+            <tr><th scope="row"><span>Organiser 2 fenêtres en 1 × 2</span></th><td data-label="Message">« Les fenêtres en plein écran ne peuvent pas être déplacées »</td><td data-label="Résultat">Rien n’a bougé : l’autre fenêtre est dans un autre Space et n’a pas été prise en compte.</td></tr>
+            <tr><th scope="row"><span>Déplacer le séparateur vers la droite</span></th><td data-label="Message">« Les fenêtres en plein écran ne peuvent pas être déplacées »</td><td data-label="Résultat">Rien n’a bougé.</td></tr>
+            <tr><th scope="row"><span>Permuter avec la fenêtre à droite</span></th><td data-label="Message">« Les fenêtres en plein écran ne peuvent pas être déplacées »</td><td data-label="Résultat">Rien n’a bougé.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Fenêtres qu’on ne peut pas redimensionner</h3>
+        <p>Une fenêtre de 640 × 420 qui refuse d’être redimensionnée, en <code>(120, 80)</code>. Piccolo la déplace sans pouvoir la redimensionner, et n’affiche aucun message.</p>
+        <table class="results">
+          <thead><tr><th scope="col">Action</th><th scope="col">Message</th><th scope="col">Résultat</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Moitié gauche</span></th><td data-label="Message">Aucun</td><td data-label="Résultat">Déplacée en <code>(0, 0)</code>, toujours en 640×420 (la cible est 1280×1440).</td></tr>
+            <tr><th scope="row"><span>Maximiser</span></th><td data-label="Message">Aucun</td><td data-label="Résultat">Déplacée en <code>(0, 0)</code>, toujours en 640×420.</td></tr>
+            <tr><th scope="row"><span>Organiser 2 fenêtres en 1 × 2</span><small>seconde fenêtre redimensionnable</small></th><td data-label="Message">Aucun</td><td data-label="Résultat">La fenêtre fixe en <code>(0, 0) 640×420</code>, l’autre en <code>(640, 0) 1920×1440</code> : le séparateur suit le bord droit de la fenêtre fixe et l’autre fenêtre occupe le reste de la largeur. L’espace sous la fenêtre fixe reste vide.</td></tr>
+            <tr><th scope="row"><span>Déplacer le séparateur vers la droite</span><small>après l’organisation</small></th><td data-label="Message">« Le séparateur ne peut pas aller plus loin »</td><td data-label="Résultat">Rien n’a changé : la fenêtre fixe ne peut pas s’agrandir, donc le séparateur reste en place.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Une largeur minimale de plus de la moitié du moniteur</h3>
+        <p>Une fenêtre d’une largeur minimale de 1536 pt (0,6 × la largeur disponible), ouverte en 1792 × 420.</p>
+        <table class="results">
+          <thead><tr><th scope="col">Action</th><th scope="col">Message</th><th scope="col">Résultat</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Moitié gauche</span></th><td data-label="Message">Aucun</td><td data-label="Résultat"><code>(0, 0) 1536×1440</code> : 256 pt de plus que la moitié.</td></tr>
+            <tr><th scope="row"><span>Moitié droite</span></th><td data-label="Message">Aucun</td><td data-label="Résultat"><code>(1024, 0) 1536×1440</code> : plus large que la moitié, décalée vers la gauche pour rester sur le moniteur.</td></tr>
+            <tr><th scope="row"><span>Organiser 2 fenêtres en 1 × 2</span><small>seconde fenêtre redimensionnable</small></th><td data-label="Message">Aucun</td><td data-label="Résultat">La fenêtre en <code>(0, 0) 1536×1440</code>, l’autre en <code>(1536, 0) 1024×1440</code> : l’autre fenêtre occupe ce qui reste.</td></tr>
+            <tr><th scope="row"><span>Déplacer le séparateur vers la gauche</span><small>après l’organisation</small></th><td data-label="Message">« Le séparateur ne peut pas aller plus loin »</td><td data-label="Résultat">Rien n’a changé : la fenêtre large refuse de rétrécir, donc le séparateur reste en place.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Taille par pas de 7 × 15</h3>
+        <p>Une fenêtre de 637 × 420 qui se redimensionne par pas de 7 × 15, comme celle d’un terminal.</p>
+        <table class="results">
+          <thead><tr><th scope="col">Action</th><th scope="col">Message</th><th scope="col">Résultat</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Moitié gauche</span></th><td data-label="Message">Aucun</td><td data-label="Résultat"><code>(0, 0) 1281×1440</code> : la largeur s’aligne sur un multiple de 7, 1 pt de plus que la moitié.</td></tr>
+            <tr><th scope="row"><span>Organiser 2 fenêtres en 1 × 2</span><small>seconde fenêtre redimensionnable</small></th><td data-label="Message">Aucun</td><td data-label="Résultat">La fenêtre en <code>(0, 0) 1281×1440</code>, l’autre en <code>(1280, 0) 1280×1440</code> : elles se chevauchent de 1 pt.</td></tr>
+          </tbody>
+        </table>
+
+        <p>Dans aucun de ces cas une action n’a laissé une fenêtre hors d’un moniteur, et aucune action n’est restée sans effet sans afficher de message.</p>
+
+        <h3>Latence</h3>
+        <p>Du moment juste avant l’envoi du raccourci jusqu’à ce que la position de la fenêtre, lue dans le serveur de fenêtres, soit à 1 pt au plus de sa cible lors de deux lectures de suite, à environ 1 ms d’intervalle. 20 appuis alternant Moitié gauche et Moitié droite sur une fenêtre, compilation Debug.</p>
+        <table class="figures stack">
+          <thead><tr><th scope="col">Animation des fenêtres</th><th scope="col">Médiane</th><th scope="col">90e centile</th><th scope="col">Maximum</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Désactivée</span></th><td data-label="Médiane">25 ms</td><td data-label="90e centile">32 ms</td><td data-label="Maximum">33 ms</td></tr>
+            <tr><th scope="row"><span>Moyenne</span><small>la valeur par défaut d’une nouvelle installation</small></th><td data-label="Médiane">255 ms</td><td data-label="90e centile">273 ms</td><td data-label="Maximum">279 ms</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Mémoire</h3>
+        <p>L’empreinte mémoire que macOS indique pour Piccolo (la ligne Footprint de <code>footprint</code>), en mégaoctets entiers.</p>
+        <p>Compilation Debug, animation des fenêtres désactivée. Au repos : un Piccolo tout juste lancé avec les réglages d’une nouvelle installation, lu jusqu’à ce que deux lectures concordent ; la seconde lecture suit 200 actions alternant Moitié gauche et Moitié droite sur une fenêtre.</p>
+        <table class="figures">
+          <thead><tr><th scope="col">Piccolo (Debug)</th><th scope="col">Empreinte</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Au repos après le lancement</span></th><td>20 Mo</td></tr>
+            <tr><th scope="row"><span>Après 200 actions</span></th><td>20 Mo</td></tr>
+          </tbody>
+        </table>
+        <p>La compilation Release, installée dans /Applications et utilisée au quotidien, mesurée à la main.</p>
+        <table class="figures">
+          <thead><tr><th scope="col">Piccolo (Release)</th><th scope="col">Empreinte</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Au repos, 9 minutes après le lancement</span></th><td>19 Mo</td></tr>
+            <tr><th scope="row"><span>Après 21 heures 48 minutes d’usage quotidien (version 1.0.0 (2))</span></th><td>20 Mo</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Mentions légales et assistance">
+        <a href="./" aria-current="page">Compatibilité</a>
+        <a href="../../terms.html">Conditions d’utilisation</a>
+        <a href="../../privacy.html">Politique de confidentialité</a>
+        <a href="../../refunds.html">Politique de remboursement</a>
+        <a href="mailto:support@damao.io">support@damao.io</a>
+      </nav>
+      <nav class="langs" aria-label="Langue">
+        <a href="../../compatibility/" hreflang="en" lang="en" data-lang="en">English</a>
+        <a href="../../zh-hans/compatibility/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a>
+        <a href="../../zh-hant/compatibility/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a>
+        <a href="../../ja/compatibility/" hreflang="ja" lang="ja" data-lang="ja">日本語</a>
+        <a href="../../ko/compatibility/" hreflang="ko" lang="ko" data-lang="ko">한국어</a>
+        <a href="../../fr/compatibility/" hreflang="fr" lang="fr" data-lang="fr" aria-current="page">Français</a>
+        <a href="../../es/compatibility/" hreflang="es" lang="es" data-lang="es">Español</a>
+        <a href="../../pt-br/compatibility/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a>
+        <a href="../../de/compatibility/" hreflang="de" lang="de" data-lang="de">Deutsch</a>
+      </nav>
+      <p>© 2026 Xiaoyu Guan</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll("[data-lang]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        try { localStorage.setItem("lang", link.dataset.lang); } catch (e) {}
+      });
+    });
+  </script>
+</body>
+</html>

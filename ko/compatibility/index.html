@@ -1,0 +1,161 @@
+<!doctype html>
+<!-- Generated from src/ by scripts/build.py. Edit those, not this file. -->
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Piccolo: 호환성 기록</title>
+  <meta name="description" content="macOS 릴리스별로 Piccolo의 각 동작이 전체 화면 윈도우와 크기를 조절할 수 없는 윈도우에 무엇을 하는지, 단축키가 얼마나 걸리는지, Piccolo가 메모리를 얼마나 쓰는지 기록합니다.">
+  <link rel="alternate" hreflang="en" href="https://piccolo.damao.io/compatibility/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://piccolo.damao.io/zh-hans/compatibility/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://piccolo.damao.io/zh-hant/compatibility/">
+  <link rel="alternate" hreflang="ja" href="https://piccolo.damao.io/ja/compatibility/">
+  <link rel="alternate" hreflang="ko" href="https://piccolo.damao.io/ko/compatibility/">
+  <link rel="alternate" hreflang="fr" href="https://piccolo.damao.io/fr/compatibility/">
+  <link rel="alternate" hreflang="es" href="https://piccolo.damao.io/es/compatibility/">
+  <link rel="alternate" hreflang="pt-BR" href="https://piccolo.damao.io/pt-br/compatibility/">
+  <link rel="alternate" hreflang="de" href="https://piccolo.damao.io/de/compatibility/">
+  <link rel="alternate" hreflang="x-default" href="https://piccolo.damao.io/compatibility/">
+  <link rel="icon" type="image/png" href="../../images/icon.png">
+  <link rel="apple-touch-icon" href="../../images/icon.png">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../"><img src="../../images/icon.png" alt="" width="32" height="32"><span>Piccolo</span></a>
+      <nav aria-label="주 메뉴">
+        <a href="../#features">기능</a>
+        <a href="../#pricing">가격</a>
+        <a href="../#faq">자주 묻는 질문</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="record">
+    <div class="wrap">
+      <h1>호환성 기록</h1>
+      <p class="intro">포커스된 윈도우가 전체 화면이거나 크기 조절을 거부할 때 각 윈도우 동작이 무엇을 하는지, 키를 누른 뒤 윈도우가 자리를 잡기까지 얼마나 걸리는지, Piccolo가 메모리를 얼마나 쓰는지 기록합니다. macOS 릴리스마다 한 섹션이며, 최신 릴리스가 먼저 나옵니다.</p>
+
+      <section id="macos-27-0-1">
+        <h2>macOS 27.0.1 (26A434)</h2>
+        <p>디스플레이 2대, 주 디스플레이는 2560 × 1440이며 화면 전체를 윈도우에 쓸 수 있습니다. 스테이지 매니저는 끔, ‘각각의 Spaces가 있는 디스플레이’는 켬. Piccolo는 1.0.0 이후 개발 버전의 Debug 빌드이며, 표에 따로 적지 않은 한 윈도우 간격은 0, 윈도우 애니메이션은 ‘빠르게’입니다.</p>
+        <p>위치 및 크기는 (x, y) 너비×높이로 적으며 단위는 포인트입니다. 주 디스플레이의 왼쪽 절반은 <code>(0, 0) 1280×1440</code>입니다.</p>
+
+        <h3>전체 화면 윈도우</h3>
+        <p>윈도우 하나가 전체 화면이며 포커스되어 있습니다. 그 전에 포커스되어 있던, 전체 화면이 아닌 두 번째 윈도우는 데스크탑 Space에 있어 화면에 보이지 않습니다. 모든 동작에서 ‘전체 화면 윈도우는 이동할 수 없습니다’ 알림이 표시되었고, 윈도우는 <code>(0, 0) 2560×1440</code>에서 전체 화면 상태를 유지했습니다.</p>
+        <table class="results">
+          <thead><tr><th scope="col">동작</th><th scope="col">알림</th><th scope="col">결과</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>왼쪽 절반</span></th><td data-label="알림">‘전체 화면 윈도우는 이동할 수 없습니다’</td><td data-label="결과">아무것도 움직이지 않았습니다.</td></tr>
+            <tr><th scope="row"><span>최대화</span></th><td data-label="알림">‘전체 화면 윈도우는 이동할 수 없습니다’</td><td data-label="결과">아무것도 움직이지 않았습니다.</td></tr>
+            <tr><th scope="row"><span>중앙 정렬</span></th><td data-label="알림">‘전체 화면 윈도우는 이동할 수 없습니다’</td><td data-label="결과">아무것도 움직이지 않았습니다.</td></tr>
+            <tr><th scope="row"><span>윈도우 복원</span></th><td data-label="알림">‘전체 화면 윈도우는 이동할 수 없습니다’</td><td data-label="결과">아무것도 움직이지 않았습니다. Piccolo는 원래 위치를 찾아보기 전에 이 윈도우를 거부합니다.</td></tr>
+            <tr><th scope="row"><span>다음 디스플레이</span></th><td data-label="알림">‘전체 화면 윈도우는 이동할 수 없습니다’</td><td data-label="결과">아무것도 움직이지 않았습니다. 윈도우는 원래 디스플레이에 남았습니다.</td></tr>
+            <tr><th scope="row"><span>윈도우 2개를 1 × 2(으)로 정렬</span></th><td data-label="알림">‘전체 화면 윈도우는 이동할 수 없습니다’</td><td data-label="결과">아무것도 움직이지 않았습니다. 다른 윈도우는 다른 Space에 있어 고려되지 않았습니다.</td></tr>
+            <tr><th scope="row"><span>구분선을 오른쪽으로 이동</span></th><td data-label="알림">‘전체 화면 윈도우는 이동할 수 없습니다’</td><td data-label="결과">아무것도 움직이지 않았습니다.</td></tr>
+            <tr><th scope="row"><span>오른쪽 윈도우와 바꾸기</span></th><td data-label="알림">‘전체 화면 윈도우는 이동할 수 없습니다’</td><td data-label="결과">아무것도 움직이지 않았습니다.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>크기를 조절할 수 없는 윈도우</h3>
+        <p>크기 조절을 거부하는 640 × 420 윈도우를 <code>(120, 80)</code>에 둔 경우입니다. Piccolo는 이 윈도우를 이동할 수는 있지만 크기는 조절할 수 없으며, 알림도 표시하지 않습니다.</p>
+        <table class="results">
+          <thead><tr><th scope="col">동작</th><th scope="col">알림</th><th scope="col">결과</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>왼쪽 절반</span></th><td data-label="알림">없음</td><td data-label="결과"><code>(0, 0)</code>으로 이동, 크기는 그대로 640×420(목표는 1280×1440).</td></tr>
+            <tr><th scope="row"><span>최대화</span></th><td data-label="알림">없음</td><td data-label="결과"><code>(0, 0)</code>으로 이동, 크기는 그대로 640×420.</td></tr>
+            <tr><th scope="row"><span>윈도우 2개를 1 × 2(으)로 정렬</span><small>두 번째 윈도우는 크기 조절 가능</small></th><td data-label="알림">없음</td><td data-label="결과">고정된 윈도우는 <code>(0, 0) 640×420</code>, 다른 윈도우는 <code>(640, 0) 1920×1440</code>. 구분선이 고정된 윈도우의 오른쪽 가장자리를 따라가고, 다른 윈도우가 남은 너비를 채웁니다. 고정된 윈도우 아래의 공간은 비어 있습니다.</td></tr>
+            <tr><th scope="row"><span>구분선을 오른쪽으로 이동</span><small>정렬한 뒤</small></th><td data-label="알림">‘구분선을 더 이상 이동할 수 없습니다’</td><td data-label="결과">변화 없음. 고정된 윈도우가 커질 수 없으므로 구분선은 제자리에 있습니다.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>디스플레이 절반보다 넓은 최소 너비</h3>
+        <p>최소 너비가 1536포인트(사용 가능한 너비의 0.6배)인 윈도우를 1792 × 420으로 연 경우입니다.</p>
+        <table class="results">
+          <thead><tr><th scope="col">동작</th><th scope="col">알림</th><th scope="col">결과</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>왼쪽 절반</span></th><td data-label="알림">없음</td><td data-label="결과"><code>(0, 0) 1536×1440</code>. 절반보다 256포인트 넓습니다.</td></tr>
+            <tr><th scope="row"><span>오른쪽 절반</span></th><td data-label="알림">없음</td><td data-label="결과"><code>(1024, 0) 1536×1440</code>. 절반보다 넓으며, 디스플레이 안에 머물도록 왼쪽으로 밀렸습니다.</td></tr>
+            <tr><th scope="row"><span>윈도우 2개를 1 × 2(으)로 정렬</span><small>두 번째 윈도우는 크기 조절 가능</small></th><td data-label="알림">없음</td><td data-label="결과">이 윈도우는 <code>(0, 0) 1536×1440</code>, 다른 윈도우는 <code>(1536, 0) 1024×1440</code>. 다른 윈도우가 남은 공간을 채웁니다.</td></tr>
+            <tr><th scope="row"><span>구분선을 왼쪽으로 이동</span><small>정렬한 뒤</small></th><td data-label="알림">‘구분선을 더 이상 이동할 수 없습니다’</td><td data-label="결과">변화 없음. 넓은 윈도우가 줄어들기를 거부하므로 구분선은 제자리에 있습니다.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>7 × 15 단위의 크기 조절</h3>
+        <p>터미널처럼 7 × 15 단위로 크기가 바뀌는 637 × 420 윈도우입니다.</p>
+        <table class="results">
+          <thead><tr><th scope="col">동작</th><th scope="col">알림</th><th scope="col">결과</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>왼쪽 절반</span></th><td data-label="알림">없음</td><td data-label="결과"><code>(0, 0) 1281×1440</code>. 너비가 7의 배수에 맞춰져 절반보다 1포인트 넓습니다.</td></tr>
+            <tr><th scope="row"><span>윈도우 2개를 1 × 2(으)로 정렬</span><small>두 번째 윈도우는 크기 조절 가능</small></th><td data-label="알림">없음</td><td data-label="결과">이 윈도우는 <code>(0, 0) 1281×1440</code>, 다른 윈도우는 <code>(1280, 0) 1280×1440</code>. 두 윈도우가 1포인트 겹칩니다.</td></tr>
+          </tbody>
+        </table>
+
+        <p>어떤 경우에도 동작이 윈도우를 디스플레이 밖에 두지 않았고, 알림 없이 아무것도 하지 않은 동작도 없었습니다.</p>
+
+        <h3>지연 시간</h3>
+        <p>단축키를 보내기 직전부터, 윈도우 서버에서 읽은 윈도우의 위치 및 크기가 약 1밀리초 간격으로 두 번 연속 목표와 1포인트 이내가 될 때까지입니다. 한 윈도우에서 왼쪽 절반과 오른쪽 절반을 번갈아 20번 실행했으며, Debug 빌드입니다.</p>
+        <table class="figures stack">
+          <thead><tr><th scope="col">윈도우 애니메이션</th><th scope="col">중앙값</th><th scope="col">90번째 백분위수</th><th scope="col">최댓값</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>끔</span></th><td data-label="중앙값">25 ms</td><td data-label="90번째 백분위수">32 ms</td><td data-label="최댓값">33 ms</td></tr>
+            <tr><th scope="row"><span>중간</span><small>새로 설치했을 때의 기본값</small></th><td data-label="중앙값">255 ms</td><td data-label="90번째 백분위수">273 ms</td><td data-label="최댓값">279 ms</td></tr>
+          </tbody>
+        </table>
+
+        <h3>메모리</h3>
+        <p>macOS가 보고하는 Piccolo의 메모리 사용량(<code>footprint</code>의 Footprint 줄)을 MB 단위 정수로 적었습니다.</p>
+        <p>Debug 빌드, 윈도우 애니메이션 끔. 유휴 상태는 새로 설치한 설정으로 막 실행한 Piccolo를 두 번의 측정값이 같아질 때까지 읽은 값이며, 두 번째 값은 한 윈도우에서 왼쪽 절반과 오른쪽 절반을 번갈아 200번 실행한 뒤의 값입니다.</p>
+        <table class="figures">
+          <thead><tr><th scope="col">Piccolo(Debug)</th><th scope="col">메모리 사용량</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>실행 후 유휴 상태</span></th><td>20 MB</td></tr>
+            <tr><th scope="row"><span>동작 200번 실행 후</span></th><td>20 MB</td></tr>
+          </tbody>
+        </table>
+        <p>/Applications에 설치해 매일 쓰는 Release 빌드를 직접 측정했습니다.</p>
+        <table class="figures">
+          <thead><tr><th scope="col">Piccolo(Release)</th><th scope="col">메모리 사용량</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>실행 9분 후, 유휴 상태</span></th><td>19 MB</td></tr>
+            <tr><th scope="row"><span>일상적으로 21시간 48분 사용한 뒤(버전 1.0.0 (2))</span></th><td>20 MB</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="약관 및 지원">
+        <a href="./" aria-current="page">호환성</a>
+        <a href="../../terms.html">서비스 약관</a>
+        <a href="../../privacy.html">개인정보 처리방침</a>
+        <a href="../../refunds.html">환불 정책</a>
+        <a href="mailto:support@damao.io">support@damao.io</a>
+      </nav>
+      <nav class="langs" aria-label="언어">
+        <a href="../../compatibility/" hreflang="en" lang="en" data-lang="en">English</a>
+        <a href="../../zh-hans/compatibility/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a>
+        <a href="../../zh-hant/compatibility/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a>
+        <a href="../../ja/compatibility/" hreflang="ja" lang="ja" data-lang="ja">日本語</a>
+        <a href="../../ko/compatibility/" hreflang="ko" lang="ko" data-lang="ko" aria-current="page">한국어</a>
+        <a href="../../fr/compatibility/" hreflang="fr" lang="fr" data-lang="fr">Français</a>
+        <a href="../../es/compatibility/" hreflang="es" lang="es" data-lang="es">Español</a>
+        <a href="../../pt-br/compatibility/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a>
+        <a href="../../de/compatibility/" hreflang="de" lang="de" data-lang="de">Deutsch</a>
+      </nav>
+      <p>© 2026 Xiaoyu Guan</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll("[data-lang]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        try { localStorage.setItem("lang", link.dataset.lang); } catch (e) {}
+      });
+    });
+  </script>
+</body>
+</html>

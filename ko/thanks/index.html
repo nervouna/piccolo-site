@@ -1,0 +1,96 @@
+<!doctype html>
+<!-- Generated from src/ by scripts/build.py. Edit those, not this file. -->
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="robots" content="noindex">
+  <title>Piccolo를 구입해 주셔서 감사합니다</title>
+  <link rel="icon" type="image/png" href="../../images/icon.png">
+  <link rel="apple-touch-icon" href="../../images/icon.png">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../"><img src="../../images/icon.png" alt="" width="32" height="32"><span>Piccolo</span></a>
+    </div>
+  </header>
+
+  <main class="thanks">
+    <div class="wrap">
+      <!-- Dodo Payments sends the buyer here with status, payment_id, email and license_key in the query.
+           Without a status (or without JavaScript) the page says the key is in the email. -->
+      <section class="thanks-card" data-state="succeeded">
+        <h1>Piccolo를 구입해 주셔서 감사합니다</h1>
+        <div class="thanks-key" hidden>
+          <p class="thanks-key-label">사용권 키</p>
+          <div class="thanks-key-row">
+            <code id="license-key"></code>
+            <button class="button" type="button" id="copy-key" data-copied="복사됨">복사</button>
+          </div>
+          <p class="fine">Dodo Payments에서 보낸 이메일에도 들어 있습니다. 이메일이 보이지 않으면 스팸 폴더를 확인하세요.</p>
+        </div>
+        <p class="thanks-no-key">사용권 키는 Dodo Payments에서 보낸 이메일에 들어 있습니다. 보이지 않으면 스팸 폴더를 확인하세요.</p>
+        <h2>Piccolo 활성화하기</h2>
+        <ol class="thanks-steps">
+          <li>Piccolo를 엽니다. 아직 없다면 먼저 <a href="../../downloads/Piccolo-1.0.0.zip">다운로드</a>하세요.</li>
+          <li>메뉴 막대에서 Piccolo 아이콘을 클릭하고 <strong>사용권 키 입력…</strong> 항목을 선택합니다.</li>
+          <li>키를 붙여넣고 <strong>활성화</strong>를 클릭합니다.</li>
+        </ol>
+        <p class="fine">사용권 하나로 Mac 3대에서 사용할 수 있습니다. 궁금한 점은 <a href="mailto:support@damao.io">support@damao.io</a>로 문의하세요.</p>
+      </section>
+
+      <section class="thanks-card" data-state="failed" hidden>
+        <h1>결제가 완료되지 않았습니다</h1>
+        <p>요금은 청구되지 않았습니다. 다시 시도하거나 다른 카드를 사용하세요.</p>
+        <a class="button primary" href="https://checkout.dodopayments.com/buy/pdt_0NrGPyMUoa4o9eIOWl0Jf?quantity=1&amp;redirect_url=https%3A%2F%2Fpiccolo.damao.io%2Fko%2Fthanks%2F">다시 시도</a>
+      </section>
+
+      <section class="thanks-card" data-state="pending" hidden>
+        <h1>주문해 주셔서 감사합니다</h1>
+        <p>결제가 아직 처리 중입니다. 처리가 끝나면 Dodo Payments가 사용권 키를 이메일로 보내 드립니다.</p>
+        <p class="fine">사용권 하나로 Mac 3대에서 사용할 수 있습니다. 궁금한 점은 <a href="mailto:support@damao.io">support@damao.io</a>로 문의하세요.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="약관 및 지원">
+        <a href="../compatibility/">호환성</a>
+        <a href="../../terms.html">서비스 약관</a>
+        <a href="../../privacy.html">개인정보 처리방침</a>
+        <a href="../../refunds.html">환불 정책</a>
+        <a href="mailto:support@damao.io">support@damao.io</a>
+      </nav>
+      <p>© 2026 Xiaoyu Guan</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var query = new URLSearchParams(location.search);
+      var status = query.get("status");
+      var key = (query.get("license_key") || "").split(",")[0].trim();
+      // Keep the key out of the address bar, the history and any link copied from it.
+      if (location.search) history.replaceState(null, "", location.pathname);
+      var state = !status || status === "succeeded" ? "succeeded"
+        : status === "failed" || status === "expired" ? "failed" : "pending";
+      document.querySelectorAll("[data-state]").forEach(function (section) {
+        section.hidden = section.dataset.state !== state;
+      });
+      if (state !== "succeeded" || !key) return;
+      document.getElementById("license-key").textContent = key;
+      document.querySelector(".thanks-key").hidden = false;
+      document.querySelector(".thanks-no-key").hidden = true;
+      var copy = document.getElementById("copy-key");
+      copy.addEventListener("click", function () {
+        navigator.clipboard.writeText(key).then(function () {
+          copy.textContent = copy.dataset.copied;
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

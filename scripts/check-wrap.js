@@ -8,12 +8,15 @@
 //
 // It returns one line per problem; an empty list means none.
 
-const PAGES = ["", "zh-hans/", "zh-hant/", "ja/", "fr/", "es/", "pt-br/", "de/"];
+const LANGUAGES = ["", "zh-hans/", "zh-hant/", "ja/", "ko/", "fr/", "es/", "pt-br/", "de/"];
+// The product page and the compatibility record of each language.
+const PAGES = LANGUAGES.flatMap((language) => [language, language + "compatibility/"]);
 const WIDTHS = [360, 375, 390, 414, 600, 768, 900, 1024, 1280, 1440];
 const BLOCKS = [
   ".hero h1 span", ".lead span", ".hero-fine", "h2", "h3", ".feature-text p",
   ".layouts p", ".points p", ".button", ".price-card li", ".price-card .fine", ".price-card small",
   ".faq p", ".faq li", ".step span", ".button .note", ".rec-button span",
+  ".record p", ".record thead th", ".record tbody th > span", ".record th small", ".record td",
 ].join(", ");
 const CJK = /[\u3040-\u30ff\u3400-\u9fff\uf900-\ufaff]/g;
 

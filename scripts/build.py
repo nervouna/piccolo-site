@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Generate the product page and the thank-you page in every language from src/.
+"""Generate the product page, the compatibility record and the thank-you page in
+every language from src/.
 
-src/index.html and src/thanks.html are the templates; src/strings/<language>.json
-holds their texts. English goes to index.html and thanks/index.html, every other
-language to <dir>/index.html and <dir>/thanks/index.html. The output is
-committed, so GitHub Pages serves plain files.
+src/index.html, src/compatibility.html and src/thanks.html are the templates;
+src/strings/<language>.json holds their texts. English goes to index.html,
+compatibility/index.html and thanks/index.html, every other language to
+<dir>/index.html, <dir>/compatibility/index.html and <dir>/thanks/index.html.
+The output is committed, so GitHub Pages serves plain files.
 
     scripts/build.py           write the pages
     scripts/build.py --check   exit 1 if a committed page is out of date
@@ -30,6 +32,7 @@ LANGUAGES = [
     ("zh-Hans", "zh-hans", "zh-Hans", "简体中文"),
     ("zh-Hant", "zh-hant", "zh-Hant", "繁體中文"),
     ("ja", "ja", "ja", "日本語"),
+    ("ko", "ko", "ko", "한국어"),
     ("fr", "fr", "fr", "Français"),
     ("es", "es", "es", "Español"),
     ("pt-BR", "pt-br", "pt-BR", "Português (Brasil)"),
@@ -42,7 +45,7 @@ PLACEHOLDER = re.compile(r"\{\{(\w+)\}\}")
 ATTRIBUTE_KEYS = {
     "title", "description", "nav_label", "demo_label", "f1_label", "f2_label",
     "f3_label", "craft_img_alt", "footer_label", "languages_label", "phrase_gap",
-    "thanks_title",
+    "thanks_title", "cx_title", "cx_description",
 }
 
 # Short labels that sit in buttons, menus and key rows, where an extra span
@@ -51,7 +54,13 @@ LABEL_KEYS = {
     "nav_features", "nav_pricing", "nav_faq", "download_trial",
     "purchase", "download", "rec_typing", "lay_display_arrows",
     "terms", "privacy", "refunds", "thanks_copy", "thanks_copied", "thanks_retry",
+    "nav_compat", "cx_col_action", "cx_col_notice", "cx_col_result", "cx_col_animation",
+    "cx_col_median", "cx_col_p90", "cx_col_max", "cx_col_debug", "cx_col_release",
+    "cx_col_footprint", "cx_none", "cx_anim_off", "cx_anim_medium", "cx_mb",
 }
+
+# The compatibility record, relative to a language's directory.
+COMPAT = "compatibility/"
 
 CJK = re.compile(r"[\u3040-\u30ff\u3400-\u9fff\uf900-\ufaff]")
 # A visible unit of text: an entity, a placeholder, or one character outside a tag.
@@ -93,13 +102,15 @@ def keep_last_two_words(text, units):
     return text[:last] + "\u00a0" + text[last + 1:]
 
 
-def redirect_script():
-    """Sends a first visit to the root page on to the visitor's language.
+def redirect_script(page=""):
+    """Sends a first visit to an English page on to the visitor's language.
 
-    A language picked in the footer is remembered and always wins, so a
-    visitor who chose English is never sent away again.
+    `page` is the page's path inside a language's directory ("" for the
+    product page). A language picked in the footer is remembered and always
+    wins, so a visitor who chose English is never sent away again.
     """
-    pages = {code: directory + "/" for code, directory, _, _ in LANGUAGES if directory}
+    pages = {code: "../" * page.count("/") + directory + "/" + page
+             for code, directory, _, _ in LANGUAGES if directory}
     return f"""  <script>
     (function () {{
       var pages = {json.dumps(pages)};
@@ -132,19 +143,19 @@ REMEMBER_SCRIPT = """  <script>
 """
 
 
-def alternates():
+def alternates(page=""):
     lines = [
-        f'  <link rel="alternate" hreflang="{hreflang}" href="{SITE}{directory + "/" if directory else ""}">'
+        f'  <link rel="alternate" hreflang="{hreflang}" href="{SITE}{directory + "/" if directory else ""}{page}">'
         for _, directory, hreflang, _ in LANGUAGES
     ]
-    lines.append(f'  <link rel="alternate" hreflang="x-default" href="{SITE}">')
+    lines.append(f'  <link rel="alternate" hreflang="x-default" href="{SITE}{page}">')
     return "\n".join(lines) + "\n"
 
 
-def language_nav(current, root, label):
+def language_nav(current, root, label, page=""):
     links = []
     for code, directory, hreflang, name in LANGUAGES:
-        href = root + (directory + "/" if directory else "")
+        href = root + (directory + "/" if directory else "") + page
         current_attr = ' aria-current="page"' if code == current else ""
         links.append(
             f'        <a href="{href or "./"}" hreflang="{hreflang}" lang="{hreflang}"'
@@ -179,6 +190,7 @@ def generated(page):
 
 def build():
     template = (ROOT / "src/index.html").read_text()
+    compat_template = (ROOT / "src/compatibility.html").read_text()
     thanks_template = (ROOT / "src/thanks.html").read_text()
     english = json.loads((ROOT / "src/strings/en.json").read_text())
     pages = {}
@@ -203,10 +215,17 @@ def build():
             buy_url=buy_url(directory),
             download_url=root + DOWNLOAD,
             home="./",
+            compat_url=COMPAT,
         )
         where = f"src/strings/{code}.json"
         pages[Path(directory) / "index.html"] = generated(fill(template, values, where))
-        values.update(root=root + "../", home="../", download_url=root + "../" + DOWNLOAD)
+        values.update(root=root + "../", home="../", download_url=root + "../" + DOWNLOAD,
+                      compat_url="./",
+                      redirect=redirect_script(COMPAT) if not directory else "",
+                      alternates=alternates(COMPAT),
+                      languages=language_nav(code, root + "../", strings["languages_label"], COMPAT))
+        pages[Path(directory) / COMPAT / "index.html"] = generated(fill(compat_template, values, where))
+        values.update(compat_url="../" + COMPAT)
         pages[Path(directory) / "thanks/index.html"] = generated(fill(thanks_template, values, where))
     return pages
 

@@ -1,0 +1,161 @@
+<!doctype html>
+<!-- Generated from src/ by scripts/build.py. Edit those, not this file. -->
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Piccolo：互換性の記録</title>
+  <meta name="description" content="macOSのリリースごとに、Piccoloの各アクションがフルスクリーンのウインドウやサイズを変更できないウインドウに何をするか、ショートカットにかかる時間、Piccoloのメモリ使用量を記録しています。">
+  <link rel="alternate" hreflang="en" href="https://piccolo.damao.io/compatibility/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://piccolo.damao.io/zh-hans/compatibility/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://piccolo.damao.io/zh-hant/compatibility/">
+  <link rel="alternate" hreflang="ja" href="https://piccolo.damao.io/ja/compatibility/">
+  <link rel="alternate" hreflang="ko" href="https://piccolo.damao.io/ko/compatibility/">
+  <link rel="alternate" hreflang="fr" href="https://piccolo.damao.io/fr/compatibility/">
+  <link rel="alternate" hreflang="es" href="https://piccolo.damao.io/es/compatibility/">
+  <link rel="alternate" hreflang="pt-BR" href="https://piccolo.damao.io/pt-br/compatibility/">
+  <link rel="alternate" hreflang="de" href="https://piccolo.damao.io/de/compatibility/">
+  <link rel="alternate" hreflang="x-default" href="https://piccolo.damao.io/compatibility/">
+  <link rel="icon" type="image/png" href="../../images/icon.png">
+  <link rel="apple-touch-icon" href="../../images/icon.png">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../"><img src="../../images/icon.png" alt="" width="32" height="32"><span>Piccolo</span></a>
+      <nav aria-label="メイン">
+        <a href="../#features">機能</a>
+        <a href="../#pricing">価格</a>
+        <a href="../#faq">よくある質問</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="record">
+    <div class="wrap">
+      <h1>互換性<span class="nobr">の記録</span></h1>
+      <p class="intro">フォーカス中のウインドウがフルスクリーンのとき、またはサイズ変更を受け付けないときに各アクションが何をするか、キーを押してからウインドウが落ち着くまでの時間、Piccoloのメモリ使用量。macOSのリリースごとに1つのセクションで、新しいものが<span class="nobr">先です。</span></p>
+
+      <section id="macos-27-0-1">
+        <h2>macOS 27.0.1 (26A434)</h2>
+        <p>ディスプレイは2台で、メインは2560 × 1440、画面全体をウインドウに使える状態。ステージマネージャはオフ、“ディスプレイごとに個別の操作スペース”はオン。Piccoloは1.0.0以降の開発版のDebugビルドで、表に別の記載がない限り、ウインドウの隙間は0、ウインドウのアニメーションは「速<span class="nobr">い」です。</span></p>
+        <p>位置とサイズは(x, y) 幅×高さで、単位はポイントです。メインディスプレイの左半分は<code>(0, 0) 1280×1440</code>です。</p>
+
+        <h3>フルスクリーンのウイ<span class="nobr">ンドウ</span></h3>
+        <p>1つのウインドウがフルスクリーンでフォーカス中。その前にフォーカスしていた、フルスクリーンでないもう1つのウインドウは、デスクトップの操作スペースにあって画面には表示されていません。どのアクションでも通知「フルスクリーンのウインドウは移動できません」が表示され、ウインドウは<code>(0, 0) 2560×1440</code>でフルスクリーンのまま<span class="nobr">でした。</span></p>
+        <table class="results">
+          <thead><tr><th scope="col">アクション</th><th scope="col">通知</th><th scope="col">結果</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>左半分</span></th><td data-label="通知">「フルスクリーンのウインドウは移動でき<span class="nobr">ません」</span></td><td data-label="結果">何も動きません<span class="nobr">でした。</span></td></tr>
+            <tr><th scope="row"><span>最大化</span></th><td data-label="通知">「フルスクリーンのウインドウは移動でき<span class="nobr">ません」</span></td><td data-label="結果">何も動きません<span class="nobr">でした。</span></td></tr>
+            <tr><th scope="row"><span>中央に配置</span></th><td data-label="通知">「フルスクリーンのウインドウは移動でき<span class="nobr">ません」</span></td><td data-label="結果">何も動きません<span class="nobr">でした。</span></td></tr>
+            <tr><th scope="row"><span>ウインドウを復元</span></th><td data-label="通知">「フルスクリーンのウインドウは移動でき<span class="nobr">ません」</span></td><td data-label="結果">何も動きませんでした。Piccoloは元の位置を調べる前にこのウインドウを対象外に<span class="nobr">します。</span></td></tr>
+            <tr><th scope="row"><span>次のディスプレイ</span></th><td data-label="通知">「フルスクリーンのウインドウは移動でき<span class="nobr">ません」</span></td><td data-label="結果">何も動きませんでした。ウインドウは元のディスプレイに残り<span class="nobr">ました。</span></td></tr>
+            <tr><th scope="row"><span>2個のウインドウを1 × 2に配置</span></th><td data-label="通知">「フルスクリーンのウインドウは移動でき<span class="nobr">ません」</span></td><td data-label="結果">何も動きませんでした。もう1つのウインドウは別の操作スペースにあり、対象になりません<span class="nobr">でした。</span></td></tr>
+            <tr><th scope="row"><span>区切り線を右に移動</span></th><td data-label="通知">「フルスクリーンのウインドウは移動でき<span class="nobr">ません」</span></td><td data-label="結果">何も動きません<span class="nobr">でした。</span></td></tr>
+            <tr><th scope="row"><span>右のウインドウと入れ替え</span></th><td data-label="通知">「フルスクリーンのウインドウは移動でき<span class="nobr">ません」</span></td><td data-label="結果">何も動きません<span class="nobr">でした。</span></td></tr>
+          </tbody>
+        </table>
+
+        <h3>サイズを変更できないウイ<span class="nobr">ンドウ</span></h3>
+        <p>サイズ変更を受け付けない640 × 420のウインドウを<code>(120, 80)</code>に置いた場合。Piccoloは移動はできてもサイズは変えられず、通知も表示し<span class="nobr">ません。</span></p>
+        <table class="results">
+          <thead><tr><th scope="col">アクション</th><th scope="col">通知</th><th scope="col">結果</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>左半分</span></th><td data-label="通知">なし</td><td data-label="結果"><code>(0, 0)</code>に移動し、640×420のまま（目標は1280×1440）。</td></tr>
+            <tr><th scope="row"><span>最大化</span></th><td data-label="通知">なし</td><td data-label="結果"><code>(0, 0)</code>に移動し、640×420<span class="nobr">のまま。</span></td></tr>
+            <tr><th scope="row"><span>2個のウインドウを1 × 2に配置</span><small>2つ目のウインドウはサイズ<span class="nobr">変更可</span></small></th><td data-label="通知">なし</td><td data-label="結果">固定のウインドウは<code>(0, 0) 640×420</code>、もう一方は<code>(640, 0) 1920×1440</code>。区切り線は固定のウインドウの右端に合わせ、もう一方のウインドウが残りの幅を埋めます。固定のウインドウの下は空いたま<span class="nobr">まです。</span></td></tr>
+            <tr><th scope="row"><span>区切り線を右に移動</span><small>配置し<span class="nobr">たあと</span></small></th><td data-label="通知">「区切り線はこれ以上動かせ<span class="nobr">ません」</span></td><td data-label="結果">変化なし。固定のウインドウは大きくできないため、区切り線はそのま<span class="nobr">まです。</span></td></tr>
+          </tbody>
+        </table>
+
+        <h3>最小幅がディスプレイの半分を<span class="nobr">超える</span></h3>
+        <p>最小幅が1536ポイント（表示領域の幅の0.6倍）のウインドウを1792 × 420で開い<span class="nobr">た場合。</span></p>
+        <table class="results">
+          <thead><tr><th scope="col">アクション</th><th scope="col">通知</th><th scope="col">結果</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>左半分</span></th><td data-label="通知">なし</td><td data-label="結果"><code>(0, 0) 1536×1440</code>。半分より256ポイント広くな<span class="nobr">ります。</span></td></tr>
+            <tr><th scope="row"><span>右半分</span></th><td data-label="通知">なし</td><td data-label="結果"><code>(1024, 0) 1536×1440</code>。半分より広く、ディスプレイに収まるよう左にず<span class="nobr">れます。</span></td></tr>
+            <tr><th scope="row"><span>2個のウインドウを1 × 2に配置</span><small>2つ目のウインドウはサイズ<span class="nobr">変更可</span></small></th><td data-label="通知">なし</td><td data-label="結果">このウインドウは<code>(0, 0) 1536×1440</code>、もう一方は<code>(1536, 0) 1024×1440</code>。もう一方のウインドウが残りを埋<span class="nobr">めます。</span></td></tr>
+            <tr><th scope="row"><span>区切り線を左に移動</span><small>配置し<span class="nobr">たあと</span></small></th><td data-label="通知">「区切り線はこれ以上動かせ<span class="nobr">ません」</span></td><td data-label="結果">変化なし。幅の広いウインドウが縮小を受け付けないため、区切り線はそのま<span class="nobr">まです。</span></td></tr>
+          </tbody>
+        </table>
+
+        <h3>7 × 15刻みのサイ<span class="nobr">ズ変更</span></h3>
+        <p>ターミナルのように7 × 15刻みでサイズが変わる、637 × 420のウイ<span class="nobr">ンドウ。</span></p>
+        <table class="results">
+          <thead><tr><th scope="col">アクション</th><th scope="col">通知</th><th scope="col">結果</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>左半分</span></th><td data-label="通知">なし</td><td data-label="結果"><code>(0, 0) 1281×1440</code>。幅が7の倍数に揃い、半分より1ポイント広くな<span class="nobr">ります。</span></td></tr>
+            <tr><th scope="row"><span>2個のウインドウを1 × 2に配置</span><small>2つ目のウインドウはサイズ<span class="nobr">変更可</span></small></th><td data-label="通知">なし</td><td data-label="結果">このウインドウは<code>(0, 0) 1281×1440</code>、もう一方は<code>(1280, 0) 1280×1440</code>。1ポイント重な<span class="nobr">ります。</span></td></tr>
+          </tbody>
+        </table>
+
+        <p>どのケースでも、アクションがウインドウをディスプレイの外に置くことはなく、通知なしに何もしないアクションもありません<span class="nobr">でした。</span></p>
+
+        <h3>応<span class="nobr">答時間</span></h3>
+        <p>ショートカットを送る直前から、ウインドウサーバから読んだウインドウの位置とサイズが、約1ミリ秒間隔で2回続けて目標との差1ポイント以内になるまで。1つのウインドウで左半分と右半分を交互に20回、Debug<span class="nobr">ビルド。</span></p>
+        <table class="figures stack">
+          <thead><tr><th scope="col">ウインドウのアニメーション</th><th scope="col">中央値</th><th scope="col">90パーセンタイル</th><th scope="col">最大値</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>オフ</span></th><td data-label="中央値">25 ms</td><td data-label="90パーセンタイル">32 ms</td><td data-label="最大値">33 ms</td></tr>
+            <tr><th scope="row"><span>中</span><small>新規インストール時のデフ<span class="nobr">ォルト</span></small></th><td data-label="中央値">255 ms</td><td data-label="90パーセンタイル">273 ms</td><td data-label="最大値">279 ms</td></tr>
+          </tbody>
+        </table>
+
+        <h3><span class="nobr">メモリ</span></h3>
+        <p>macOSが報告するPiccoloのメモリフットプリント（<code>footprint</code>のFootprintの行）を、MB単位の整数で示<span class="nobr">します。</span></p>
+        <p>Debugビルド、ウインドウのアニメーションはオフ。アイドル時は、新規インストールの設定で起動したばかりのPiccoloを、2回の読み取りが一致するまで読んだ値。2つ目の値は、1つのウインドウで左半分と右半分を交互に200回実行したあ<span class="nobr">とです。</span></p>
+        <table class="figures">
+          <thead><tr><th scope="col">Piccolo（Debug）</th><th scope="col">フットプリント</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>起動後のアイ<span class="nobr">ドル時</span></span></th><td>20 MB</td></tr>
+            <tr><th scope="row"><span>200回のアクション<span class="nobr">のあと</span></span></th><td>20 MB</td></tr>
+          </tbody>
+        </table>
+        <p>/Applicationsにインストールして日常的に使っているReleaseビルドを、手作業<span class="nobr">で計測。</span></p>
+        <table class="figures">
+          <thead><tr><th scope="col">Piccolo（Release）</th><th scope="col">フットプリント</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>起動9分後のアイ<span class="nobr">ドル時</span></span></th><td>19 MB</td></tr>
+            <tr><th scope="row"><span>日常的に21時間48分使ったあと（バージョン1.0.0 (2)）</span></th><td>20 MB</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="規約とサポート">
+        <a href="./" aria-current="page">互換性</a>
+        <a href="../../terms.html">利用規約</a>
+        <a href="../../privacy.html">プライバシーポリシー</a>
+        <a href="../../refunds.html">返金ポリシー</a>
+        <a href="mailto:support@damao.io">support@damao.io</a>
+      </nav>
+      <nav class="langs" aria-label="言語">
+        <a href="../../compatibility/" hreflang="en" lang="en" data-lang="en">English</a>
+        <a href="../../zh-hans/compatibility/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a>
+        <a href="../../zh-hant/compatibility/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a>
+        <a href="../../ja/compatibility/" hreflang="ja" lang="ja" data-lang="ja" aria-current="page">日本語</a>
+        <a href="../../ko/compatibility/" hreflang="ko" lang="ko" data-lang="ko">한국어</a>
+        <a href="../../fr/compatibility/" hreflang="fr" lang="fr" data-lang="fr">Français</a>
+        <a href="../../es/compatibility/" hreflang="es" lang="es" data-lang="es">Español</a>
+        <a href="../../pt-br/compatibility/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a>
+        <a href="../../de/compatibility/" hreflang="de" lang="de" data-lang="de">Deutsch</a>
+      </nav>
+      <p>© 2026 Xiaoyu Guan</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll("[data-lang]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        try { localStorage.setItem("lang", link.dataset.lang); } catch (e) {}
+      });
+    });
+  </script>
+</body>
+</html>

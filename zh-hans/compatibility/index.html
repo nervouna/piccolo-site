@@ -1,0 +1,161 @@
+<!doctype html>
+<!-- Generated from src/ by scripts/build.py. Edit those, not this file. -->
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Piccolo：兼容性记录</title>
+  <meta name="description" content="按macOS版本列出Piccolo的每个动作如何处理全屏幕窗口和无法调整大小的窗口、快捷键需要多长时间，以及Piccolo占用多少内存。">
+  <link rel="alternate" hreflang="en" href="https://piccolo.damao.io/compatibility/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://piccolo.damao.io/zh-hans/compatibility/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://piccolo.damao.io/zh-hant/compatibility/">
+  <link rel="alternate" hreflang="ja" href="https://piccolo.damao.io/ja/compatibility/">
+  <link rel="alternate" hreflang="ko" href="https://piccolo.damao.io/ko/compatibility/">
+  <link rel="alternate" hreflang="fr" href="https://piccolo.damao.io/fr/compatibility/">
+  <link rel="alternate" hreflang="es" href="https://piccolo.damao.io/es/compatibility/">
+  <link rel="alternate" hreflang="pt-BR" href="https://piccolo.damao.io/pt-br/compatibility/">
+  <link rel="alternate" hreflang="de" href="https://piccolo.damao.io/de/compatibility/">
+  <link rel="alternate" hreflang="x-default" href="https://piccolo.damao.io/compatibility/">
+  <link rel="icon" type="image/png" href="../../images/icon.png">
+  <link rel="apple-touch-icon" href="../../images/icon.png">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../"><img src="../../images/icon.png" alt="" width="32" height="32"><span>Piccolo</span></a>
+      <nav aria-label="主导航">
+        <a href="../#features">功能</a>
+        <a href="../#pricing">价格</a>
+        <a href="../#faq">常见问题</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="record">
+    <div class="wrap">
+      <h1>兼容<span class="nobr">性记录</span></h1>
+      <p class="intro">当前窗口处于全屏幕或拒绝调整大小时，每个窗口动作会做什么；从按下快捷键到窗口停稳需要多长时间；Piccolo占用多少内存。每个macOS版本一节，最新<span class="nobr">的在前。</span></p>
+
+      <section id="macos-27-0-1">
+        <h2>macOS 27.0.1 (26A434)</h2>
+        <p>两台显示器，主显示器为2560 × 1440，整个屏幕都可放置窗口；台前调度关闭，“显示器具有单独空间”打开。Piccolo为1.0.0之后开发版本的Debug构建，窗口间距为0，窗口动画为“快”，表格另有说明<span class="nobr">的除外。</span></p>
+        <p>窗口位置写作(x, y) 宽×高，单位为点。主显示器上的左半屏是<code>(0, 0) 1280×1440</code>。</p>
+
+        <h3>全屏<span class="nobr">幕窗口</span></h3>
+        <p>一个窗口处于全屏幕并且是当前窗口。另一个不在全屏幕的窗口在它之前是当前窗口，它留在桌面空间里，不在屏幕上。每个动作都显示了提示“全屏幕窗口无法移动”，窗口仍然全屏幕，位于<code>(0, 0) 2560×1440</code>。</p>
+        <table class="results">
+          <thead><tr><th scope="col">动作</th><th scope="col">提示</th><th scope="col">结果</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>左半屏</span></th><td data-label="提示">“全屏幕窗口无<span class="nobr">法移动”</span></td><td data-label="结果">没<span class="nobr">有移动。</span></td></tr>
+            <tr><th scope="row"><span>最大化</span></th><td data-label="提示">“全屏幕窗口无<span class="nobr">法移动”</span></td><td data-label="结果">没<span class="nobr">有移动。</span></td></tr>
+            <tr><th scope="row"><span>居中</span></th><td data-label="提示">“全屏幕窗口无<span class="nobr">法移动”</span></td><td data-label="结果">没<span class="nobr">有移动。</span></td></tr>
+            <tr><th scope="row"><span>恢复窗口</span></th><td data-label="提示">“全屏幕窗口无<span class="nobr">法移动”</span></td><td data-label="结果">没有移动：Piccolo在查找窗口原来的位置之前就拒<span class="nobr">绝了它。</span></td></tr>
+            <tr><th scope="row"><span>下一个显示器</span></th><td data-label="提示">“全屏幕窗口无<span class="nobr">法移动”</span></td><td data-label="结果">没有移动：窗口留在原来的显<span class="nobr">示器上。</span></td></tr>
+            <tr><th scope="row"><span>将2个窗口排成1 × 2</span></th><td data-label="提示">“全屏幕窗口无<span class="nobr">法移动”</span></td><td data-label="结果">没有移动：另一个窗口在另一个空间里，没有<span class="nobr">被考虑。</span></td></tr>
+            <tr><th scope="row"><span>向右移动分隔线</span></th><td data-label="提示">“全屏幕窗口无<span class="nobr">法移动”</span></td><td data-label="结果">没<span class="nobr">有移动。</span></td></tr>
+            <tr><th scope="row"><span>与右侧窗口交换</span></th><td data-label="提示">“全屏幕窗口无<span class="nobr">法移动”</span></td><td data-label="结果">没<span class="nobr">有移动。</span></td></tr>
+          </tbody>
+        </table>
+
+        <h3>无法调整大小<span class="nobr">的窗口</span></h3>
+        <p>一个640 × 420、拒绝调整大小的窗口，位于<code>(120, 80)</code>。Piccolo能移动它，但无法调整它的大小，也不显<span class="nobr">示提示。</span></p>
+        <table class="results">
+          <thead><tr><th scope="col">动作</th><th scope="col">提示</th><th scope="col">结果</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>左半屏</span></th><td data-label="提示">无</td><td data-label="结果">移到<code>(0, 0)</code>，仍为640×420（目标为1280×1440）。</td></tr>
+            <tr><th scope="row"><span>最大化</span></th><td data-label="提示">无</td><td data-label="结果">移到<code>(0, 0)</code>，仍为640×420。</td></tr>
+            <tr><th scope="row"><span>将2个窗口排成1 × 2</span><small>第二个窗口可调<span class="nobr">整大小</span></small></th><td data-label="提示">无</td><td data-label="结果">固定窗口在<code>(0, 0) 640×420</code>，另一个在<code>(640, 0) 1920×1440</code>：分隔线跟随固定窗口的右边缘，另一个窗口填满剩下的宽度。固定窗口下方的空间保<span class="nobr">持空白。</span></td></tr>
+            <tr><th scope="row"><span>向右移动分隔线</span><small>排<span class="nobr">列之后</span></small></th><td data-label="提示">“分隔线无法<span class="nobr">再移动”</span></td><td data-label="结果">没有变化：固定窗口无法变大，所以分隔线停<span class="nobr">在原处。</span></td></tr>
+          </tbody>
+        </table>
+
+        <h3>最小宽度超过显示器<span class="nobr">的一半</span></h3>
+        <p>一个最小宽度为1536点（可用宽度的0.6倍）的窗口，打开时为1792 × 420。</p>
+        <table class="results">
+          <thead><tr><th scope="col">动作</th><th scope="col">提示</th><th scope="col">结果</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>左半屏</span></th><td data-label="提示">无</td><td data-label="结果"><code>(0, 0) 1536×1440</code>：比一<span class="nobr">半宽256点。</span></td></tr>
+            <tr><th scope="row"><span>右半屏</span></th><td data-label="提示">无</td><td data-label="结果"><code>(1024, 0) 1536×1440</code>：比一半宽，向左移以留在显<span class="nobr">示器上。</span></td></tr>
+            <tr><th scope="row"><span>将2个窗口排成1 × 2</span><small>第二个窗口可调<span class="nobr">整大小</span></small></th><td data-label="提示">无</td><td data-label="结果">该窗口在<code>(0, 0) 1536×1440</code>，另一个在<code>(1536, 0) 1024×1440</code>：另一个窗口填满剩下<span class="nobr">的空间。</span></td></tr>
+            <tr><th scope="row"><span>向左移动分隔线</span><small>排<span class="nobr">列之后</span></small></th><td data-label="提示">“分隔线无法<span class="nobr">再移动”</span></td><td data-label="结果">没有变化：宽窗口拒绝变窄，所以分隔线停<span class="nobr">在原处。</span></td></tr>
+          </tbody>
+        </table>
+
+        <h3>以7 × 15为步长调<span class="nobr">整大小</span></h3>
+        <p>一个637 × 420的窗口，像终端窗口一样以7 × 15为步长调<span class="nobr">整大小。</span></p>
+        <table class="results">
+          <thead><tr><th scope="col">动作</th><th scope="col">提示</th><th scope="col">结果</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>左半屏</span></th><td data-label="提示">无</td><td data-label="结果"><code>(0, 0) 1281×1440</code>：宽度对齐到7的倍数，比一<span class="nobr">半多1点。</span></td></tr>
+            <tr><th scope="row"><span>将2个窗口排成1 × 2</span><small>第二个窗口可调<span class="nobr">整大小</span></small></th><td data-label="提示">无</td><td data-label="结果">该窗口在<code>(0, 0) 1281×1440</code>，另一个在<code>(1280, 0) 1280×1440</code>：两者<span class="nobr">重叠1点。</span></td></tr>
+          </tbody>
+        </table>
+
+        <p>在以上所有情况中，没有一个动作把窗口留在显示器之外，也没有一个动作在什么都没做时不显<span class="nobr">示提示。</span></p>
+
+        <h3>延迟</h3>
+        <p>从快捷键发出前一刻起，到从窗口服务器读到的窗口位置连续两次（间隔约1毫秒）与目标相差不超过1点为止。在一个窗口上交替执行左半屏和右半屏，共20<span class="nobr">次，Debug构建。</span></p>
+        <table class="figures stack">
+          <thead><tr><th scope="col">窗口动画</th><th scope="col">中位数</th><th scope="col">第90百分位</th><th scope="col">最大值</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>关闭</span></th><td data-label="中位数">25 ms</td><td data-label="第90百分位">32 ms</td><td data-label="最大值">33 ms</td></tr>
+            <tr><th scope="row"><span>中</span><small>新安装时的<span class="nobr">默认值</span></small></th><td data-label="中位数">255 ms</td><td data-label="第90百分位">273 ms</td><td data-label="最大值">279 ms</td></tr>
+          </tbody>
+        </table>
+
+        <h3>内存</h3>
+        <p>macOS报告的Piccolo内存占用（<code>footprint</code>的Footprint一行），以整兆<span class="nobr">字节计。</span></p>
+        <p>Debug构建，窗口动画关闭。闲置是指刚启动、使用新安装设置的Piccolo，读到两次读数一致为止；第二次读数是在一个窗口上交替执行左半屏和右半屏共200<span class="nobr">次之后。</span></p>
+        <table class="figures">
+          <thead><tr><th scope="col">Piccolo（Debug）</th><th scope="col">内存占用</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>启动<span class="nobr">后闲置</span></span></th><td>20 MB</td></tr>
+            <tr><th scope="row"><span>执行200个<span class="nobr">动作后</span></span></th><td>20 MB</td></tr>
+          </tbody>
+        </table>
+        <p>安装在/Applications中、日常使用的Release构建，手<span class="nobr">动测量。</span></p>
+        <table class="figures">
+          <thead><tr><th scope="col">Piccolo（Release）</th><th scope="col">内存占用</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>启动9分钟<span class="nobr">后，闲置</span></span></th><td>19 MB</td></tr>
+            <tr><th scope="row"><span>日常使用21小时48分钟后（版本1.0.0 (2)）</span></th><td>20 MB</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="法律与支持">
+        <a href="./" aria-current="page">兼容性</a>
+        <a href="../../terms.html">服务条款</a>
+        <a href="../../privacy.html">隐私政策</a>
+        <a href="../../refunds.html">退款政策</a>
+        <a href="mailto:support@damao.io">support@damao.io</a>
+      </nav>
+      <nav class="langs" aria-label="语言">
+        <a href="../../compatibility/" hreflang="en" lang="en" data-lang="en">English</a>
+        <a href="../../zh-hans/compatibility/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans" aria-current="page">简体中文</a>
+        <a href="../../zh-hant/compatibility/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a>
+        <a href="../../ja/compatibility/" hreflang="ja" lang="ja" data-lang="ja">日本語</a>
+        <a href="../../ko/compatibility/" hreflang="ko" lang="ko" data-lang="ko">한국어</a>
+        <a href="../../fr/compatibility/" hreflang="fr" lang="fr" data-lang="fr">Français</a>
+        <a href="../../es/compatibility/" hreflang="es" lang="es" data-lang="es">Español</a>
+        <a href="../../pt-br/compatibility/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a>
+        <a href="../../de/compatibility/" hreflang="de" lang="de" data-lang="de">Deutsch</a>
+      </nav>
+      <p>© 2026 Xiaoyu Guan</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll("[data-lang]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        try { localStorage.setItem("lang", link.dataset.lang); } catch (e) {}
+      });
+    });
+  </script>
+</body>
+</html>

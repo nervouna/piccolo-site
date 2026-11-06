@@ -1,0 +1,161 @@
+<!doctype html>
+<!-- Generated from src/ by scripts/build.py. Edit those, not this file. -->
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Piccolo: Kompatibilitätsbericht</title>
+  <meta name="description" content="Für jede macOS-Version: was jede Aktion von Piccolo mit Fenstern im Vollbildmodus und Fenstern fester Größe macht, wie lange ein Tastaturkurzbefehl dauert und wie viel Speicher Piccolo belegt.">
+  <link rel="alternate" hreflang="en" href="https://piccolo.damao.io/compatibility/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://piccolo.damao.io/zh-hans/compatibility/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://piccolo.damao.io/zh-hant/compatibility/">
+  <link rel="alternate" hreflang="ja" href="https://piccolo.damao.io/ja/compatibility/">
+  <link rel="alternate" hreflang="ko" href="https://piccolo.damao.io/ko/compatibility/">
+  <link rel="alternate" hreflang="fr" href="https://piccolo.damao.io/fr/compatibility/">
+  <link rel="alternate" hreflang="es" href="https://piccolo.damao.io/es/compatibility/">
+  <link rel="alternate" hreflang="pt-BR" href="https://piccolo.damao.io/pt-br/compatibility/">
+  <link rel="alternate" hreflang="de" href="https://piccolo.damao.io/de/compatibility/">
+  <link rel="alternate" hreflang="x-default" href="https://piccolo.damao.io/compatibility/">
+  <link rel="icon" type="image/png" href="../../images/icon.png">
+  <link rel="apple-touch-icon" href="../../images/icon.png">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../"><img src="../../images/icon.png" alt="" width="32" height="32"><span>Piccolo</span></a>
+      <nav aria-label="Hauptnavigation">
+        <a href="../#features">Funktionen</a>
+        <a href="../#pricing">Preis</a>
+        <a href="../#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="record">
+    <div class="wrap">
+      <h1>Kompatibilitätsbericht</h1>
+      <p class="intro">Was jede Aktion macht, wenn das aktive Fenster im Vollbildmodus ist oder seine Größe nicht ändern lässt, wie lange es vom Tastendruck dauert, bis das Fenster zur Ruhe kommt, und wie viel Speicher Piccolo belegt. Ein Abschnitt je macOS-Version, die neueste zuerst.</p>
+
+      <section id="macos-27-0-1">
+        <h2>macOS 27.0.1 (26A434)</h2>
+        <p>Zwei Displays, das Hauptdisplay mit 2560 × 1440 und ganz für Fenster verfügbar; Stage Manager aus und „Monitore verwenden verschiedene Spaces“ an. Piccolo war ein Debug-Build der Entwicklungsversion nach 1.0.0, mit einem Fensterabstand von 0 und der Fensteranimation Schnell, sofern eine Tabelle nichts anderes angibt.</p>
+        <p>Positionen sind als (x, y) Breite×Höhe in Punkten angegeben. Linke Hälfte auf dem Hauptdisplay ergibt <code>(0, 0) 1280×1440</code>.</p>
+
+        <h3>Fenster im Vollbildmodus</h3>
+        <p>Ein Fenster im Vollbildmodus und aktiv. Ein zweites Fenster, nicht im Vollbildmodus, war davor aktiv; es bleibt im Space des Schreibtischs, außerhalb des Bildschirms. Jede Aktion zeigte den Hinweis „Fenster im Vollbildmodus lassen sich nicht bewegen“ und ließ das Fenster im Vollbildmodus bei <code>(0, 0) 2560×1440</code>.</p>
+        <table class="results">
+          <thead><tr><th scope="col">Aktion</th><th scope="col">Hinweis</th><th scope="col">Ergebnis</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Linke Hälfte</span></th><td data-label="Hinweis">„Fenster im Vollbildmodus lassen sich nicht bewegen“</td><td data-label="Ergebnis">Nichts hat sich bewegt.</td></tr>
+            <tr><th scope="row"><span>Maximieren</span></th><td data-label="Hinweis">„Fenster im Vollbildmodus lassen sich nicht bewegen“</td><td data-label="Ergebnis">Nichts hat sich bewegt.</td></tr>
+            <tr><th scope="row"><span>Zentriert</span></th><td data-label="Hinweis">„Fenster im Vollbildmodus lassen sich nicht bewegen“</td><td data-label="Ergebnis">Nichts hat sich bewegt.</td></tr>
+            <tr><th scope="row"><span>Fenster wiederherstellen</span></th><td data-label="Hinweis">„Fenster im Vollbildmodus lassen sich nicht bewegen“</td><td data-label="Ergebnis">Nichts hat sich bewegt: Piccolo weist das Fenster ab, bevor es nachsieht, wo es vorher war.</td></tr>
+            <tr><th scope="row"><span>Nächstes Display</span></th><td data-label="Hinweis">„Fenster im Vollbildmodus lassen sich nicht bewegen“</td><td data-label="Ergebnis">Nichts hat sich bewegt: Das Fenster blieb auf seinem Display.</td></tr>
+            <tr><th scope="row"><span>2 Fenster in 1 × 2 anordnen</span></th><td data-label="Hinweis">„Fenster im Vollbildmodus lassen sich nicht bewegen“</td><td data-label="Ergebnis">Nichts hat sich bewegt: Das andere Fenster ist in einem anderen Space und wurde nicht berücksichtigt.</td></tr>
+            <tr><th scope="row"><span>Trennlinie nach rechts verschieben</span></th><td data-label="Hinweis">„Fenster im Vollbildmodus lassen sich nicht bewegen“</td><td data-label="Ergebnis">Nichts hat sich bewegt.</td></tr>
+            <tr><th scope="row"><span>Mit Fenster rechts tauschen</span></th><td data-label="Hinweis">„Fenster im Vollbildmodus lassen sich nicht bewegen“</td><td data-label="Ergebnis">Nichts hat sich bewegt.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Fenster fester Größe</h3>
+        <p>Ein Fenster von 640 × 420, dessen Größe sich nicht ändern lässt, bei <code>(120, 80)</code>. Piccolo bewegt es, kann seine Größe aber nicht ändern, und zeigt keinen Hinweis.</p>
+        <table class="results">
+          <thead><tr><th scope="col">Aktion</th><th scope="col">Hinweis</th><th scope="col">Ergebnis</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Linke Hälfte</span></th><td data-label="Hinweis">Keiner</td><td data-label="Ergebnis">Nach <code>(0, 0)</code> bewegt, weiterhin 640×420 (das Ziel ist 1280×1440).</td></tr>
+            <tr><th scope="row"><span>Maximieren</span></th><td data-label="Hinweis">Keiner</td><td data-label="Ergebnis">Nach <code>(0, 0)</code> bewegt, weiterhin 640×420.</td></tr>
+            <tr><th scope="row"><span>2 Fenster in 1 × 2 anordnen</span><small>zweites Fenster in der Größe änderbar</small></th><td data-label="Hinweis">Keiner</td><td data-label="Ergebnis">Das feste Fenster bei <code>(0, 0) 640×420</code>, das andere bei <code>(640, 0) 1920×1440</code>: Die Trennlinie folgt dem rechten Rand des festen Fensters, und das andere Fenster füllt die übrige Breite. Der Platz unter dem festen Fenster bleibt leer.</td></tr>
+            <tr><th scope="row"><span>Trennlinie nach rechts verschieben</span><small>nach dem Anordnen</small></th><td data-label="Hinweis">„Die Trennlinie kann nicht weiter bewegt werden“</td><td data-label="Ergebnis">Nichts hat sich geändert: Das feste Fenster kann nicht wachsen, also bleibt die Trennlinie, wo sie ist.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Eine Mindestbreite über der halben Displaybreite</h3>
+        <p>Ein Fenster mit einer Mindestbreite von 1536 pt (0,6 × die nutzbare Breite), geöffnet mit 1792 × 420.</p>
+        <table class="results">
+          <thead><tr><th scope="col">Aktion</th><th scope="col">Hinweis</th><th scope="col">Ergebnis</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Linke Hälfte</span></th><td data-label="Hinweis">Keiner</td><td data-label="Ergebnis"><code>(0, 0) 1536×1440</code>: 256 pt breiter als die Hälfte.</td></tr>
+            <tr><th scope="row"><span>Rechte Hälfte</span></th><td data-label="Hinweis">Keiner</td><td data-label="Ergebnis"><code>(1024, 0) 1536×1440</code>: breiter als die Hälfte, nach links verschoben, damit es auf dem Display bleibt.</td></tr>
+            <tr><th scope="row"><span>2 Fenster in 1 × 2 anordnen</span><small>zweites Fenster in der Größe änderbar</small></th><td data-label="Hinweis">Keiner</td><td data-label="Ergebnis">Das Fenster bei <code>(0, 0) 1536×1440</code>, das andere bei <code>(1536, 0) 1024×1440</code>: Das andere Fenster füllt, was übrig bleibt.</td></tr>
+            <tr><th scope="row"><span>Trennlinie nach links verschieben</span><small>nach dem Anordnen</small></th><td data-label="Hinweis">„Die Trennlinie kann nicht weiter bewegt werden“</td><td data-label="Ergebnis">Nichts hat sich geändert: Das breite Fenster lässt sich nicht schmaler machen, also bleibt die Trennlinie, wo sie ist.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Größenänderung in Schritten von 7 × 15</h3>
+        <p>Ein Fenster von 637 × 420, dessen Größe sich in Schritten von 7 × 15 ändert, wie bei einem Terminal.</p>
+        <table class="results">
+          <thead><tr><th scope="col">Aktion</th><th scope="col">Hinweis</th><th scope="col">Ergebnis</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Linke Hälfte</span></th><td data-label="Hinweis">Keiner</td><td data-label="Ergebnis"><code>(0, 0) 1281×1440</code>: Die Breite rastet auf ein Vielfaches von 7 ein, 1 pt mehr als die Hälfte.</td></tr>
+            <tr><th scope="row"><span>2 Fenster in 1 × 2 anordnen</span><small>zweites Fenster in der Größe änderbar</small></th><td data-label="Hinweis">Keiner</td><td data-label="Ergebnis">Das Fenster bei <code>(0, 0) 1281×1440</code>, das andere bei <code>(1280, 0) 1280×1440</code>: Sie überlappen sich um 1 pt.</td></tr>
+          </tbody>
+        </table>
+
+        <p>In keinem dieser Fälle ließ eine Aktion ein Fenster außerhalb eines Displays, und keine Aktion blieb ohne Wirkung, ohne einen Hinweis zu zeigen.</p>
+
+        <h3>Latenz</h3>
+        <p>Von kurz vor dem Senden des Tastaturkurzbefehls, bis die Position des Fensters, aus dem Window Server gelesen, in zwei Lesungen hintereinander im Abstand von etwa 1 ms höchstens 1 pt von ihrem Ziel abweicht. 20 Tastendrücke abwechselnd Linke Hälfte und Rechte Hälfte auf einem Fenster, Debug-Build.</p>
+        <table class="figures stack">
+          <thead><tr><th scope="col">Fensteranimation</th><th scope="col">Median</th><th scope="col">90. Perzentil</th><th scope="col">Maximum</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Aus</span></th><td data-label="Median">25 ms</td><td data-label="90. Perzentil">32 ms</td><td data-label="Maximum">33 ms</td></tr>
+            <tr><th scope="row"><span>Mittel</span><small>die Standardeinstellung einer neuen Installation</small></th><td data-label="Median">255 ms</td><td data-label="90. Perzentil">273 ms</td><td data-label="Maximum">279 ms</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Speicher</h3>
+        <p>Der Speicherbedarf, den macOS für Piccolo meldet (die Zeile Footprint von <code>footprint</code>), in ganzen Megabyte.</p>
+        <p>Debug-Build, Fensteranimation aus. Im Leerlauf: ein frisch gestartetes Piccolo mit den Einstellungen einer neuen Installation, gelesen, bis zwei Messungen übereinstimmen; die zweite Messung folgt auf 200 Aktionen, abwechselnd Linke Hälfte und Rechte Hälfte auf einem Fenster.</p>
+        <table class="figures">
+          <thead><tr><th scope="col">Piccolo (Debug)</th><th scope="col">Speicherbedarf</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Im Leerlauf nach dem Start</span></th><td>20 MB</td></tr>
+            <tr><th scope="row"><span>Nach 200 Aktionen</span></th><td>20 MB</td></tr>
+          </tbody>
+        </table>
+        <p>Der Release-Build, installiert in /Applications und täglich in Gebrauch, von Hand gemessen.</p>
+        <table class="figures">
+          <thead><tr><th scope="col">Piccolo (Release)</th><th scope="col">Speicherbedarf</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Im Leerlauf, 9 Minuten nach dem Start</span></th><td>19 MB</td></tr>
+            <tr><th scope="row"><span>Nach 21 Stunden 48 Minuten täglicher Nutzung (Version 1.0.0 (2))</span></th><td>20 MB</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Rechtliches und Support">
+        <a href="./" aria-current="page">Kompatibilität</a>
+        <a href="../../terms.html">Nutzungsbedingungen</a>
+        <a href="../../privacy.html">Datenschutzerklärung</a>
+        <a href="../../refunds.html">Erstattungsrichtlinie</a>
+        <a href="mailto:support@damao.io">support@damao.io</a>
+      </nav>
+      <nav class="langs" aria-label="Sprache">
+        <a href="../../compatibility/" hreflang="en" lang="en" data-lang="en">English</a>
+        <a href="../../zh-hans/compatibility/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a>
+        <a href="../../zh-hant/compatibility/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a>
+        <a href="../../ja/compatibility/" hreflang="ja" lang="ja" data-lang="ja">日本語</a>
+        <a href="../../ko/compatibility/" hreflang="ko" lang="ko" data-lang="ko">한국어</a>
+        <a href="../../fr/compatibility/" hreflang="fr" lang="fr" data-lang="fr">Français</a>
+        <a href="../../es/compatibility/" hreflang="es" lang="es" data-lang="es">Español</a>
+        <a href="../../pt-br/compatibility/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a>
+        <a href="../../de/compatibility/" hreflang="de" lang="de" data-lang="de" aria-current="page">Deutsch</a>
+      </nav>
+      <p>© 2026 Xiaoyu Guan</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll("[data-lang]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        try { localStorage.setItem("lang", link.dataset.lang); } catch (e) {}
+      });
+    });
+  </script>
+</body>
+</html>
