@@ -1,0 +1,161 @@
+<!doctype html>
+<!-- Generated from src/ by scripts/build.py. Edit those, not this file. -->
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Piccolo: registro de compatibilidade</title>
+  <meta name="description" content="Para cada versão do macOS, o que cada ação do Piccolo faz com janelas em tela cheia e janelas que não podem ser redimensionadas, quanto tempo um atalho leva e quanta memória o Piccolo usa.">
+  <link rel="alternate" hreflang="en" href="https://piccolo.damao.io/compatibility/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://piccolo.damao.io/zh-hans/compatibility/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://piccolo.damao.io/zh-hant/compatibility/">
+  <link rel="alternate" hreflang="ja" href="https://piccolo.damao.io/ja/compatibility/">
+  <link rel="alternate" hreflang="ko" href="https://piccolo.damao.io/ko/compatibility/">
+  <link rel="alternate" hreflang="fr" href="https://piccolo.damao.io/fr/compatibility/">
+  <link rel="alternate" hreflang="es" href="https://piccolo.damao.io/es/compatibility/">
+  <link rel="alternate" hreflang="pt-BR" href="https://piccolo.damao.io/pt-br/compatibility/">
+  <link rel="alternate" hreflang="de" href="https://piccolo.damao.io/de/compatibility/">
+  <link rel="alternate" hreflang="x-default" href="https://piccolo.damao.io/compatibility/">
+  <link rel="icon" type="image/png" href="../../images/icon.png">
+  <link rel="apple-touch-icon" href="../../images/icon.png">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../"><img src="../../images/icon.png" alt="" width="32" height="32"><span>Piccolo</span></a>
+      <nav aria-label="Navegação principal">
+        <a href="../#features">Recursos</a>
+        <a href="../#pricing">Preço</a>
+        <a href="../#faq">Dúvidas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="record">
+    <div class="wrap">
+      <h1>Registro de compatibilidade</h1>
+      <p class="intro">O que cada ação faz quando a janela em foco está em tela cheia ou recusa ser redimensionada, quanto tempo passa entre pressionar o atalho e a janela parar, e quanta memória o Piccolo usa. Uma seção por versão do macOS, a mais recente primeiro.</p>
+
+      <section id="macos-27-0-1">
+        <h2>macOS 27.0.1 (26A434)</h2>
+        <p>Duas telas, a principal com 2560 × 1440 e toda disponível para janelas; Organizador Visual desativado e “As telas têm Spaces separados” ativado. O Piccolo era uma compilação Debug da versão em desenvolvimento posterior à 1.0.0, com margem entre janelas 0 e a animação de janelas Rápida, salvo indicação diferente numa tabela.</p>
+        <p>As posições são escritas (x, y) largura×altura, em pontos. Metade esquerda na tela principal é <code>(0, 0) 1280×1440</code>.</p>
+
+        <h3>Janelas em tela cheia</h3>
+        <p>Uma janela em tela cheia e em foco. Outra janela, fora da tela cheia, estava em foco antes dela; ela fica no Space da mesa, fora da tela. Todas as ações mostraram o aviso “As janelas em tela cheia não podem ser movidas” e deixaram a janela em tela cheia em <code>(0, 0) 2560×1440</code>.</p>
+        <table class="results">
+          <thead><tr><th scope="col">Ação</th><th scope="col">Aviso</th><th scope="col">Resultado</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Metade esquerda</span></th><td data-label="Aviso">“As janelas em tela cheia não podem ser movidas”</td><td data-label="Resultado">Nada se moveu.</td></tr>
+            <tr><th scope="row"><span>Maximizar</span></th><td data-label="Aviso">“As janelas em tela cheia não podem ser movidas”</td><td data-label="Resultado">Nada se moveu.</td></tr>
+            <tr><th scope="row"><span>Centralizar</span></th><td data-label="Aviso">“As janelas em tela cheia não podem ser movidas”</td><td data-label="Resultado">Nada se moveu.</td></tr>
+            <tr><th scope="row"><span>Restaurar janela</span></th><td data-label="Aviso">“As janelas em tela cheia não podem ser movidas”</td><td data-label="Resultado">Nada se moveu: o Piccolo recusa a janela antes de procurar onde ela estava.</td></tr>
+            <tr><th scope="row"><span>Próxima tela</span></th><td data-label="Aviso">“As janelas em tela cheia não podem ser movidas”</td><td data-label="Resultado">Nada se moveu: a janela ficou na sua tela.</td></tr>
+            <tr><th scope="row"><span>Organizar 2 janelas em 1 × 2</span></th><td data-label="Aviso">“As janelas em tela cheia não podem ser movidas”</td><td data-label="Resultado">Nada se moveu: a outra janela está em outro Space e não foi considerada.</td></tr>
+            <tr><th scope="row"><span>Mover divisor para a direita</span></th><td data-label="Aviso">“As janelas em tela cheia não podem ser movidas”</td><td data-label="Resultado">Nada se moveu.</td></tr>
+            <tr><th scope="row"><span>Trocar com a janela à direita</span></th><td data-label="Aviso">“As janelas em tela cheia não podem ser movidas”</td><td data-label="Resultado">Nada se moveu.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Janelas que não podem ser redimensionadas</h3>
+        <p>Uma janela de 640 × 420 que recusa ser redimensionada, em <code>(120, 80)</code>. O Piccolo a move, mas não consegue redimensioná-la, e não mostra nenhum aviso.</p>
+        <table class="results">
+          <thead><tr><th scope="col">Ação</th><th scope="col">Aviso</th><th scope="col">Resultado</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Metade esquerda</span></th><td data-label="Aviso">Nenhum</td><td data-label="Resultado">Movida para <code>(0, 0)</code>, ainda com 640×420 (o alvo é 1280×1440).</td></tr>
+            <tr><th scope="row"><span>Maximizar</span></th><td data-label="Aviso">Nenhum</td><td data-label="Resultado">Movida para <code>(0, 0)</code>, ainda com 640×420.</td></tr>
+            <tr><th scope="row"><span>Organizar 2 janelas em 1 × 2</span><small>segunda janela redimensionável</small></th><td data-label="Aviso">Nenhum</td><td data-label="Resultado">A janela fixa em <code>(0, 0) 640×420</code>, a outra em <code>(640, 0) 1920×1440</code>: o divisor acompanha a borda direita da janela fixa e a outra janela ocupa o resto da largura. O espaço abaixo da janela fixa fica vazio.</td></tr>
+            <tr><th scope="row"><span>Mover divisor para a direita</span><small>depois da organização</small></th><td data-label="Aviso">“O divisor não pode ir mais longe”</td><td data-label="Resultado">Nada mudou: a janela fixa não pode crescer, então o divisor fica onde está.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Uma largura mínima maior que metade da tela</h3>
+        <p>Uma janela com largura mínima de 1536 pt (0,6 × a largura disponível), aberta com 1792 × 420.</p>
+        <table class="results">
+          <thead><tr><th scope="col">Ação</th><th scope="col">Aviso</th><th scope="col">Resultado</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Metade esquerda</span></th><td data-label="Aviso">Nenhum</td><td data-label="Resultado"><code>(0, 0) 1536×1440</code>: 256 pt mais larga que a metade.</td></tr>
+            <tr><th scope="row"><span>Metade direita</span></th><td data-label="Aviso">Nenhum</td><td data-label="Resultado"><code>(1024, 0) 1536×1440</code>: mais larga que a metade, deslocada para a esquerda para continuar na tela.</td></tr>
+            <tr><th scope="row"><span>Organizar 2 janelas em 1 × 2</span><small>segunda janela redimensionável</small></th><td data-label="Aviso">Nenhum</td><td data-label="Resultado">A janela em <code>(0, 0) 1536×1440</code>, a outra em <code>(1536, 0) 1024×1440</code>: a outra janela ocupa o que sobra.</td></tr>
+            <tr><th scope="row"><span>Mover divisor para a esquerda</span><small>depois da organização</small></th><td data-label="Aviso">“O divisor não pode ir mais longe”</td><td data-label="Resultado">Nada mudou: a janela larga recusa encolher, então o divisor fica onde está.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Tamanho em passos de 7 × 15</h3>
+        <p>Uma janela de 637 × 420 que muda de tamanho em passos de 7 × 15, como a de um terminal.</p>
+        <table class="results">
+          <thead><tr><th scope="col">Ação</th><th scope="col">Aviso</th><th scope="col">Resultado</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Metade esquerda</span></th><td data-label="Aviso">Nenhum</td><td data-label="Resultado"><code>(0, 0) 1281×1440</code>: a largura se ajustou a um múltiplo de 7, 1 pt além da metade.</td></tr>
+            <tr><th scope="row"><span>Organizar 2 janelas em 1 × 2</span><small>segunda janela redimensionável</small></th><td data-label="Aviso">Nenhum</td><td data-label="Resultado">A janela em <code>(0, 0) 1281×1440</code>, a outra em <code>(1280, 0) 1280×1440</code>: elas se sobrepõem em 1 pt.</td></tr>
+          </tbody>
+        </table>
+
+        <p>Em nenhum desses casos uma ação deixou uma janela fora de uma tela, e nenhuma ação ficou sem efeito sem mostrar um aviso.</p>
+
+        <h3>Latência</h3>
+        <p>Desde logo antes de o atalho ser enviado até a posição da janela, lida do servidor de janelas, ficar a até 1 pt do alvo em duas leituras seguidas, com cerca de 1 ms de intervalo. 20 toques alternando Metade esquerda e Metade direita em uma janela, compilação Debug.</p>
+        <table class="figures stack">
+          <thead><tr><th scope="col">Animação de janelas</th><th scope="col">Mediana</th><th scope="col">Percentil 90</th><th scope="col">Máximo</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Desativada</span></th><td data-label="Mediana">25 ms</td><td data-label="Percentil 90">32 ms</td><td data-label="Máximo">33 ms</td></tr>
+            <tr><th scope="row"><span>Média</span><small>o padrão de uma nova instalação</small></th><td data-label="Mediana">255 ms</td><td data-label="Percentil 90">273 ms</td><td data-label="Máximo">279 ms</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Memória</h3>
+        <p>A memória que o macOS informa para o Piccolo (a linha Footprint de <code>footprint</code>), em megabytes inteiros.</p>
+        <p>Compilação Debug, animação de janelas desativada. Em repouso: um Piccolo recém-aberto com os ajustes de uma nova instalação, lido até duas leituras coincidirem; a segunda leitura vem depois de 200 ações alternando Metade esquerda e Metade direita em uma janela.</p>
+        <table class="figures">
+          <thead><tr><th scope="col">Piccolo (Debug)</th><th scope="col">Memória</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Em repouso após abrir</span></th><td>20 MB</td></tr>
+            <tr><th scope="row"><span>Depois de 200 ações</span></th><td>20 MB</td></tr>
+          </tbody>
+        </table>
+        <p>A compilação Release, instalada em /Applications e em uso diário, medida à mão.</p>
+        <table class="figures">
+          <thead><tr><th scope="col">Piccolo (Release)</th><th scope="col">Memória</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Em repouso, 9 minutos após abrir</span></th><td>19 MB</td></tr>
+            <tr><th scope="row"><span>Depois de 21 horas e 48 minutos de uso diário (versão 1.0.0 (2))</span></th><td>20 MB</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Informações legais e suporte">
+        <a href="./" aria-current="page">Compatibilidade</a>
+        <a href="../../terms.html">Termos de Serviço</a>
+        <a href="../../privacy.html">Política de Privacidade</a>
+        <a href="../../refunds.html">Política de Reembolso</a>
+        <a href="mailto:support@damao.io">support@damao.io</a>
+      </nav>
+      <nav class="langs" aria-label="Idioma">
+        <a href="../../compatibility/" hreflang="en" lang="en" data-lang="en">English</a>
+        <a href="../../zh-hans/compatibility/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a>
+        <a href="../../zh-hant/compatibility/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a>
+        <a href="../../ja/compatibility/" hreflang="ja" lang="ja" data-lang="ja">日本語</a>
+        <a href="../../ko/compatibility/" hreflang="ko" lang="ko" data-lang="ko">한국어</a>
+        <a href="../../fr/compatibility/" hreflang="fr" lang="fr" data-lang="fr">Français</a>
+        <a href="../../es/compatibility/" hreflang="es" lang="es" data-lang="es">Español</a>
+        <a href="../../pt-br/compatibility/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR" aria-current="page">Português (Brasil)</a>
+        <a href="../../de/compatibility/" hreflang="de" lang="de" data-lang="de">Deutsch</a>
+      </nav>
+      <p>© 2026 Xiaoyu Guan</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll("[data-lang]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        try { localStorage.setItem("lang", link.dataset.lang); } catch (e) {}
+      });
+    });
+  </script>
+</body>
+</html>

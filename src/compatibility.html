@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="{{html_lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+{{redirect}}  <title>{{cx_title}}</title>
+  <meta name="description" content="{{cx_description}}">
+{{alternates}}  <link rel="icon" type="image/png" href="{{root}}images/icon.png">
+  <link rel="apple-touch-icon" href="{{root}}images/icon.png">
+  <link rel="stylesheet" href="{{root}}styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="{{home}}"><img src="{{root}}images/icon.png" alt="" width="32" height="32"><span>Piccolo</span></a>
+      <nav aria-label="{{nav_label}}">
+        <a href="{{home}}#features">{{nav_features}}</a>
+        <a href="{{home}}#pricing">{{nav_pricing}}</a>
+        <a href="{{home}}#faq">{{nav_faq}}</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="record">
+    <div class="wrap">
+      <h1>{{cx_h1}}</h1>
+      <p class="intro">{{cx_lead}}</p>
+
+      <section id="macos-27-0-1">
+        <h2>macOS 27.0.1 (26A434)</h2>
+        <p>{{cx_setup}}</p>
+        <p>{{cx_frames}}</p>
+
+        <h3>{{cx_fs_title}}</h3>
+        <p>{{cx_fs_text}}</p>
+        <table class="results">
+          <thead><tr><th scope="col">{{cx_col_action}}</th><th scope="col">{{cx_col_notice}}</th><th scope="col">{{cx_col_result}}</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>{{act_left_half}}</span></th><td data-label="{{cx_col_notice}}">{{cx_notice_fullscreen}}</td><td data-label="{{cx_col_result}}">{{cx_nothing}}</td></tr>
+            <tr><th scope="row"><span>{{act_maximize}}</span></th><td data-label="{{cx_col_notice}}">{{cx_notice_fullscreen}}</td><td data-label="{{cx_col_result}}">{{cx_nothing}}</td></tr>
+            <tr><th scope="row"><span>{{act_center}}</span></th><td data-label="{{cx_col_notice}}">{{cx_notice_fullscreen}}</td><td data-label="{{cx_col_result}}">{{cx_nothing}}</td></tr>
+            <tr><th scope="row"><span>{{act_restore_window}}</span></th><td data-label="{{cx_col_notice}}">{{cx_notice_fullscreen}}</td><td data-label="{{cx_col_result}}">{{cx_fs_restore}}</td></tr>
+            <tr><th scope="row"><span>{{act_next_display}}</span></th><td data-label="{{cx_col_notice}}">{{cx_notice_fullscreen}}</td><td data-label="{{cx_col_result}}">{{cx_fs_display}}</td></tr>
+            <tr><th scope="row"><span>{{act_arrange_2_1x2}}</span></th><td data-label="{{cx_col_notice}}">{{cx_notice_fullscreen}}</td><td data-label="{{cx_col_result}}">{{cx_fs_arrange}}</td></tr>
+            <tr><th scope="row"><span>{{act_divider_right}}</span></th><td data-label="{{cx_col_notice}}">{{cx_notice_fullscreen}}</td><td data-label="{{cx_col_result}}">{{cx_nothing}}</td></tr>
+            <tr><th scope="row"><span>{{act_swap_right}}</span></th><td data-label="{{cx_col_notice}}">{{cx_notice_fullscreen}}</td><td data-label="{{cx_col_result}}">{{cx_nothing}}</td></tr>
+          </tbody>
+        </table>
+
+        <h3>{{cx_fixed_title}}</h3>
+        <p>{{cx_fixed_text}}</p>
+        <table class="results">
+          <thead><tr><th scope="col">{{cx_col_action}}</th><th scope="col">{{cx_col_notice}}</th><th scope="col">{{cx_col_result}}</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>{{act_left_half}}</span></th><td data-label="{{cx_col_notice}}">{{cx_none}}</td><td data-label="{{cx_col_result}}">{{cx_fixed_half}}</td></tr>
+            <tr><th scope="row"><span>{{act_maximize}}</span></th><td data-label="{{cx_col_notice}}">{{cx_none}}</td><td data-label="{{cx_col_result}}">{{cx_fixed_max}}</td></tr>
+            <tr><th scope="row"><span>{{act_arrange_2_1x2}}</span><small>{{cx_q_second}}</small></th><td data-label="{{cx_col_notice}}">{{cx_none}}</td><td data-label="{{cx_col_result}}">{{cx_fixed_arrange}}</td></tr>
+            <tr><th scope="row"><span>{{act_divider_right}}</span><small>{{cx_q_after}}</small></th><td data-label="{{cx_col_notice}}">{{cx_notice_divider}}</td><td data-label="{{cx_col_result}}">{{cx_fixed_divider}}</td></tr>
+          </tbody>
+        </table>
+
+        <h3>{{cx_minw_title}}</h3>
+        <p>{{cx_minw_text}}</p>
+        <table class="results">
+          <thead><tr><th scope="col">{{cx_col_action}}</th><th scope="col">{{cx_col_notice}}</th><th scope="col">{{cx_col_result}}</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>{{act_left_half}}</span></th><td data-label="{{cx_col_notice}}">{{cx_none}}</td><td data-label="{{cx_col_result}}">{{cx_minw_left}}</td></tr>
+            <tr><th scope="row"><span>{{act_right_half}}</span></th><td data-label="{{cx_col_notice}}">{{cx_none}}</td><td data-label="{{cx_col_result}}">{{cx_minw_right}}</td></tr>
+            <tr><th scope="row"><span>{{act_arrange_2_1x2}}</span><small>{{cx_q_second}}</small></th><td data-label="{{cx_col_notice}}">{{cx_none}}</td><td data-label="{{cx_col_result}}">{{cx_minw_arrange}}</td></tr>
+            <tr><th scope="row"><span>{{act_divider_left}}</span><small>{{cx_q_after}}</small></th><td data-label="{{cx_col_notice}}">{{cx_notice_divider}}</td><td data-label="{{cx_col_result}}">{{cx_minw_divider}}</td></tr>
+          </tbody>
+        </table>
+
+        <h3>{{cx_inc_title}}</h3>
+        <p>{{cx_inc_text}}</p>
+        <table class="results">
+          <thead><tr><th scope="col">{{cx_col_action}}</th><th scope="col">{{cx_col_notice}}</th><th scope="col">{{cx_col_result}}</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>{{act_left_half}}</span></th><td data-label="{{cx_col_notice}}">{{cx_none}}</td><td data-label="{{cx_col_result}}">{{cx_inc_left}}</td></tr>
+            <tr><th scope="row"><span>{{act_arrange_2_1x2}}</span><small>{{cx_q_second}}</small></th><td data-label="{{cx_col_notice}}">{{cx_none}}</td><td data-label="{{cx_col_result}}">{{cx_inc_arrange}}</td></tr>
+          </tbody>
+        </table>
+
+        <p>{{cx_summary}}</p>
+
+        <h3>{{cx_lat_title}}</h3>
+        <p>{{cx_lat_text}}</p>
+        <table class="figures stack">
+          <thead><tr><th scope="col">{{cx_col_animation}}</th><th scope="col">{{cx_col_median}}</th><th scope="col">{{cx_col_p90}}</th><th scope="col">{{cx_col_max}}</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>{{cx_anim_off}}</span></th><td data-label="{{cx_col_median}}">25 ms</td><td data-label="{{cx_col_p90}}">32 ms</td><td data-label="{{cx_col_max}}">33 ms</td></tr>
+            <tr><th scope="row"><span>{{cx_anim_medium}}</span><small>{{cx_q_default}}</small></th><td data-label="{{cx_col_median}}">255 ms</td><td data-label="{{cx_col_p90}}">273 ms</td><td data-label="{{cx_col_max}}">279 ms</td></tr>
+          </tbody>
+        </table>
+
+        <h3>{{cx_mem_title}}</h3>
+        <p>{{cx_mem_text}}</p>
+        <p>{{cx_mem_debug_text}}</p>
+        <table class="figures">
+          <thead><tr><th scope="col">{{cx_col_debug}}</th><th scope="col">{{cx_col_footprint}}</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>{{cx_mem_idle}}</span></th><td>20 {{cx_mb}}</td></tr>
+            <tr><th scope="row"><span>{{cx_mem_200}}</span></th><td>20 {{cx_mb}}</td></tr>
+          </tbody>
+        </table>
+        <p>{{cx_mem_release_text}}</p>
+        <table class="figures">
+          <thead><tr><th scope="col">{{cx_col_release}}</th><th scope="col">{{cx_col_footprint}}</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>{{cx_mem_rel_idle}}</span></th><td>19 {{cx_mb}}</td></tr>
+            <tr><th scope="row"><span>{{cx_mem_rel_day}}</span></th><td>20 {{cx_mb}}</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="{{footer_label}}">
+        <a href="{{compat_url}}" aria-current="page">{{nav_compat}}</a>
+        <a href="{{root}}terms.html">{{terms}}</a>
+        <a href="{{root}}privacy.html">{{privacy}}</a>
+        <a href="{{root}}refunds.html">{{refunds}}</a>
+        <a href="mailto:support@damao.io">support@damao.io</a>
+      </nav>
+{{languages}}      <p>© 2026 Xiaoyu Guan</p>
+    </div>
+  </footer>
+{{remember}}</body>
+</html>

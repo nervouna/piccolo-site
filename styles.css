@@ -138,6 +138,12 @@ li {
   word-break: auto-phrase;
 }
 
+/* Korean breaks lines between words, as it is written, not between
+   syllables. */
+:lang(ko) {
+  word-break: keep-all;
+}
+
 .wrap {
   max-width: 960px;
   margin: 0 auto;
@@ -1494,6 +1500,162 @@ kbd {
 
 .faq ul {
   padding-left: 1.25rem;
+}
+
+/* Compatibility record */
+
+.record {
+  padding: 2.5rem 0 1rem;
+}
+
+.record h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.9rem, 6vw, 2.5rem);
+}
+
+.record .intro {
+  max-width: 44rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.record section {
+  padding: 0.5rem 0 0;
+}
+
+.record h2 {
+  margin: 1.5rem 0 0.75rem;
+  font-size: clamp(1.4rem, 4.5vw, 1.75rem);
+}
+
+.record h3 {
+  margin: 2.5rem 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.record section > p {
+  max-width: 44rem;
+}
+
+.record table {
+  width: 100%;
+  margin: 0.75rem 0 1.5rem;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.record th,
+.record td {
+  padding: 0.65rem 1rem 0.65rem 0;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.record th:last-child,
+.record td:last-child {
+  padding-right: 0;
+}
+
+.record thead th {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.record tbody th {
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.record th small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.record code {
+  white-space: nowrap;
+}
+
+@media (min-width: 801px) {
+  .results tbody th {
+    width: 28%;
+  }
+
+  .results td:nth-child(2) {
+    width: 26%;
+  }
+}
+
+.figures td {
+  white-space: nowrap;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.figures thead th {
+  white-space: nowrap;
+}
+
+.figures thead th:not(:first-child) {
+  text-align: right;
+}
+
+/* On a phone or a narrow tablet each row of a results table becomes a block: the action,
+   then the notice and what happened, each under its column's name. The
+   latency table does the same, with each figure beside its column's name. */
+@media (max-width: 800px) {
+  .results thead,
+  .stack thead {
+    display: none;
+  }
+
+  .results tr,
+  .stack tr {
+    display: block;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .results tr:first-child,
+  .stack tr:first-child {
+    border-top: 1px solid var(--line);
+  }
+
+  .results tbody th,
+  .results td,
+  .stack tbody th {
+    display: block;
+    padding: 0;
+    border: 0;
+  }
+
+  .results td::before {
+    content: attr(data-label);
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .stack td {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.25rem 0 0;
+    border: 0;
+  }
+
+  .stack td::before {
+    content: attr(data-label);
+    color: var(--muted);
+    white-space: normal;
+    text-align: left;
+  }
 }
 
 /* Legal pages */

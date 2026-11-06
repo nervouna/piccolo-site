@@ -1,0 +1,268 @@
+<!doctype html>
+<!-- Generated from src/ by scripts/build.py. Edit those, not this file. -->
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Piccolo: 키보드로 하는 macOS 윈도우 관리</title>
+  <meta name="description" content="Piccolo는 방금 사용한 윈도우를 키보드만으로 배치하고, 함께 크기를 조절하고, 서로 바꿉니다. 한 번 구입으로 US$4.99, 14일 무료 체험 제공.">
+  <link rel="alternate" hreflang="en" href="https://piccolo.damao.io/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://piccolo.damao.io/zh-hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://piccolo.damao.io/zh-hant/">
+  <link rel="alternate" hreflang="ja" href="https://piccolo.damao.io/ja/">
+  <link rel="alternate" hreflang="ko" href="https://piccolo.damao.io/ko/">
+  <link rel="alternate" hreflang="fr" href="https://piccolo.damao.io/fr/">
+  <link rel="alternate" hreflang="es" href="https://piccolo.damao.io/es/">
+  <link rel="alternate" hreflang="pt-BR" href="https://piccolo.damao.io/pt-br/">
+  <link rel="alternate" hreflang="de" href="https://piccolo.damao.io/de/">
+  <link rel="alternate" hreflang="x-default" href="https://piccolo.damao.io/">
+  <link rel="icon" type="image/png" href="../images/icon.png">
+  <link rel="apple-touch-icon" href="../images/icon.png">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="../images/icon.png" alt="" width="32" height="32"><span>Piccolo</span></a>
+      <nav aria-label="주 메뉴">
+        <a href="#features">기능</a>
+        <a href="#pricing">가격</a>
+        <a href="#faq">자주 묻는 질문</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <h1><span>macOS에 기본으로</span> <span>들어 있어야 할 윈도우 관리</span></h1>
+        <p class="lead"><span>Piccolo는 방금 사용한 윈도우를 배치하고</span> <span>키보드만으로 데스크탑을 깔끔하게 정리합니다.</span></p>
+        <div class="actions">
+          <a class="button primary" href="../downloads/Piccolo-1.0.0.zip">무료 체험판 다운로드</a>
+        </div>
+        <p class="hero-fine">14일 무료, 신용카드 필요 없음<br>
+          <a href="#pricing">US$4.99에 구입</a></p>
+        <figure class="demo" role="img" aria-label="윈도우 세 개가 겹쳐 있는 Mac 데스크탑. Control-Option-4를 누르고 있으면 윈도우가 갈 자리가 표시되고, 손을 떼면 2 × 2 격자로 배치됩니다. Control-Option-등호를 두 번 누르면 구분선이 오른쪽으로 이동하며 세 윈도우의 크기가 함께 바뀝니다. Control-Option-오른쪽 화살표를 누르면 포커스된 윈도우가 옆 윈도우와 자리를 바꿉니다.">
+          <div class="desk" aria-hidden="true">
+            <div class="menubar"></div>
+            <div class="win win-a"><div class="titlebar"></div><div class="body"></div></div>
+            <div class="win win-b"><div class="titlebar"></div><div class="body"></div></div>
+            <div class="win win-c"><div class="titlebar"></div><div class="body"></div></div>
+            <div class="ghost ghost-a"></div>
+            <div class="ghost ghost-b"></div>
+            <div class="ghost ghost-c"></div>
+          </div>
+          <div class="keys" aria-hidden="true">
+            <p class="step step-1"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>4</kbd><span>윈도우 3개를 2 × 2(으)로 정렬</span></p>
+            <p class="step step-2"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>=</kbd><span>구분선을 오른쪽으로 이동</span></p>
+            <p class="step step-3"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>→</kbd><span>오른쪽 윈도우와 바꾸기</span></p>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="wrap">
+        <article class="feature">
+          <div class="feature-text">
+            <h2>지금 쓰는 윈도우만 골라 배치</h2>
+            <p>Piccolo는 마지막으로 사용한 윈도우를 기억합니다. 단축키 하나로 가장 최근의 윈도우 2개, 3개 또는 6개를 현재 디스플레이에 나란히 또는 격자로 배치하므로, 하나씩 고를 필요가 없습니다.</p>
+          </div>
+          <figure class="mini-fig f1" role="img" aria-label="Control-Option-2는 가장 최근의 윈도우 2개를 나란히, Control-Option-3은 최근 윈도우 3개를 세 열로, Control-Option-6은 윈도우 6개를 2 × 3 격자로 배치합니다.">
+            <div class="mini" aria-hidden="true">
+              <div class="mw t1 focus f1-a"></div>
+              <div class="mw t2 f1-b"></div>
+              <div class="mw t3 f1-c"></div>
+              <div class="mw t4 f1-r f1-d"></div>
+              <div class="mw t5 f1-r f1-e"></div>
+              <div class="mw t6 f1-r f1-f"></div>
+            </div>
+            <div class="keys" aria-hidden="true">
+              <p class="step s1"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>2</kbd><span>윈도우 2개를 1 × 2(으)로 정렬</span></p>
+              <p class="step s2"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>3</kbd><span>윈도우 3개를 1 × 3(으)로 정렬</span></p>
+              <p class="step s3"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>6</kbd><span>윈도우 6개를 2 × 3(으)로 정렬</span></p>
+            </div>
+          </figure>
+        </article>
+
+        <article class="feature">
+          <div class="feature-text">
+            <h2>함께 크기 조절</h2>
+            <p>Piccolo가 윈도우를 배치한 뒤에는 단축키로 포커스된 윈도우 옆의 구분선을 옮기면 이웃한 윈도우가 따라 움직여, 틈도 겹침도 생기지 않습니다. 윈도우 바꾸기는 두 윈도우의 자리를 맞바꾸고 레이아웃은 그대로 둡니다.</p>
+          </div>
+          <figure class="mini-fig f2" role="img" aria-label="세 열로 배치된 윈도우. Control-Option-등호를 두 번 누르면 가운데 윈도우가 넓어지고 오른쪽 윈도우가 좁아지며, Control-Option-빼기를 두 번 누르면 왼쪽으로 넓어지고, Control-Option-오른쪽 화살표를 누르면 오른쪽 윈도우와 자리를 바꿉니다.">
+            <div class="mini" aria-hidden="true">
+              <div class="mw t1 f2-a"></div>
+              <div class="mw t2 focus f2-b"></div>
+              <div class="mw t3 f2-c"></div>
+            </div>
+            <div class="keys" aria-hidden="true">
+              <p class="step s1"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>=</kbd><span>구분선을 오른쪽으로 이동</span></p>
+              <p class="step s2"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>-</kbd><span>구분선을 왼쪽으로 이동</span></p>
+              <p class="step s3"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>→</kbd><span>오른쪽 윈도우와 바꾸기</span></p>
+            </div>
+          </figure>
+        </article>
+
+        <article class="feature">
+          <div class="feature-text">
+            <h2>옮기기 전에 목적지 확인</h2>
+            <p>단축키를 누르고 있으면 목적지가 강조 표시됩니다. 손을 떼면 윈도우가 그곳으로 이동하고, Esc를 누르면 아무것도 바뀌지 않습니다.</p>
+          </div>
+          <figure class="mini-fig f3" role="img" aria-label="Control-Option-H를 누르고 있으면 왼쪽 절반이 강조 표시되고, Esc를 누르면 취소되어 윈도우가 그대로 있습니다. Control-Option-L을 누르고 있으면 오른쪽 절반이 강조 표시되고, 손을 떼면 윈도우가 그곳으로 이동합니다.">
+            <div class="mini" aria-hidden="true">
+              <div class="mw t1 focus f3-w"></div>
+              <div class="ghost f3-gl"></div>
+              <div class="ghost f3-gr"></div>
+            </div>
+            <div class="keys" aria-hidden="true">
+              <p class="step s1"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>H</kbd><span>왼쪽 절반</span></p>
+              <p class="step s2"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>H</kbd><kbd>esc</kbd><span>취소됨</span></p>
+              <p class="step s3"><kbd>⌃</kbd><kbd>⌥</kbd><kbd>L</kbd><span>오른쪽 절반</span></p>
+            </div>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <section id="layouts">
+      <div class="wrap">
+        <h2>필요한 레이아웃은 모두</h2>
+        <ul class="layouts">
+          <li><div class="screen" aria-hidden="true"><i class="area cycle"></i></div><h3>절반</h3><p>다시 누르면 2/3, 한 번 더 누르면 1/3</p><p class="combo">⌃⌥H&ensp;⌃⌥L</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:0;--y:0;--w:50;--h:50"></i><i class="area faint" style="--x:50;--y:0;--w:50;--h:50"></i><i class="area faint" style="--x:0;--y:50;--w:50;--h:50"></i><i class="area faint" style="--x:50;--y:50;--w:50;--h:50"></i></div><h3>사분면</h3><p>모서리마다 키 하나씩</p><p class="combo">⌃⌥U&ensp;⌃⌥I&ensp;⌃⌥J&ensp;⌃⌥K</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area faint" style="--x:0;--y:0;--w:33.33;--h:100"></i><i class="area" style="--x:33.33;--y:0;--w:33.33;--h:100"></i><i class="area faint" style="--x:66.67;--y:0;--w:33.33;--h:100"></i></div><h3>3분의 1</h3><p>와이드 화면을 세 열로</p><p class="combo">⌃⌥A&ensp;⌃⌥S&ensp;⌃⌥D</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:0;--y:0;--w:66.67;--h:100"></i><i class="area faint" style="--x:66.67;--y:0;--w:33.33;--h:100"></i></div><h3>3분의 2</h3><p>메인 윈도우를 넓게</p><p class="combo">⌃⌥Q&ensp;⌃⌥E</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:0;--y:0;--w:100;--h:100"></i></div><h3>최대화</h3><p>화면 전체를 채움</p><p class="combo">⌃⌥R</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area" style="--x:22;--y:15;--w:56;--h:70"></i></div><h3>중앙 정렬</h3><p>크기는 그대로, 한가운데로</p><p class="combo">⌃⌥C</p></li>
+          <li><div class="screen dual" aria-hidden="true"><i class="area faint dashed" style="--x:8;--y:20;--w:34;--h:60"></i><i class="area" style="--x:58;--y:20;--w:34;--h:60"></i></div><h3>다른 디스플레이로</h3><p>상대적인 크기와 위치는 그대로</p><p class="combo">⌃⌥[&ensp;⌃⌥]&ensp;⌃⌥⌘ + 화살표</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area dashed" style="--x:25;--y:10;--w:50;--h:65"></i></div><h3>사용자 설정 영역</h3><p>화면 그림 위에 직접 그리기</p><p class="combo">⌃⌥W</p></li>
+          <li><div class="screen" aria-hidden="true"><i class="area faint dashed" style="--x:12;--y:12;--w:48;--h:60"></i><i class="area" style="--x:50;--y:0;--w:50;--h:100"></i></div><h3>윈도우 복원</h3><p>옮기기 전 자리로</p><p class="combo">⌃⌥⌫</p></li>
+          <li class="rebind">
+            <div class="recorder" aria-hidden="true">
+              <span class="rec-name">왼쪽 절반</span>
+              <span class="rec-button"><span class="rec-1">⌃⌥H</span><span class="rec-2">단축키 입력…</span><span class="rec-3">⌃⌘←</span></span>
+            </div>
+            <div>
+              <h3>모든 단축키를 원하는 대로</h3>
+              <p>설정에서 동작을 클릭하고 원하는 키를 누르기만 하면 됩니다. 격자와 사용자 설정 영역에도 각각 단축키를 지정할 수 있고, 고급 사용자는 구성 파일을 직접 편집할 수도 있습니다.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="craft">
+      <div class="wrap">
+        <h2>Mac 앱다운 완성도</h2>
+        <div class="craft">
+          <img src="../images/settings-shortcuts-ko.webp" width="1632" height="1966" loading="lazy" alt="설정 윈도우의 단축키 탭: 검색 필드 아래에 절반, 사분면, 3분의 1, 기타 그룹으로 동작이 나열되어 있고, 각 행에 위치를 보여 주는 작은 그림, 동작 이름, 단축키(예: 왼쪽 절반은 ⌃⌥H)가 표시되어 있습니다.">
+          <ul class="points">
+            <li><h3>검색할 수 있는 키맵</h3><p>모든 동작을 하나의 목록에. 행을 클릭하고 키를 누르면 바로 저장됩니다. 어떤 변경이든 ⌘Z로 실행 취소할 수 있습니다.</p></li>
+            <li><h3>자연스러운 움직임</h3><p>윈도우가 부드럽게 제자리를 찾아가고, 더 갈 곳이 없으면 살짝 튕깁니다. 속도를 고르거나 끌 수 있습니다.</p></li>
+            <li><h3>가로 화면에도, 세로 화면에도</h3><p>윈도우가 격자를 다 채우지 못할 때, 마지막 윈도우를 아래로 늘릴지 옆으로 늘릴지 고를 수 있습니다. 가로로 넓은 디스플레이에는 열 우선, 세로로 세운 디스플레이에는 행 우선.</p></li>
+            <li><h3>여유 있는 간격</h3><p>윈도우 사이와 화면 가장자리에 간격을 두어, 그림자가 겹쳐 어두운 줄이 생기지 않게 합니다.</p></li>
+            <li><h3>사용자의 언어로</h3><p>English, 简体中文, 繁體中文, 日本語, 한국어, Français, Español, Português, Deutsch.</p></li>
+            <li><h3>개인정보 보호</h3><p>계정도, 분석 도구도 없습니다. 인터넷에 연결하는 것은 사용권 확인과 업데이트 확인뿐입니다.</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="wrap">
+        <h2>가격</h2>
+        <div class="price-card">
+          <p class="eyebrow">출시 기념 가격</p>
+          <p class="price">US$4.99 <small>한 번 구입 · 출시 기간 후 US$9.99</small></p>
+          <ul>
+            <li>사용권 하나로 Mac 최대 3대</li>
+            <li>14일 무료 체험, 카드 필요 없음</li>
+            <li>1.x 업데이트 모두 무료</li>
+            <li>30일 이내 이유 불문 환불</li>
+          </ul>
+          <div class="price-actions">
+            <a id="buy" class="button primary" href="https://checkout.dodopayments.com/buy/pdt_0NrGPyMUoa4o9eIOWl0Jf?quantity=1&amp;redirect_url=https%3A%2F%2Fpiccolo.damao.io%2Fko%2Fthanks%2F">구입</a>
+            <a class="button" href="../downloads/Piccolo-1.0.0.zip">다운로드</a>
+          </div>
+          <p class="fine">주문은 공식 판매자인 <a href="https://dodopayments.com">Dodo Payments</a>가 처리하며, 결제와 세금, 청구서 발행을 맡습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <h2>자주 묻는 질문</h2>
+        <div class="faq">
+          <div>
+            <h3>무엇이 필요한가요?</h3>
+            <p>macOS 14 이상과 손쉬운 사용 권한이 필요합니다. Piccolo는 macOS 손쉬운 사용 API로 다른 앱의 윈도우를 이동하므로, 권한이 없으면 어떤 윈도우도 움직이지 않습니다.</p>
+          </div>
+          <div>
+            <h3>Piccolo에 손쉬운 사용 권한이 왜 필요한가요?</h3>
+            <p>Piccolo는 macOS 손쉬운 사용 API로 다른 앱의 윈도우를 이동하고 크기를 조절하며, 권한이 없으면 어떤 윈도우도 움직이지 않습니다. 이 권한은 윈도우의 위치와 크기를 읽고 바꾸는 데만 씁니다. 시스템 설정 &gt; 개인정보 보호 및 보안 &gt; 손쉬운 사용에서 허용할 수 있습니다.</p>
+          </div>
+          <div>
+            <h3>Piccolo는 전체 화면 윈도우와 크기를 조절할 수 없는 윈도우를 어떻게 처리하나요?</h3>
+            <p><a href="compatibility/">호환성 기록</a>에 측정한 macOS 릴리스마다 각 동작이 이런 윈도우에 무엇을 하는지, 단축키가 얼마나 걸리는지, Piccolo가 메모리를 얼마나 쓰는지 정리해 두었습니다.</p>
+          </div>
+          <div>
+            <h3>Mac 밖으로 나가는 데이터는 무엇인가요?</h3>
+            <ul>
+              <li>사용권을 활성화하면 사용권 키와 Mac의 모델 식별자(예: MacBookPro18,3)를 Dodo Payments로 보냅니다.</li>
+              <li>사용권 확인은 약 일주일에 한 번 키와 활성화 ID를 Dodo Payments로 보냅니다.</li>
+              <li>‘이 Mac에서 비활성화’는 키와 활성화 ID를 Dodo Payments로 보냅니다.</li>
+              <li>업데이트 확인은 하루에 한 번 이 웹사이트에서 appcast를 가져옵니다. Sparkle는 User-Agent에 앱 이름과 버전만 보내며, 시스템 프로필은 보내지 않습니다.</li>
+            </ul>
+            <p>그 밖의 데이터는 Mac 밖으로 나가지 않습니다. 분석 도구도, 충돌 보고도 없습니다. 윈도우, 단축키, 구성 파일은 모두 Mac에만 남습니다. 자세한 내용은 <a href="../privacy.html">개인정보 처리방침</a>(영어)을 참고하세요.</p>
+          </div>
+          <div>
+            <h3>Mac 몇 대에서 사용할 수 있나요?</h3>
+            <p>사용권 하나로 Mac 3대에서 사용할 수 있습니다.</p>
+          </div>
+          <div>
+            <h3>사용권을 다른 Mac으로 옮기려면 어떻게 하나요?</h3>
+            <p>사용권을 해제할 Mac에서 설정을 열고, 일반에서 ‘이 Mac에서 비활성화’를 선택하세요. 그런 다음 다른 Mac에서 사용권을 활성화하면 됩니다.</p>
+          </div>
+          <div>
+            <h3>환불은 어떻게 받나요?</h3>
+            <p>구입 후 30일 이내라면 이유를 묻지 않고 환불해 드립니다. 주문 번호와 함께 <a href="mailto:support@damao.io">support@damao.io</a>로 이메일을 보내 주세요. 자세한 내용은 <a href="../refunds.html">환불 정책</a>(영어)을 참고하세요.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="약관 및 지원">
+        <a href="compatibility/">호환성</a>
+        <a href="../terms.html">서비스 약관</a>
+        <a href="../privacy.html">개인정보 처리방침</a>
+        <a href="../refunds.html">환불 정책</a>
+        <a href="mailto:support@damao.io">support@damao.io</a>
+      </nav>
+      <nav class="langs" aria-label="언어">
+        <a href="../" hreflang="en" lang="en" data-lang="en">English</a>
+        <a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a>
+        <a href="../zh-hant/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a>
+        <a href="../ja/" hreflang="ja" lang="ja" data-lang="ja">日本語</a>
+        <a href="../ko/" hreflang="ko" lang="ko" data-lang="ko" aria-current="page">한국어</a>
+        <a href="../fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a>
+        <a href="../es/" hreflang="es" lang="es" data-lang="es">Español</a>
+        <a href="../pt-br/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a>
+        <a href="../de/" hreflang="de" lang="de" data-lang="de">Deutsch</a>
+      </nav>
+      <p>© 2026 Xiaoyu Guan</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll("[data-lang]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        try { localStorage.setItem("lang", link.dataset.lang); } catch (e) {}
+      });
+    });
+  </script>
+</body>
+</html>

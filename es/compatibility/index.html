@@ -1,0 +1,161 @@
+<!doctype html>
+<!-- Generated from src/ by scripts/build.py. Edit those, not this file. -->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Piccolo: registro de compatibilidad</title>
+  <meta name="description" content="Para cada versión de macOS, qué hace cada acción de Piccolo con las ventanas en pantalla completa y las que no se pueden redimensionar, cuánto tarda un atajo y cuánta memoria usa Piccolo.">
+  <link rel="alternate" hreflang="en" href="https://piccolo.damao.io/compatibility/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://piccolo.damao.io/zh-hans/compatibility/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://piccolo.damao.io/zh-hant/compatibility/">
+  <link rel="alternate" hreflang="ja" href="https://piccolo.damao.io/ja/compatibility/">
+  <link rel="alternate" hreflang="ko" href="https://piccolo.damao.io/ko/compatibility/">
+  <link rel="alternate" hreflang="fr" href="https://piccolo.damao.io/fr/compatibility/">
+  <link rel="alternate" hreflang="es" href="https://piccolo.damao.io/es/compatibility/">
+  <link rel="alternate" hreflang="pt-BR" href="https://piccolo.damao.io/pt-br/compatibility/">
+  <link rel="alternate" hreflang="de" href="https://piccolo.damao.io/de/compatibility/">
+  <link rel="alternate" hreflang="x-default" href="https://piccolo.damao.io/compatibility/">
+  <link rel="icon" type="image/png" href="../../images/icon.png">
+  <link rel="apple-touch-icon" href="../../images/icon.png">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../"><img src="../../images/icon.png" alt="" width="32" height="32"><span>Piccolo</span></a>
+      <nav aria-label="Navegación principal">
+        <a href="../#features">Funciones</a>
+        <a href="../#pricing">Precio</a>
+        <a href="../#faq">Preguntas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="record">
+    <div class="wrap">
+      <h1>Registro de compatibilidad</h1>
+      <p class="intro">Qué hace cada acción cuando la ventana activa está en pantalla completa o no admite cambios de tamaño, cuánto pasa desde que se pulsa el atajo hasta que la ventana se detiene y cuánta memoria usa Piccolo. Una sección por versión de macOS, la más reciente primero.</p>
+
+      <section id="macos-27-0-1">
+        <h2>macOS 27.0.1 (26A434)</h2>
+        <p>Dos pantallas, la principal de 2560 × 1440 y disponible entera para las ventanas; Organizador visual desactivado y “Pantallas con Spaces separados” activado. Piccolo era una compilación Debug de la versión en desarrollo posterior a la 1.0.0, con un margen entre ventanas de 0 y la animación de ventanas Rápida, salvo que una tabla indique otra cosa.</p>
+        <p>Las posiciones se escriben (x, y) ancho×alto, en puntos. Mitad izquierda en la pantalla principal es <code>(0, 0) 1280×1440</code>.</p>
+
+        <h3>Ventanas en pantalla completa</h3>
+        <p>Una ventana en pantalla completa y activa. Otra ventana, no en pantalla completa, estuvo activa antes; sigue en el Space del escritorio, fuera de la pantalla. Todas las acciones mostraron el aviso “Las ventanas en pantalla completa no se pueden mover” y dejaron la ventana en pantalla completa en <code>(0, 0) 2560×1440</code>.</p>
+        <table class="results">
+          <thead><tr><th scope="col">Acción</th><th scope="col">Aviso</th><th scope="col">Resultado</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Mitad izquierda</span></th><td data-label="Aviso">“Las ventanas en pantalla completa no se pueden mover”</td><td data-label="Resultado">No se movió nada.</td></tr>
+            <tr><th scope="row"><span>Maximizar</span></th><td data-label="Aviso">“Las ventanas en pantalla completa no se pueden mover”</td><td data-label="Resultado">No se movió nada.</td></tr>
+            <tr><th scope="row"><span>Centrar</span></th><td data-label="Aviso">“Las ventanas en pantalla completa no se pueden mover”</td><td data-label="Resultado">No se movió nada.</td></tr>
+            <tr><th scope="row"><span>Restaurar ventana</span></th><td data-label="Aviso">“Las ventanas en pantalla completa no se pueden mover”</td><td data-label="Resultado">No se movió nada: Piccolo rechaza la ventana antes de buscar dónde estaba.</td></tr>
+            <tr><th scope="row"><span>Pantalla siguiente</span></th><td data-label="Aviso">“Las ventanas en pantalla completa no se pueden mover”</td><td data-label="Resultado">No se movió nada: la ventana se quedó en su pantalla.</td></tr>
+            <tr><th scope="row"><span>Disponer 2 ventanas en 1 × 2</span></th><td data-label="Aviso">“Las ventanas en pantalla completa no se pueden mover”</td><td data-label="Resultado">No se movió nada: la otra ventana está en otro Space y no se tuvo en cuenta.</td></tr>
+            <tr><th scope="row"><span>Mover divisor hacia la derecha</span></th><td data-label="Aviso">“Las ventanas en pantalla completa no se pueden mover”</td><td data-label="Resultado">No se movió nada.</td></tr>
+            <tr><th scope="row"><span>Intercambiar con la ventana de la derecha</span></th><td data-label="Aviso">“Las ventanas en pantalla completa no se pueden mover”</td><td data-label="Resultado">No se movió nada.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Ventanas que no se pueden redimensionar</h3>
+        <p>Una ventana de 640 × 420 que no admite cambios de tamaño, en <code>(120, 80)</code>. Piccolo la mueve pero no puede redimensionarla, y no muestra ningún aviso.</p>
+        <table class="results">
+          <thead><tr><th scope="col">Acción</th><th scope="col">Aviso</th><th scope="col">Resultado</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Mitad izquierda</span></th><td data-label="Aviso">Ninguno</td><td data-label="Resultado">Movida a <code>(0, 0)</code>, sigue en 640×420 (el objetivo es 1280×1440).</td></tr>
+            <tr><th scope="row"><span>Maximizar</span></th><td data-label="Aviso">Ninguno</td><td data-label="Resultado">Movida a <code>(0, 0)</code>, sigue en 640×420.</td></tr>
+            <tr><th scope="row"><span>Disponer 2 ventanas en 1 × 2</span><small>segunda ventana redimensionable</small></th><td data-label="Aviso">Ninguno</td><td data-label="Resultado">La ventana fija en <code>(0, 0) 640×420</code>, la otra en <code>(640, 0) 1920×1440</code>: el divisor sigue el borde derecho de la ventana fija y la otra ventana ocupa el resto del ancho. El espacio bajo la ventana fija queda vacío.</td></tr>
+            <tr><th scope="row"><span>Mover divisor hacia la derecha</span><small>después de disponerlas</small></th><td data-label="Aviso">“El divisor no puede avanzar más”</td><td data-label="Resultado">No cambió nada: la ventana fija no puede crecer, así que el divisor se queda donde está.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Un ancho mínimo de más de media pantalla</h3>
+        <p>Una ventana con un ancho mínimo de 1536 pt (0,6 × el ancho disponible), abierta en 1792 × 420.</p>
+        <table class="results">
+          <thead><tr><th scope="col">Acción</th><th scope="col">Aviso</th><th scope="col">Resultado</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Mitad izquierda</span></th><td data-label="Aviso">Ninguno</td><td data-label="Resultado"><code>(0, 0) 1536×1440</code>: 256 pt más ancha que la mitad.</td></tr>
+            <tr><th scope="row"><span>Mitad derecha</span></th><td data-label="Aviso">Ninguno</td><td data-label="Resultado"><code>(1024, 0) 1536×1440</code>: más ancha que la mitad, desplazada a la izquierda para seguir en la pantalla.</td></tr>
+            <tr><th scope="row"><span>Disponer 2 ventanas en 1 × 2</span><small>segunda ventana redimensionable</small></th><td data-label="Aviso">Ninguno</td><td data-label="Resultado">La ventana en <code>(0, 0) 1536×1440</code>, la otra en <code>(1536, 0) 1024×1440</code>: la otra ventana ocupa lo que queda.</td></tr>
+            <tr><th scope="row"><span>Mover divisor hacia la izquierda</span><small>después de disponerlas</small></th><td data-label="Aviso">“El divisor no puede avanzar más”</td><td data-label="Resultado">No cambió nada: la ventana ancha no admite encogerse, así que el divisor se queda donde está.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Cambios de tamaño en pasos de 7 × 15</h3>
+        <p>Una ventana de 637 × 420 que cambia de tamaño en pasos de 7 × 15, como la de un terminal.</p>
+        <table class="results">
+          <thead><tr><th scope="col">Acción</th><th scope="col">Aviso</th><th scope="col">Resultado</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Mitad izquierda</span></th><td data-label="Aviso">Ninguno</td><td data-label="Resultado"><code>(0, 0) 1281×1440</code>: el ancho se ajustó a un múltiplo de 7, 1 pt más que la mitad.</td></tr>
+            <tr><th scope="row"><span>Disponer 2 ventanas en 1 × 2</span><small>segunda ventana redimensionable</small></th><td data-label="Aviso">Ninguno</td><td data-label="Resultado">La ventana en <code>(0, 0) 1281×1440</code>, la otra en <code>(1280, 0) 1280×1440</code>: se solapan 1 pt.</td></tr>
+          </tbody>
+        </table>
+
+        <p>En ninguno de estos casos una acción dejó una ventana fuera de una pantalla, y ninguna acción se quedó sin efecto sin mostrar un aviso.</p>
+
+        <h3>Latencia</h3>
+        <p>Desde justo antes de enviar el atajo hasta que la posición de la ventana, leída del servidor de ventanas, queda a 1 pt o menos de su objetivo en dos lecturas seguidas, separadas por 1 ms aproximadamente. 20 pulsaciones alternando Mitad izquierda y Mitad derecha en una ventana, compilación Debug.</p>
+        <table class="figures stack">
+          <thead><tr><th scope="col">Animación de ventanas</th><th scope="col">Mediana</th><th scope="col">Percentil 90</th><th scope="col">Máximo</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Desactivada</span></th><td data-label="Mediana">25 ms</td><td data-label="Percentil 90">32 ms</td><td data-label="Máximo">33 ms</td></tr>
+            <tr><th scope="row"><span>Media</span><small>el valor por omisión de una instalación nueva</small></th><td data-label="Mediana">255 ms</td><td data-label="Percentil 90">273 ms</td><td data-label="Máximo">279 ms</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Memoria</h3>
+        <p>La huella de memoria que macOS indica para Piccolo (la línea Footprint de <code>footprint</code>), en megabytes enteros.</p>
+        <p>Compilación Debug, animación de ventanas desactivada. En reposo: un Piccolo recién abierto con los ajustes de una instalación nueva, leído hasta que dos lecturas coinciden; la segunda lectura sigue a 200 acciones alternando Mitad izquierda y Mitad derecha en una ventana.</p>
+        <table class="figures">
+          <thead><tr><th scope="col">Piccolo (Debug)</th><th scope="col">Huella</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>En reposo tras abrirlo</span></th><td>20 MB</td></tr>
+            <tr><th scope="row"><span>Tras 200 acciones</span></th><td>20 MB</td></tr>
+          </tbody>
+        </table>
+        <p>La compilación Release, instalada en /Applications y en uso diario, medida a mano.</p>
+        <table class="figures">
+          <thead><tr><th scope="col">Piccolo (Release)</th><th scope="col">Huella</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>En reposo, 9 minutos después de abrirlo</span></th><td>19 MB</td></tr>
+            <tr><th scope="row"><span>Tras 21 horas y 48 minutos de uso diario (versión 1.0.0 (2))</span></th><td>20 MB</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Aviso legal y soporte">
+        <a href="./" aria-current="page">Compatibilidad</a>
+        <a href="../../terms.html">Condiciones del servicio</a>
+        <a href="../../privacy.html">Política de privacidad</a>
+        <a href="../../refunds.html">Política de reembolsos</a>
+        <a href="mailto:support@damao.io">support@damao.io</a>
+      </nav>
+      <nav class="langs" aria-label="Idioma">
+        <a href="../../compatibility/" hreflang="en" lang="en" data-lang="en">English</a>
+        <a href="../../zh-hans/compatibility/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a>
+        <a href="../../zh-hant/compatibility/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a>
+        <a href="../../ja/compatibility/" hreflang="ja" lang="ja" data-lang="ja">日本語</a>
+        <a href="../../ko/compatibility/" hreflang="ko" lang="ko" data-lang="ko">한국어</a>
+        <a href="../../fr/compatibility/" hreflang="fr" lang="fr" data-lang="fr">Français</a>
+        <a href="../../es/compatibility/" hreflang="es" lang="es" data-lang="es" aria-current="page">Español</a>
+        <a href="../../pt-br/compatibility/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a>
+        <a href="../../de/compatibility/" hreflang="de" lang="de" data-lang="de">Deutsch</a>
+      </nav>
+      <p>© 2026 Xiaoyu Guan</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll("[data-lang]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        try { localStorage.setItem("lang", link.dataset.lang); } catch (e) {}
+      });
+    });
+  </script>
+</body>
+</html>

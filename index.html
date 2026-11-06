@@ -7,7 +7,7 @@
   <meta name="color-scheme" content="light dark">
   <script>
     (function () {
-      var pages = {"zh-Hans": "zh-hans/", "zh-Hant": "zh-hant/", "ja": "ja/", "fr": "fr/", "es": "es/", "pt-BR": "pt-br/", "de": "de/"};
+      var pages = {"zh-Hans": "zh-hans/", "zh-Hant": "zh-hant/", "ja": "ja/", "ko": "ko/", "fr": "fr/", "es": "es/", "pt-BR": "pt-br/", "de": "de/"};
       var target = null;
       try { target = localStorage.getItem("lang"); } catch (e) {}
       if (!target) {
@@ -30,6 +30,7 @@
   <link rel="alternate" hreflang="zh-Hans" href="https://piccolo.damao.io/zh-hans/">
   <link rel="alternate" hreflang="zh-Hant" href="https://piccolo.damao.io/zh-hant/">
   <link rel="alternate" hreflang="ja" href="https://piccolo.damao.io/ja/">
+  <link rel="alternate" hreflang="ko" href="https://piccolo.damao.io/ko/">
   <link rel="alternate" hreflang="fr" href="https://piccolo.damao.io/fr/">
   <link rel="alternate" hreflang="es" href="https://piccolo.damao.io/es/">
   <link rel="alternate" hreflang="pt-BR" href="https://piccolo.damao.io/pt-br/">
@@ -181,7 +182,7 @@
             <li><h3>Motion that feels right</h3><p>Windows glide into place and bounce softly when there’s nowhere to go. Pick the speed, or turn it off.</p></li>
             <li><h3>Fits wide and tall screens</h3><p>When the windows don’t fill a grid, choose whether the last one stretches down or across: columns first for a wide display, rows first for a portrait one.</p></li>
             <li><h3>Room to breathe</h3><p>Leave a gap between windows and around the edges, so shadows don’t pile up into dark seams.</p></li>
-            <li><h3>Speaks your language</h3><p>English, 简体中文, 繁體中文, 日本語, Français, Español, Português and Deutsch.</p></li>
+            <li><h3>Speaks your language</h3><p>English, 简体中文, 繁體中文, 日本語, 한국어, Français, Español, Português and Deutsch.</p></li>
             <li><h3>Private</h3><p>No account, no analytics. Only the license check and the update check go online.</p></li>
           </ul>
         </div>
@@ -222,6 +223,10 @@
             <p>Piccolo moves and resizes other apps’ windows through the macOS Accessibility API, and without the permission no window moves. It uses it to read and change the position and size of windows. You grant it under System Settings, Privacy &amp; Security, Accessibility.</p>
           </div>
           <div>
+            <h3>How does Piccolo handle full-screen windows and windows that can’t be resized?</h3>
+            <p>The <a href="compatibility/">compatibility record</a> lists what each action does with them on every macOS release it was measured on, how long a shortcut takes and how much memory Piccolo uses.</p>
+          </div>
+          <div>
             <h3>What leaves my Mac?</h3>
             <ul>
               <li>License activation sends your license key and your Mac’s model identifier (for example MacBookPro18,3) to Dodo Payments.</li>
@@ -251,6 +256,7 @@
   <footer class="site-footer">
     <div class="wrap">
       <nav aria-label="Legal and support">
+        <a href="compatibility/">Compatibility</a>
         <a href="terms.html">Terms of Service</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="refunds.html">Refund Policy</a>
@@ -261,6 +267,7 @@
         <a href="zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a>
         <a href="zh-hant/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a>
         <a href="ja/" hreflang="ja" lang="ja" data-lang="ja">日本語</a>
+        <a href="ko/" hreflang="ko" lang="ko" data-lang="ko">한국어</a>
         <a href="fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a>
         <a href="es/" hreflang="es" lang="es" data-lang="es">Español</a>
         <a href="pt-br/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a>

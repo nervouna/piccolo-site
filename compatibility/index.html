@@ -1,0 +1,180 @@
+<!doctype html>
+<!-- Generated from src/ by scripts/build.py. Edit those, not this file. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    (function () {
+      var pages = {"zh-Hans": "../zh-hans/compatibility/", "zh-Hant": "../zh-hant/compatibility/", "ja": "../ja/compatibility/", "ko": "../ko/compatibility/", "fr": "../fr/compatibility/", "es": "../es/compatibility/", "pt-BR": "../pt-br/compatibility/", "de": "../de/compatibility/"};
+      var target = null;
+      try { target = localStorage.getItem("lang"); } catch (e) {}
+      if (!target) {
+        var wanted = navigator.languages || [navigator.language || ""];
+        for (var i = 0; i < wanted.length && !target; i++) {
+          var tag = String(wanted[i]).toLowerCase();
+          var primary = tag.split("-")[0];
+          if (primary === "en") target = "en";
+          else if (primary === "zh") target = /hant|-tw|-hk|-mo/.test(tag) ? "zh-Hant" : "zh-Hans";
+          else if (primary === "pt") target = "pt-BR";
+          else if (pages[primary]) target = primary;
+        }
+      }
+      if (target && pages[target]) location.replace(pages[target] + location.hash);
+    })();
+  </script>
+  <title>Piccolo: Compatibility record</title>
+  <meta name="description" content="What each Piccolo action does with full-screen windows and windows that can’t be resized, how long a shortcut takes and how much memory Piccolo uses, for each macOS release.">
+  <link rel="alternate" hreflang="en" href="https://piccolo.damao.io/compatibility/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://piccolo.damao.io/zh-hans/compatibility/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://piccolo.damao.io/zh-hant/compatibility/">
+  <link rel="alternate" hreflang="ja" href="https://piccolo.damao.io/ja/compatibility/">
+  <link rel="alternate" hreflang="ko" href="https://piccolo.damao.io/ko/compatibility/">
+  <link rel="alternate" hreflang="fr" href="https://piccolo.damao.io/fr/compatibility/">
+  <link rel="alternate" hreflang="es" href="https://piccolo.damao.io/es/compatibility/">
+  <link rel="alternate" hreflang="pt-BR" href="https://piccolo.damao.io/pt-br/compatibility/">
+  <link rel="alternate" hreflang="de" href="https://piccolo.damao.io/de/compatibility/">
+  <link rel="alternate" hreflang="x-default" href="https://piccolo.damao.io/compatibility/">
+  <link rel="icon" type="image/png" href="../images/icon.png">
+  <link rel="apple-touch-icon" href="../images/icon.png">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../"><img src="../images/icon.png" alt="" width="32" height="32"><span>Piccolo</span></a>
+      <nav aria-label="Main">
+        <a href="../#features">Features</a>
+        <a href="../#pricing">Pricing</a>
+        <a href="../#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="record">
+    <div class="wrap">
+      <h1>Compatibility record</h1>
+      <p class="intro">What each window action does when the focused window is in full screen or refuses to be resized, how long a shortcut takes from the key press until the window settles, and how much memory Piccolo uses. One section per macOS release, newest first.</p>
+
+      <section id="macos-27-0-1">
+        <h2>macOS 27.0.1 (26A434)</h2>
+        <p>Two displays, the primary one 2560 × 1440 and all of it available to windows; Stage Manager off and “Displays have separate Spaces” on. Piccolo was a Debug build of the development version after 1.0.0, with a window gap of 0 and the Fast window animation unless a table says otherwise.</p>
+        <p>Frames are written (x, y) width×height, in points. Left Half on the primary display is <code>(0, 0) 1280×1440</code>.</p>
+
+        <h3>Full-screen windows</h3>
+        <p>One window in full screen and focused. A second window, not in full screen, was focused before it; it stays in the desktop Space, off screen. Every action showed the notice “Full-screen windows can't be moved” and left the window in full screen at <code>(0, 0) 2560×1440</code>.</p>
+        <table class="results">
+          <thead><tr><th scope="col">Action</th><th scope="col">Notice</th><th scope="col">What happened</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Left Half</span></th><td data-label="Notice">“Full-screen windows can't be moved”</td><td data-label="What happened">Nothing moved.</td></tr>
+            <tr><th scope="row"><span>Maximize</span></th><td data-label="Notice">“Full-screen windows can't be moved”</td><td data-label="What happened">Nothing moved.</td></tr>
+            <tr><th scope="row"><span>Center</span></th><td data-label="Notice">“Full-screen windows can't be moved”</td><td data-label="What happened">Nothing moved.</td></tr>
+            <tr><th scope="row"><span>Restore Window</span></th><td data-label="Notice">“Full-screen windows can't be moved”</td><td data-label="What happened">Nothing moved: Piccolo refuses the window before looking up where it was.</td></tr>
+            <tr><th scope="row"><span>Next Display</span></th><td data-label="Notice">“Full-screen windows can't be moved”</td><td data-label="What happened">Nothing moved: the window stayed on its display.</td></tr>
+            <tr><th scope="row"><span>Arrange 2 in 1 × 2</span></th><td data-label="Notice">“Full-screen windows can't be moved”</td><td data-label="What happened">Nothing moved: the other window is in another Space and was not looked at.</td></tr>
+            <tr><th scope="row"><span>Move Divider Right</span></th><td data-label="Notice">“Full-screen windows can't be moved”</td><td data-label="What happened">Nothing moved.</td></tr>
+            <tr><th scope="row"><span>Swap Window Right</span></th><td data-label="Notice">“Full-screen windows can't be moved”</td><td data-label="What happened">Nothing moved.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Windows that can’t be resized</h3>
+        <p>A 640 × 420 window that refuses to be resized, at <code>(120, 80)</code>. Piccolo moves it but cannot resize it, and shows no notice.</p>
+        <table class="results">
+          <thead><tr><th scope="col">Action</th><th scope="col">Notice</th><th scope="col">What happened</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Left Half</span></th><td data-label="Notice">None</td><td data-label="What happened">Moved to <code>(0, 0)</code>, still 640×420 (the target is 1280×1440).</td></tr>
+            <tr><th scope="row"><span>Maximize</span></th><td data-label="Notice">None</td><td data-label="What happened">Moved to <code>(0, 0)</code>, still 640×420.</td></tr>
+            <tr><th scope="row"><span>Arrange 2 in 1 × 2</span><small>second window resizable</small></th><td data-label="Notice">None</td><td data-label="What happened">The fixed window at <code>(0, 0) 640×420</code>, the other at <code>(640, 0) 1920×1440</code>: the divider follows the fixed window’s right edge and the other window fills the rest of the width. The space below the fixed window stays empty.</td></tr>
+            <tr><th scope="row"><span>Move Divider Right</span><small>after the arrangement</small></th><td data-label="Notice">“The divider cannot move further”</td><td data-label="What happened">Nothing changed: the fixed window cannot grow, so the divider stays where it is.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>A minimum width over half the display</h3>
+        <p>A window with a minimum width of 1536 pt (0.6 × the visible width), opened at 1792 × 420.</p>
+        <table class="results">
+          <thead><tr><th scope="col">Action</th><th scope="col">Notice</th><th scope="col">What happened</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Left Half</span></th><td data-label="Notice">None</td><td data-label="What happened"><code>(0, 0) 1536×1440</code>: 256 pt wider than the half.</td></tr>
+            <tr><th scope="row"><span>Right Half</span></th><td data-label="Notice">None</td><td data-label="What happened"><code>(1024, 0) 1536×1440</code>: wider than the half, shifted left to stay on the display.</td></tr>
+            <tr><th scope="row"><span>Arrange 2 in 1 × 2</span><small>second window resizable</small></th><td data-label="Notice">None</td><td data-label="What happened">The window at <code>(0, 0) 1536×1440</code>, the other at <code>(1536, 0) 1024×1440</code>: the other window fills what is left.</td></tr>
+            <tr><th scope="row"><span>Move Divider Left</span><small>after the arrangement</small></th><td data-label="Notice">“The divider cannot move further”</td><td data-label="What happened">Nothing changed: the wide window refuses to shrink, so the divider stays where it is.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Resize increments of 7 × 15</h3>
+        <p>A 637 × 420 window that resizes in steps of 7 × 15, like a terminal’s.</p>
+        <table class="results">
+          <thead><tr><th scope="col">Action</th><th scope="col">Notice</th><th scope="col">What happened</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Left Half</span></th><td data-label="Notice">None</td><td data-label="What happened"><code>(0, 0) 1281×1440</code>: the width snapped to a multiple of 7, 1 pt over the half.</td></tr>
+            <tr><th scope="row"><span>Arrange 2 in 1 × 2</span><small>second window resizable</small></th><td data-label="Notice">None</td><td data-label="What happened">The window at <code>(0, 0) 1281×1440</code>, the other at <code>(1280, 0) 1280×1440</code>: they overlap by 1 pt.</td></tr>
+          </tbody>
+        </table>
+
+        <p>In none of these cases did an action leave a window outside a display, and no action did nothing without a notice.</p>
+
+        <h3>Latency</h3>
+        <p>From just before the shortcut is sent until the window’s frame, read from the window server, is within 1 pt of its target in two reads in a row, about 1 ms apart. 20 presses alternating Left Half and Right Half on one window, Debug build.</p>
+        <table class="figures stack">
+          <thead><tr><th scope="col">Window animation</th><th scope="col">Median</th><th scope="col">90th percentile</th><th scope="col">Maximum</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Off</span></th><td data-label="Median">25 ms</td><td data-label="90th percentile">32 ms</td><td data-label="Maximum">33 ms</td></tr>
+            <tr><th scope="row"><span>Medium</span><small>the default of a new install</small></th><td data-label="Median">255 ms</td><td data-label="90th percentile">273 ms</td><td data-label="Maximum">279 ms</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Memory</h3>
+        <p>The memory footprint macOS reports for Piccolo (the Footprint line of <code>footprint</code>), in whole megabytes.</p>
+        <p>Debug build, window animation Off. Idle is a fresh Piccolo with the settings of a new install, read until two readings agree; the second reading follows 200 actions alternating Left Half and Right Half on one window.</p>
+        <table class="figures">
+          <thead><tr><th scope="col">Piccolo (Debug)</th><th scope="col">Footprint</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Idle after launch</span></th><td>20 MB</td></tr>
+            <tr><th scope="row"><span>After 200 actions</span></th><td>20 MB</td></tr>
+          </tbody>
+        </table>
+        <p>The Release build, as installed in /Applications and used every day, measured by hand.</p>
+        <table class="figures">
+          <thead><tr><th scope="col">Piccolo (Release)</th><th scope="col">Footprint</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><span>Idle, 9 minutes after launch</span></th><td>19 MB</td></tr>
+            <tr><th scope="row"><span>After 21 hours 48 minutes of daily use (version 1.0.0 (2))</span></th><td>20 MB</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Legal and support">
+        <a href="./" aria-current="page">Compatibility</a>
+        <a href="../terms.html">Terms of Service</a>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../refunds.html">Refund Policy</a>
+        <a href="mailto:support@damao.io">support@damao.io</a>
+      </nav>
+      <nav class="langs" aria-label="Language">
+        <a href="../compatibility/" hreflang="en" lang="en" data-lang="en" aria-current="page">English</a>
+        <a href="../zh-hans/compatibility/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a>
+        <a href="../zh-hant/compatibility/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a>
+        <a href="../ja/compatibility/" hreflang="ja" lang="ja" data-lang="ja">日本語</a>
+        <a href="../ko/compatibility/" hreflang="ko" lang="ko" data-lang="ko">한국어</a>
+        <a href="../fr/compatibility/" hreflang="fr" lang="fr" data-lang="fr">Français</a>
+        <a href="../es/compatibility/" hreflang="es" lang="es" data-lang="es">Español</a>
+        <a href="../pt-br/compatibility/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a>
+        <a href="../de/compatibility/" hreflang="de" lang="de" data-lang="de">Deutsch</a>
+      </nav>
+      <p>© 2026 Xiaoyu Guan</p>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll("[data-lang]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        try { localStorage.setItem("lang", link.dataset.lang); } catch (e) {}
+      });
+    });
+  </script>
+</body>
+</html>
